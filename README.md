@@ -31,8 +31,10 @@ Our iOS app by the same name, Hungry@NYUAD, aims to eradicate the above problems
 	
 _Primary Actors_: 
 * Students
+
 _Preconditions_: 
 * Active internet connection.
+
 _Basic Flow of events_:
 * The student clicks the sign up button.
 * The app responds by presenting a sign up screen with fields for name, email address, and password.
