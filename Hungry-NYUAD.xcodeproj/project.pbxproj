@@ -17,6 +17,9 @@
 		035368DF1FBC709E00B20070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035368DE1FBC709E00B20070 /* GoogleService-Info.plist */; };
 		035368E01FBC709E00B20070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035368DE1FBC709E00B20070 /* GoogleService-Info.plist */; };
 		035368E11FBC709E00B20070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035368DE1FBC709E00B20070 /* GoogleService-Info.plist */; };
+		035368EB1FBCD85B00B20070 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368EA1FBCD85B00B20070 /* SignUpView.swift */; };
+		035368EC1FBCD85B00B20070 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368EA1FBCD85B00B20070 /* SignUpView.swift */; };
+		035368ED1FBCD85B00B20070 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368EA1FBCD85B00B20070 /* SignUpView.swift */; };
 		47DD7139AE5AD445FD7C9922 /* Pods_Hungry_NYUADTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */; };
 		6C321B5CDB0207500DC79766 /* Pods_Hungry_NYUADUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53394D58AF2052F0CF23743 /* Pods_Hungry_NYUADUITests.framework */; };
 		7BD1E5C6F5FD351D75013BC7 /* Pods_Hungry_NYUAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9702C41D163B9010913509 /* Pods_Hungry_NYUAD.framework */; };
@@ -54,6 +57,7 @@
 		035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hungry_NYUADUITests.swift; sourceTree = "<group>"; };
 		035368D21FBC6FA600B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		035368DE1FBC709E00B20070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		035368EA1FBCD85B00B20070 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4313B3DF08E4258BDA9AC7A4 /* Pods-Hungry-NYUAD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUAD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD.debug.xcconfig"; sourceTree = "<group>"; };
 		4C80D12F4DCEDB3F8206E525 /* Pods-Hungry-NYUADUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8440D16AF14BBC95DDEE25CB /* Pods-Hungry-NYUADTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */,
 				035368BC1FBC6FA500B20070 /* Info.plist */,
 				035368DE1FBC709E00B20070 /* GoogleService-Info.plist */,
+				035368EA1FBCD85B00B20070 /* SignUpView.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				035368B31FBC6FA500B20070 /* ViewController.swift in Sources */,
+				035368EB1FBCD85B00B20070 /* SignUpView.swift in Sources */,
 				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035368EC1FBCD85B00B20070 /* SignUpView.swift in Sources */,
 				035368C61FBC6FA500B20070 /* Hungry_NYUADTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035368ED1FBCD85B00B20070 /* SignUpView.swift in Sources */,
 				035368D11FBC6FA600B20070 /* Hungry_NYUADUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
