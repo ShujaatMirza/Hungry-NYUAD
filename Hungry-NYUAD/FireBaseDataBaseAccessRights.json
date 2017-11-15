@@ -1,0 +1,19 @@
+{
+ "rules": {
+    "users": {
+      "$user_id": {
+        // grants write access to the owner of this user account
+        // whose uid must exactly match the key ($user_id)
+         ".read": "auth != null && auth.uid == $user_id",
+         ".write": "auth != null && auth.uid == $user_id"
+      }
+    },
+    "order_groups":{
+      "$order_group_id": {
+        // any logged in user can get a list of all order groups
+        ".validate": "root.child('order_groups/' + $order_group_id + '/capacity').val() != false && root.child('order_groups/' + $order_group_id + '/closed').val() != false",
+        ".read": "auth !== null"
+      }
+    }
+  }
+}
