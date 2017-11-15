@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368B01FBC6FA500B20070 /* AppDelegate.swift */; };
+		035368B31FBC6FA500B20070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368B21FBC6FA500B20070 /* ViewController.swift */; };
+		035368B61FBC6FA500B20070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035368B41FBC6FA500B20070 /* Main.storyboard */; };
+		035368B81FBC6FA500B20070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 035368B71FBC6FA500B20070 /* Assets.xcassets */; };
+		035368BB1FBC6FA500B20070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */; };
+		035368C61FBC6FA500B20070 /* Hungry_NYUADTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368C51FBC6FA500B20070 /* Hungry_NYUADTests.swift */; };
+		035368D11FBC6FA600B20070 /* Hungry_NYUADUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */; };
+		035368DF1FBC709E00B20070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035368DE1FBC709E00B20070 /* GoogleService-Info.plist */; };
+		035368E01FBC709E00B20070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035368DE1FBC709E00B20070 /* GoogleService-Info.plist */; };
+		035368E11FBC709E00B20070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035368DE1FBC709E00B20070 /* GoogleService-Info.plist */; };
+		47DD7139AE5AD445FD7C9922 /* Pods_Hungry_NYUADTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */; };
+		6C321B5CDB0207500DC79766 /* Pods_Hungry_NYUADUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53394D58AF2052F0CF23743 /* Pods_Hungry_NYUADUITests.framework */; };
+		7BD1E5C6F5FD351D75013BC7 /* Pods_Hungry_NYUAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9702C41D163B9010913509 /* Pods_Hungry_NYUAD.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		035368C21FBC6FA500B20070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 035368A51FBC6FA500B20070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 035368AC1FBC6FA500B20070;
+			remoteInfo = "Hungry-NYUAD";
+		};
+		035368CD1FBC6FA600B20070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 035368A51FBC6FA500B20070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 035368AC1FBC6FA500B20070;
+			remoteInfo = "Hungry-NYUAD";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		035368AD1FBC6FA500B20070 /* Hungry-NYUAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungry-NYUAD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		035368B01FBC6FA500B20070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		035368B21FBC6FA500B20070 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		035368B51FBC6FA500B20070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		035368B71FBC6FA500B20070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		035368BA1FBC6FA500B20070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		035368BC1FBC6FA500B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		035368C11FBC6FA500B20070 /* Hungry-NYUADTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hungry-NYUADTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		035368C51FBC6FA500B20070 /* Hungry_NYUADTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hungry_NYUADTests.swift; sourceTree = "<group>"; };
+		035368C71FBC6FA500B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		035368CC1FBC6FA600B20070 /* Hungry-NYUADUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hungry-NYUADUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hungry_NYUADUITests.swift; sourceTree = "<group>"; };
+		035368D21FBC6FA600B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		035368DE1FBC709E00B20070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4313B3DF08E4258BDA9AC7A4 /* Pods-Hungry-NYUAD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUAD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD.debug.xcconfig"; sourceTree = "<group>"; };
+		4C80D12F4DCEDB3F8206E525 /* Pods-Hungry-NYUADUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8440D16AF14BBC95DDEE25CB /* Pods-Hungry-NYUADTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B82DB518F2FE403C8DC6E83E /* Pods-Hungry-NYUAD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUAD.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD.release.xcconfig"; sourceTree = "<group>"; };
+		C53394D58AF2052F0CF23743 /* Pods_Hungry_NYUADUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUADUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9702C41D163B9010913509 /* Pods_Hungry_NYUAD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUAD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8038DB90F2840797C6F230C /* Pods-Hungry-NYUADTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUADTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8154EADD2EA73FFADF3F6F4 /* Pods-Hungry-NYUADUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		035368AA1FBC6FA500B20070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BD1E5C6F5FD351D75013BC7 /* Pods_Hungry_NYUAD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		035368BE1FBC6FA500B20070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DD7139AE5AD445FD7C9922 /* Pods_Hungry_NYUADTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		035368C91FBC6FA600B20070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C321B5CDB0207500DC79766 /* Pods_Hungry_NYUADUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		035368A41FBC6FA500B20070 = {
+			isa = PBXGroup;
+			children = (
+				035368AF1FBC6FA500B20070 /* Hungry-NYUAD */,
+				035368C41FBC6FA500B20070 /* Hungry-NYUADTests */,
+				035368CF1FBC6FA600B20070 /* Hungry-NYUADUITests */,
+				035368AE1FBC6FA500B20070 /* Products */,
+				AF5D1A960B7DD6CF62EC89DF /* Pods */,
+				9AA85AEDF8A57F0074790905 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		035368AE1FBC6FA500B20070 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				035368AD1FBC6FA500B20070 /* Hungry-NYUAD.app */,
+				035368C11FBC6FA500B20070 /* Hungry-NYUADTests.xctest */,
+				035368CC1FBC6FA600B20070 /* Hungry-NYUADUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		035368AF1FBC6FA500B20070 /* Hungry-NYUAD */ = {
+			isa = PBXGroup;
+			children = (
+				035368B01FBC6FA500B20070 /* AppDelegate.swift */,
+				035368B21FBC6FA500B20070 /* ViewController.swift */,
+				035368B41FBC6FA500B20070 /* Main.storyboard */,
+				035368B71FBC6FA500B20070 /* Assets.xcassets */,
+				035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */,
+				035368BC1FBC6FA500B20070 /* Info.plist */,
+				035368DE1FBC709E00B20070 /* GoogleService-Info.plist */,
+			);
+			path = "Hungry-NYUAD";
+			sourceTree = "<group>";
+		};
+		035368C41FBC6FA500B20070 /* Hungry-NYUADTests */ = {
+			isa = PBXGroup;
+			children = (
+				035368C51FBC6FA500B20070 /* Hungry_NYUADTests.swift */,
+				035368C71FBC6FA500B20070 /* Info.plist */,
+			);
+			path = "Hungry-NYUADTests";
+			sourceTree = "<group>";
+		};
+		035368CF1FBC6FA600B20070 /* Hungry-NYUADUITests */ = {
+			isa = PBXGroup;
+			children = (
+				035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */,
+				035368D21FBC6FA600B20070 /* Info.plist */,
+			);
+			path = "Hungry-NYUADUITests";
+			sourceTree = "<group>";
+		};
+		9AA85AEDF8A57F0074790905 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE9702C41D163B9010913509 /* Pods_Hungry_NYUAD.framework */,
+				F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */,
+				C53394D58AF2052F0CF23743 /* Pods_Hungry_NYUADUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF5D1A960B7DD6CF62EC89DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4313B3DF08E4258BDA9AC7A4 /* Pods-Hungry-NYUAD.debug.xcconfig */,
+				B82DB518F2FE403C8DC6E83E /* Pods-Hungry-NYUAD.release.xcconfig */,
+				8440D16AF14BBC95DDEE25CB /* Pods-Hungry-NYUADTests.debug.xcconfig */,
+				D8038DB90F2840797C6F230C /* Pods-Hungry-NYUADTests.release.xcconfig */,
+				4C80D12F4DCEDB3F8206E525 /* Pods-Hungry-NYUADUITests.debug.xcconfig */,
+				F8154EADD2EA73FFADF3F6F4 /* Pods-Hungry-NYUADUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		035368AC1FBC6FA500B20070 /* Hungry-NYUAD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 035368D51FBC6FA600B20070 /* Build configuration list for PBXNativeTarget "Hungry-NYUAD" */;
+			buildPhases = (
+				43BD56153021239CC79B33D0 /* [CP] Check Pods Manifest.lock */,
+				035368A91FBC6FA500B20070 /* Sources */,
+				035368AA1FBC6FA500B20070 /* Frameworks */,
+				035368AB1FBC6FA500B20070 /* Resources */,
+				8BC9FC63539FF261FAFF8BFF /* [CP] Embed Pods Frameworks */,
+				94740E86F65ACF45C6E986E3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hungry-NYUAD";
+			productName = "Hungry-NYUAD";
+			productReference = 035368AD1FBC6FA500B20070 /* Hungry-NYUAD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		035368C01FBC6FA500B20070 /* Hungry-NYUADTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 035368D81FBC6FA600B20070 /* Build configuration list for PBXNativeTarget "Hungry-NYUADTests" */;
+			buildPhases = (
+				C30A1CDFF7D806DBAC0210F4 /* [CP] Check Pods Manifest.lock */,
+				035368BD1FBC6FA500B20070 /* Sources */,
+				035368BE1FBC6FA500B20070 /* Frameworks */,
+				035368BF1FBC6FA500B20070 /* Resources */,
+				C9BF4419A61A56B33638BF2C /* [CP] Embed Pods Frameworks */,
+				F66B04DD01E01BAB1D479869 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				035368C31FBC6FA500B20070 /* PBXTargetDependency */,
+			);
+			name = "Hungry-NYUADTests";
+			productName = "Hungry-NYUADTests";
+			productReference = 035368C11FBC6FA500B20070 /* Hungry-NYUADTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		035368CB1FBC6FA600B20070 /* Hungry-NYUADUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 035368DB1FBC6FA600B20070 /* Build configuration list for PBXNativeTarget "Hungry-NYUADUITests" */;
+			buildPhases = (
+				4EEBC86FC76A3921E7967F45 /* [CP] Check Pods Manifest.lock */,
+				035368C81FBC6FA600B20070 /* Sources */,
+				035368C91FBC6FA600B20070 /* Frameworks */,
+				035368CA1FBC6FA600B20070 /* Resources */,
+				A2A1FD0578E55D36631F514E /* [CP] Embed Pods Frameworks */,
+				A606D5B624D7E75CCF4753E6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				035368CE1FBC6FA600B20070 /* PBXTargetDependency */,
+			);
+			name = "Hungry-NYUADUITests";
+			productName = "Hungry-NYUADUITests";
+			productReference = 035368CC1FBC6FA600B20070 /* Hungry-NYUADUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		035368A51FBC6FA500B20070 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Software Engineering Group";
+				TargetAttributes = {
+					035368AC1FBC6FA500B20070 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					035368C01FBC6FA500B20070 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 035368AC1FBC6FA500B20070;
+					};
+					035368CB1FBC6FA600B20070 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 035368AC1FBC6FA500B20070;
+					};
+				};
+			};
+			buildConfigurationList = 035368A81FBC6FA500B20070 /* Build configuration list for PBXProject "Hungry-NYUAD" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 035368A41FBC6FA500B20070;
+			productRefGroup = 035368AE1FBC6FA500B20070 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				035368AC1FBC6FA500B20070 /* Hungry-NYUAD */,
+				035368C01FBC6FA500B20070 /* Hungry-NYUADTests */,
+				035368CB1FBC6FA600B20070 /* Hungry-NYUADUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		035368AB1FBC6FA500B20070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035368BB1FBC6FA500B20070 /* LaunchScreen.storyboard in Resources */,
+				035368DF1FBC709E00B20070 /* GoogleService-Info.plist in Resources */,
+				035368B81FBC6FA500B20070 /* Assets.xcassets in Resources */,
+				035368B61FBC6FA500B20070 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		035368BF1FBC6FA500B20070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035368E01FBC709E00B20070 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		035368CA1FBC6FA600B20070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035368E11FBC709E00B20070 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43BD56153021239CC79B33D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hungry-NYUAD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EEBC86FC76A3921E7967F45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hungry-NYUADUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BC9FC63539FF261FAFF8BFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94740E86F65ACF45C6E986E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2A1FD0578E55D36631F514E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A606D5B624D7E75CCF4753E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C30A1CDFF7D806DBAC0210F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hungry-NYUADTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9BF4419A61A56B33638BF2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F66B04DD01E01BAB1D479869 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		035368A91FBC6FA500B20070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035368B31FBC6FA500B20070 /* ViewController.swift in Sources */,
+				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		035368BD1FBC6FA500B20070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035368C61FBC6FA500B20070 /* Hungry_NYUADTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		035368C81FBC6FA600B20070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035368D11FBC6FA600B20070 /* Hungry_NYUADUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		035368C31FBC6FA500B20070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 035368AC1FBC6FA500B20070 /* Hungry-NYUAD */;
+			targetProxy = 035368C21FBC6FA500B20070 /* PBXContainerItemProxy */;
+		};
+		035368CE1FBC6FA600B20070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 035368AC1FBC6FA500B20070 /* Hungry-NYUAD */;
+			targetProxy = 035368CD1FBC6FA600B20070 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		035368B41FBC6FA500B20070 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				035368B51FBC6FA500B20070 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				035368BA1FBC6FA500B20070 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		035368D31FBC6FA600B20070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		035368D41FBC6FA600B20070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		035368D61FBC6FA600B20070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4313B3DF08E4258BDA9AC7A4 /* Pods-Hungry-NYUAD.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Hungry-NYUAD/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyuadSE17.Hungry-NYUAD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		035368D71FBC6FA600B20070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B82DB518F2FE403C8DC6E83E /* Pods-Hungry-NYUAD.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Hungry-NYUAD/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyuadSE17.Hungry-NYUAD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		035368D91FBC6FA600B20070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8440D16AF14BBC95DDEE25CB /* Pods-Hungry-NYUADTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Hungry-NYUADTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyuadSE17.Hungry-NYUADTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hungry-NYUAD.app/Hungry-NYUAD";
+			};
+			name = Debug;
+		};
+		035368DA1FBC6FA600B20070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8038DB90F2840797C6F230C /* Pods-Hungry-NYUADTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Hungry-NYUADTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyuadSE17.Hungry-NYUADTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hungry-NYUAD.app/Hungry-NYUAD";
+			};
+			name = Release;
+		};
+		035368DC1FBC6FA600B20070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C80D12F4DCEDB3F8206E525 /* Pods-Hungry-NYUADUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Hungry-NYUADUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyuadSE17.Hungry-NYUADUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Hungry-NYUAD";
+			};
+			name = Debug;
+		};
+		035368DD1FBC6FA600B20070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8154EADD2EA73FFADF3F6F4 /* Pods-Hungry-NYUADUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Hungry-NYUADUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyuadSE17.Hungry-NYUADUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Hungry-NYUAD";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		035368A81FBC6FA500B20070 /* Build configuration list for PBXProject "Hungry-NYUAD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				035368D31FBC6FA600B20070 /* Debug */,
+				035368D41FBC6FA600B20070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		035368D51FBC6FA600B20070 /* Build configuration list for PBXNativeTarget "Hungry-NYUAD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				035368D61FBC6FA600B20070 /* Debug */,
+				035368D71FBC6FA600B20070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		035368D81FBC6FA600B20070 /* Build configuration list for PBXNativeTarget "Hungry-NYUADTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				035368D91FBC6FA600B20070 /* Debug */,
+				035368DA1FBC6FA600B20070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		035368DB1FBC6FA600B20070 /* Build configuration list for PBXNativeTarget "Hungry-NYUADUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				035368DC1FBC6FA600B20070 /* Debug */,
+				035368DD1FBC6FA600B20070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 035368A51FBC6FA500B20070 /* Project object */;
+}

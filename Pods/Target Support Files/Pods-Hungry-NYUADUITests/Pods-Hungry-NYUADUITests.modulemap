@@ -1,0 +1,6 @@
+framework module Pods_Hungry_NYUADUITests {
+  umbrella header "Pods-Hungry-NYUADUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
