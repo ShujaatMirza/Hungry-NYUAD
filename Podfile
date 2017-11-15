@@ -10,6 +10,7 @@ target 'Hungry-NYUAD' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
+	pod 'FirebaseUI'
 
   target 'Hungry-NYUADTests' do
     inherit! :search_paths
