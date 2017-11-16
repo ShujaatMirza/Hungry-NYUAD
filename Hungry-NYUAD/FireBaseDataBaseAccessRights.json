@@ -12,7 +12,13 @@
       "$order_group_id": {
         // any logged in user can get a list of all order groups
         ".validate" : "root.child('order_groups/' + $order_group_id + '/capacity').val() != false && root.child('order_groups/' + $order_group_id + '/closed').val() != false",
-        ".read" : "auth !== null"
+        ".read" : "auth !== null",
+        "restaurant": {
+          ".validate": "newData.isString() && newData.val().length < 100"
+        },
+        "capacity": {
+          ".validate": "newData.isNumber() && newData.val()< 15"
+        }
       }
     },
     "orders" :{
