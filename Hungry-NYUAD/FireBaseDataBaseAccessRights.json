@@ -8,12 +8,26 @@
          ".write": "auth != null && auth.uid == $user_id"
       }
     },
-    "order_groups":{
+    "order_groups" :{
       "$order_group_id": {
         // any logged in user can get a list of all order groups
-        ".validate": "root.child('order_groups/' + $order_group_id + '/capacity').val() != false && root.child('order_groups/' + $order_group_id + '/closed').val() != false",
-        ".read": "auth !== null"
+        ".validate" : "root.child('order_groups/' + $order_group_id + '/capacity').val() != false && root.child('order_groups/' + $order_group_id + '/closed').val() != false",
+        ".read" : "auth !== null"
       }
-    }
+    },
+    "orders" :{
+      "$order_id": {
+        "description": {
+          ".validate": "newData.isString() && newData.val().length < 150"
+        }
+      }
+    },
+    //might throw error because of clas with the one above
+    // "order_groups" : {
+    //   "order_group_id" : {
+    //     ".validate" : "root.child('order_groups/' + $order_group_id + '/owner_id').val() == $user_id)",
+    //     ".read" : "data.child(order)"
+    //   }
+    // }
   }
 }
