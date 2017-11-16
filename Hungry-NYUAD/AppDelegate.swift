@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        print("application called")
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
@@ -27,9 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        print("sign called")
         // ...
+        
         if let error = error {
             // ...
+            print (error)
             return
         }
         
@@ -41,7 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
                 // ...
+                print(error)
                 return
+            }
+            print("Userr is signed in.")
+            let user = Auth.auth().currentUser
+            if let user = user {
+                // The user's ID, unique to the Firebase project.
+                // Do NOT use this value to authenticate with your backend server,
+                // if you have one. Use getTokenWithCompletion:completion: instead.
+                //let uid = user.uid
+                let email = user.email
+                print(email)
+                //let photoURL = user.photoURL
+                // ...
             }
             // User is signed in
             // ...
@@ -51,6 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("Signed out")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)  // ...
+        }
     }
     
     @available(iOS 9.0, *)
