@@ -6,4 +6,14 @@
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //
 
-import Foundation
+import Firebase
+
+struct Constants
+{
+    struct refs
+    {
+        static let databaseRoot = Database.database().reference()
+        static let databaseOrders = databaseRoot.child("orders")
+        static let databaseOrderGroup = databaseRoot.child("order_group")
+    }
+}

@@ -12,11 +12,16 @@ import Firebase
 class GroupDetailsViewController : UIViewController {
     
     //MARK: Properties
-    
+    @IBOutlet weak var groupNameDisplayInfo: UILabel!
+    @IBOutlet weak var groupIdDisplayInfo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func getLabelNames(){
+        
     }
         
 }
