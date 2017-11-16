@@ -21,6 +21,9 @@
 		47DD7139AE5AD445FD7C9922 /* Pods_Hungry_NYUADTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */; };
 		6C321B5CDB0207500DC79766 /* Pods_Hungry_NYUADUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53394D58AF2052F0CF23743 /* Pods_Hungry_NYUADUITests.framework */; };
 		7BD1E5C6F5FD351D75013BC7 /* Pods_Hungry_NYUAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9702C41D163B9010913509 /* Pods_Hungry_NYUAD.framework */; };
+		C942394E1FBCF73D0097E34B /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942394D1FBCF73D0097E34B /* GroupDetailsViewController.swift */; };
+		C94239501FBCF7830097E34B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942394F1FBCF7830097E34B /* Constants.swift */; };
+		C94239521FBCFE430097E34B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C94239511FBCFE430097E34B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		8440D16AF14BBC95DDEE25CB /* Pods-Hungry-NYUADTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B82DB518F2FE403C8DC6E83E /* Pods-Hungry-NYUAD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUAD.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUAD/Pods-Hungry-NYUAD.release.xcconfig"; sourceTree = "<group>"; };
 		C53394D58AF2052F0CF23743 /* Pods_Hungry_NYUADUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUADUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C942394D1FBCF73D0097E34B /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
+		C942394F1FBCF7830097E34B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C94239511FBCFE430097E34B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE9702C41D163B9010913509 /* Pods_Hungry_NYUAD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUAD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8038DB90F2840797C6F230C /* Pods-Hungry-NYUADTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests.release.xcconfig"; sourceTree = "<group>"; };
 		F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUADTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,14 +126,16 @@
 		035368AF1FBC6FA500B20070 /* Hungry-NYUAD */ = {
 			isa = PBXGroup;
 			children = (
+				035368B71FBC6FA500B20070 /* Assets.xcassets */,
 				035368B01FBC6FA500B20070 /* AppDelegate.swift */,
 				035368B21FBC6FA500B20070 /* SignUpView.swift */,
 				03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */,
+				C94239511FBCFE430097E34B /* GoogleService-Info.plist */,
 				035368B41FBC6FA500B20070 /* Main.storyboard */,
-				035368B71FBC6FA500B20070 /* Assets.xcassets */,
 				035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */,
 				035368BC1FBC6FA500B20070 /* Info.plist */,
-				035368DE1FBC709E00B20070 /* GoogleService-Info.plist */,
+				C942394D1FBCF73D0097E34B /* GroupDetailsViewController.swift */,
+				C942394F1FBCF7830097E34B /* Constants.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -290,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				035368BB1FBC6FA500B20070 /* LaunchScreen.storyboard in Resources */,
-				035368DF1FBC709E00B20070 /* GoogleService-Info.plist in Resources */,
+				C94239521FBCFE430097E34B /* GoogleService-Info.plist in Resources */,
 				035368B81FBC6FA500B20070 /* Assets.xcassets in Resources */,
 				035368B61FBC6FA500B20070 /* Main.storyboard in Resources */,
 			);
@@ -300,7 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035368E01FBC709E00B20070 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +315,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035368E11FBC709E00B20070 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +515,9 @@
 			files = (
 				03DF56A01FBD83B300F9B5E5 /* RegistrationView.swift in Sources */,
 				035368B31FBC6FA500B20070 /* SignUpView.swift in Sources */,
+				C942394E1FBCF73D0097E34B /* GroupDetailsViewController.swift in Sources */,
 				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,
+				C94239501FBCF7830097E34B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
