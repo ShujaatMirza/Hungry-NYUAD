@@ -15,6 +15,7 @@
 		035368C61FBC6FA500B20070 /* Hungry_NYUADTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368C51FBC6FA500B20070 /* Hungry_NYUADTests.swift */; };
 		035368D11FBC6FA600B20070 /* Hungry_NYUADUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */; };
 		03DF56A01FBD83B300F9B5E5 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */; };
+		3F119C771FC215D60028F293 /* OwnerOrderGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */; };
 		3F6C49C21FC0898C004BBDCB /* CreateNewGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C49C11FC0898C004BBDCB /* CreateNewGroupVC.swift */; };
 		3FD68BDF1FC2060E006D3D75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FD68BDE1FC2060D006D3D75 /* GoogleService-Info.plist */; };
 		3FD68BE11FC20E54006D3D75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD68BE01FC20E54006D3D75 /* Constants.swift */; };
@@ -59,6 +60,7 @@
 		035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hungry_NYUADUITests.swift; sourceTree = "<group>"; };
 		035368D21FBC6FA600B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerOrderGroupVC.swift; sourceTree = "<group>"; };
 		3F6C49C11FC0898C004BBDCB /* CreateNewGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupVC.swift; sourceTree = "<group>"; };
 		3FD68BDE1FC2060D006D3D75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FD68BE01FC20E54006D3D75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				C9AE9D0D1FC1AF610063548D /* ListOrderGroupsTableViewController.swift */,
 				035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */,
 				035368B41FBC6FA500B20070 /* Main.storyboard */,
+				3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				035368B31FBC6FA500B20070 /* SignUpView.swift in Sources */,
 				C942394E1FBCF73D0097E34B /* GroupDetailsViewController.swift in Sources */,
 				C942395A1FC1A8E10097E34B /* OrderGroupTableViewCell.swift in Sources */,
+				3F119C771FC215D60028F293 /* OwnerOrderGroupVC.swift in Sources */,
 				3F6C49C21FC0898C004BBDCB /* CreateNewGroupVC.swift in Sources */,
 				C9AE9D0E1FC1AF610063548D /* ListOrderGroupsTableViewController.swift in Sources */,
 				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,

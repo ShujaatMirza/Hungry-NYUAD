@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class CreateNewGroupVC: UITableViewController {
-    
+    var dataToSend = [String: Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableView.delegate = self
@@ -51,8 +51,22 @@ class CreateNewGroupVC: UITableViewController {
         
         //adding the artist inside the generated unique key
         refOrderGroups.child(key).setValue(group)
+        dataToSend = group
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        //Check your segue, this way you can transfer different data to different view. also make sure the identifier match your segue.
+        if segue.identifier == "transferGroupData" {
+            
+            //Initial your second view data control
+            if let ExchangeViewData = segue.destination as? OwnerOrderGroupVC{
+                //Send your data with segue
+                ExchangeViewData.dataToReceive = dataToSend
+            }
+            
+            
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,6 +84,7 @@ class CreateNewGroupVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 3
     }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
