@@ -43,8 +43,8 @@ class ListOrderGroupsTableViewController: UITableViewController {
                 //reloading the tableview
                 self.tableView.reloadData()
             }
+            print(self.orderGroups.count)
         })
-        print(orderGroups.count)
     }
 
     override func didReceiveMemoryWarning() {
