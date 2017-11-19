@@ -63,6 +63,7 @@
                                 <rect key="frame" x="180" y="230" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSU-HS-doy">
@@ -110,8 +111,6 @@
             </objects>
             <point key="canvasLocation" x="1096.8" y="704.79760119940033"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="PlK-iT-f3F">
         <!--List Order Groups Table View Controller-->
         <scene sceneID="iy6-uQ-rn6">
             <objects>

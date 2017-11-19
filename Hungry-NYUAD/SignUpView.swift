@@ -74,11 +74,11 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 //let photoURL = user.photoURL
                 // ...
                 
-                // Make your seague here
-                self.performSegue(withIdentifier: "SignInSuccessful", sender: self)
+                // Make your segue here
+                //self.performSegue(withIdentifier: "SignInSuccessful", sender: self)
             }
             //
-            /*
+            
             if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
                 print("Auth in keychain")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
