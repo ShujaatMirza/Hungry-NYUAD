@@ -74,7 +74,11 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 print(email)
                 //let photoURL = user.photoURL
                 // ...
+                
+                // Make your seague here
+                self.performSegue(withIdentifier: "SignInSuccessful", sender: self)
             }
+            //
             /*
             if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
                 print("Auth in keychain")
@@ -140,8 +144,6 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
        
         
     }
-    
-   
 
 }
 
