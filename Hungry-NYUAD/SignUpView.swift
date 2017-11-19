@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
-import FirebaseFacebookAuthUI
-import FirebaseTwitterAuthUI
 import FirebasePhoneAuthUI
 import GoogleSignIn
 
@@ -70,12 +68,13 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 // Do NOT use this value to authenticate with your backend server,
                 // if you have one. Use getTokenWithCompletion:completion: instead.
                 //let uid = user.uid
-                let email = user.email
-                print(email)
+                //let email = user.email
+                let displayName = user.displayName
+                print(displayName ?? "")
                 //let photoURL = user.photoURL
                 // ...
             }
-            /*
+            
             if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
                 print("Auth in keychain")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -84,7 +83,7 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             }
             else {
                 print("Auth not in keychain")
-             }*/
+             }
             
             // User is signed in
             // ...
@@ -128,7 +127,7 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 // if you have one. Use getTokenWithCompletion:completion: instead.
                 //let uid = user.uid
                 let email = user.email
-                print(email)
+                print(email ?? "")
                 //let photoURL = user.photoURL
                 // ...
             }
