@@ -1,73 +1,29 @@
 //
-//  CreateNewGroupVC.swift
+//  OwnerOrderGroupVC.swift
 //  Hungry-NYUAD
 //
-//  Created by Muhammad Mirza on 11/18/17.
+//  Created by Muhammad Mirza on 11/19/17.
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class CreateNewGroupVC: UITableViewController {
-    var dataToSend = [String: Any]()
+class OwnerOrderGroupVC: UITableViewController {
+    var dataToReceive = [String: Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.delegate = self
-        //tableView.dataSource = self
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 44.0;
-        refOrderGroups = Constants.refs.databaseOrderGroup
+        self.OrderGroupLabel.text = dataToReceive["groupName"] as! String
+        self.OrderGroupRestaurantLabel.text = dataToReceive["restaurantName"] as! String
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    //MARK: Properties
-    //defining firebase reference var
-    var refOrderGroups: DatabaseReference!
-    
-    @IBOutlet weak var groupNameLabel: UILabel!
-    @IBOutlet weak var groupNameTextField: UITextField!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var restaurantNameTextField: UITextField!
 
-    @IBAction func createOrderGroup(_ sender: UIButton) {
-        addGroup()
-    }
-
-    func addGroup(){
-        //generating a new key inside artists node
-        //and also getting the generated key
-        let key = refOrderGroups.childByAutoId().key
-        
-        //creating artist with the given values
-        let group = ["id":key,
-                      "groupName": groupNameTextField.text! as String,
-                      "restaurantName": restaurantNameTextField.text! as String
-        ]
-        
-        //adding the artist inside the generated unique key
-        refOrderGroups.child(key).setValue(group)
-        dataToSend = group
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        //Check your segue, this way you can transfer different data to different view. also make sure the identifier match your segue.
-        if segue.identifier == "transferGroupData" {
-            
-            //Initial your second view data control
-            if let ExchangeViewData = segue.destination as? OwnerOrderGroupVC{
-                //Send your data with segue
-                ExchangeViewData.dataToReceive = dataToSend
-            }
-            
-            
-        }
-    }
-
+    @IBOutlet weak var OrderGroupLabel: UILabel!
+    @IBOutlet weak var OrderGroupRestaurantLabel: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -84,17 +40,15 @@ class CreateNewGroupVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 3
     }
-    
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  
+    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
 
         return cell
-    }
-    */
+    }*/
 
     /*
     // Override to support conditional editing of the table view.
