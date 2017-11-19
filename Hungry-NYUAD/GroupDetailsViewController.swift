@@ -19,9 +19,7 @@ class GroupDetailsViewController : UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func getFromDatabase(_ sender: UIButton) {
-        Constants.refs.databaseOrders
-    }
+
 
         
 }
