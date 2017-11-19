@@ -34,7 +34,6 @@ class ListOrderGroupsTableViewController: UITableViewController {
                     let ordergroupId  = ordergroupObject?["id"]
                     let ordergroupRestaurant = ordergroupObject?["restaurantName"]
                     
-                    //creating artist object with model and fetched values
                     let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!)
                     
                     //appending it to list
@@ -45,6 +44,7 @@ class ListOrderGroupsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         })
+        print(orderGroups.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +68,7 @@ class ListOrderGroupsTableViewController: UITableViewController {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "OrderGroupTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? OrderGroupTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as? OrderGroupTableViewCell  else {
             fatalError("The dequeued cell is not an instance of OrderGroupTableViewCell.")
         }
         
