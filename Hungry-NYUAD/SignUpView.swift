@@ -27,6 +27,19 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
+        if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
+            
+            
+            print("Auth in keychain")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "landing")
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+        else {
+            print("Auth not in keychain")
+        }
+        
         ref = Database.database().reference()
         
         //GIDSignIn.sharedInstance().signIn()
@@ -44,7 +57,6 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         print("sign called")
-        // ...
         
         if let error = error {
             // ...
@@ -55,66 +67,29 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        // ...
         
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
-                // ...
                 print(error)
                 return
             }
-            print("Userr is signed in.")
+            
             let user = Auth.auth().currentUser
             if let user = user {
-                // The user's ID, unique to the Firebase project.
-                // Do NOT use this value to authenticate with your backend server,
-                // if you have one. Use getTokenWithCompletion:completion: instead.
-                //let uid = user.uid
-                //let email = user.email
-                //let displayName = user.displayName
-                let photoURL = user.photoURL
-                print(photoURL ?? "")
-                //let photoURL = user.photoURL
-                // ...
-                
-                // Make your segue here
-                //self.performSegue(withIdentifier: "SignInSuccessful", sender: self)
-            }
-            //
-            self.ref.child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Get user value
-                if snapshot.exists() {
-                    //self.performSegue(withIdentifier: "toLandingFromSignIn", sender: self)
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "landing")
-                    self.present(vc, animated: true, completion: nil)
+                self.ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if snapshot.exists() {
+                        self.performSegue(withIdentifier: "toLandingFromSignIn", sender: self)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "landing")
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                    else {
+                        self.performSegue(withIdentifier: "toRegistration", sender: self)
+                    }
+                }) { (error) in
+                    print(error.localizedDescription) 
                 }
-                else {
-                    self.performSegue(withIdentifier: "toRegistration", sender: self)
-                }
-                
-                
-                
-                
-            }) { (error) in
-                print(error.localizedDescription)
             }
-            /*
-            if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
- 
-                /*
-                print("Auth in keychain")
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "registrationView")
-                self.present(vc, animated: true, completion: nil)
-                */
-            }
-            else {
-                print("Auth not in keychain")
-             }*/
-            
-            // User is signed in
-            // ...
         }
     }
     

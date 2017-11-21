@@ -9,7 +9,7 @@ import UIKit
 import GoogleSignIn
 import Firebase
 
-class ProfileView: UIViewController {
+class ProfileView: UIViewController, UITextFieldDelegate {
     
     var ref: DatabaseReference!
     @IBOutlet weak var name: UITextField!
@@ -49,11 +49,18 @@ class ProfileView: UIViewController {
         
     }
 
+    
 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool{
+        return true
     }
     
     @IBAction func signOut(_ sender: Any) {

@@ -9,7 +9,7 @@ import FirebaseAuthUI
 import Firebase
 import UIKit
 
-class RegistrationView: UIViewController {
+class RegistrationView: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var name: UITextField!
@@ -17,13 +17,29 @@ class RegistrationView: UIViewController {
     var ref: DatabaseReference!
     var user: User?
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        print("retfghjgj")
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("here")
         // Do any additional setup after loading the view, typically from a nib.
         user = Auth.auth().currentUser
         ref = Database.database().reference()
+        name.delegate = self
         name.text = user?.displayName ?? ""
+        phone.returnKeyType = UIReturnKeyType.done
     }
     
     @IBAction func submitDetails(_ sender: Any) {
