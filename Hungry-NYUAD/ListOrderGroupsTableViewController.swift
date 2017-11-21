@@ -64,14 +64,12 @@ class ListOrderGroupsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "OrderGroupTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as? OrderGroupTableViewCell  else {
             fatalError("The dequeued cell is not an instance of OrderGroupTableViewCell.")
         }
-        
         // Fetches the appropriate meal for the data source layout.
         let orderGroup = orderGroups[indexPath.row]
         
