@@ -16,6 +16,7 @@ import GoogleSignIn
 
 class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     @IBOutlet weak var signOutButton: UIButton!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
+        ref = Database.database().reference()
         
         //GIDSignIn.sharedInstance().signIn()
         
@@ -79,16 +81,34 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 //self.performSegue(withIdentifier: "SignInSuccessful", sender: self)
             }
             //
-            
+            self.ref.child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                if snapshot.exists() {
+                    self.performSegue(withIdentifier: "toLandingFromSignIn", sender: self)
+                }
+                else {
+                    self.performSegue(withIdentifier: "toRegistration", sender: self)
+                }
+                
+                
+                
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            /*
             if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
+ 
+                /*
                 print("Auth in keychain")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "registrationView")
                 self.present(vc, animated: true, completion: nil)
+                */
             }
             else {
                 print("Auth not in keychain")
-             }
+             }*/
             
             // User is signed in
             // ...
