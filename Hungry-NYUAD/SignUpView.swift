@@ -84,7 +84,10 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             self.ref.child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 if snapshot.exists() {
-                    self.performSegue(withIdentifier: "toLandingFromSignIn", sender: self)
+                    //self.performSegue(withIdentifier: "toLandingFromSignIn", sender: self)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "landing")
+                    self.present(vc, animated: true, completion: nil)
                 }
                 else {
                     self.performSegue(withIdentifier: "toRegistration", sender: self)
