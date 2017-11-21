@@ -69,8 +69,9 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 // if you have one. Use getTokenWithCompletion:completion: instead.
                 //let uid = user.uid
                 //let email = user.email
-                let displayName = user.displayName
-                print(displayName ?? "")
+                //let displayName = user.displayName
+                let photoURL = user.photoURL
+                print(photoURL ?? "")
                 //let photoURL = user.photoURL
                 // ...
                 
