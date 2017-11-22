@@ -46,8 +46,14 @@ class CreateNewGroupVC: UITableViewController {
         //creating order group with the given values
         let group = ["id":key,
                       "name": groupNameTextField.text! as String,
-                      "restaurant": restaurantNameTextField.text! as String
-        ]
+                      "restaurant": restaurantNameTextField.text! as String,
+                      "ownerId": Auth.auth().currentUser?.uid,
+                      "IsPlaced": false,
+                      "IsDelivered": false,
+                      "IsCompleted": false,
+                      "hasReachedCapacity": false,
+                      "numMembers": 1
+            ] as [String : Any]
         
         //adding the artist inside the generated unique key
         refOrderGroups.child(key).setValue(group)
