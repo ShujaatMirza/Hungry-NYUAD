@@ -30,11 +30,18 @@ class ListOrderGroupsTableViewController: UITableViewController {
                 for ordergroups in snapshot.children.allObjects as! [DataSnapshot] {
                     //getting values
                     let ordergroupObject = ordergroups.value as? [String: AnyObject]
-                    let ordergroupName  = ordergroupObject?["groupName"]
+                    let ordergroupName  = ordergroupObject?["name"]
                     let ordergroupId  = ordergroupObject?["id"]
-                    let ordergroupRestaurant = ordergroupObject?["restaurantName"]
+                    let ordergroupRestaurant = ordergroupObject?["restaurant"]
+                    let ordergroupOwnerId = ordergroupObject?["ownerId"]
+                    let ordergroupIsPlaced = ordergroupObject?["IsPlaced"]
+                    let ordergroupIsDelivered = ordergroupObject?["IsDelivered"]
+                    let ordergroupIsCompleted = ordergroupObject?["IsCompleted"]
+                    let ordergrouphasReachedCapacity = ordergroupObject?["hasReachedCapacity"]
+                    let ordergroupnumMembers = ordergroupObject?["numMembers"]
                     
-                    let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!)
+                    let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
+                    )
                     
                     //appending it to list
                     self.orderGroups.append(orderGroup!)

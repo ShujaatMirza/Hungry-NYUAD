@@ -12,8 +12,8 @@ class OwnerOrderGroupVC: UITableViewController {
     var dataToReceive = [String: Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.OrderGroupLabel.text = dataToReceive["groupName"] as! String
-        self.OrderGroupRestaurantLabel.text = dataToReceive["restaurantName"] as! String
+        self.OrderGroupLabel.text = dataToReceive["name"] as! String
+        self.OrderGroupRestaurantLabel.text = dataToReceive["restaurant"] as! String
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
