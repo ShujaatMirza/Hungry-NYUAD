@@ -10,8 +10,8 @@ import UIKit
 class RestaurantTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var otherLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var hours: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
