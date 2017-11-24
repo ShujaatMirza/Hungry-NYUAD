@@ -98,7 +98,7 @@ class SelectRestaurant: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? RestaurantTableViewCell  else {
             fatalError("The dequeued cell is not an instance of RestaurantTableViewCell.")
         }
-        cell.otherLabel.text = "HI" 
+        cell.otherLabel.text = "HI"
         cell.backgroundColor = UIColor.clear
         // Configure the cell...
         // add border and color

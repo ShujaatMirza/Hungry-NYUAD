@@ -44,7 +44,7 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitDetails(_ sender: Any) {
         if let user = user{
-            self.ref.child("users/\(user.uid)/name").setValue(user.displayName)
+            self.ref.child("users/\(user.uid)/name").setValue(name.text)
             self.ref.child("users/\(user.uid)/email").setValue(user.email)
             self.ref.child("users/\(user.uid)/phone").setValue(phone.text)
             //performSegue(withIdentifier: "toLanding", sender: self)

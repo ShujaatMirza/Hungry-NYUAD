@@ -107,11 +107,12 @@
                     <connections>
                         <outlet property="signOutButton" destination="3LX-9z-8KW" id="8bD-eN-lnM"/>
                         <segue destination="9nU-6j-LJM" kind="show" identifier="toRegistration" id="JeR-5N-YSt"/>
+                        <segue destination="p44-uE-tYs" kind="show" identifier="toLandingFromSignIn" id="p2h-A6-cIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3842" y="820"/>
+            <point key="canvasLocation" x="-3793" y="820"/>
         </scene>
         <!--Registration View-->
         <scene sceneID="rGk-31-6zD">
@@ -259,21 +260,39 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="toBegin" id="Z9U-PH-fvb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD5-eq-g24">
+                                <rect key="frame" x="148" y="453" width="78" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="edit:" destination="bhL-TL-OTU" eventType="touchUpInside" id="RRa-su-ifa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7T-zf-HEp">
+                                <rect key="frame" x="148" y="453" width="78" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="bhL-TL-OTU" eventType="touchUpInside" id="wEZ-EN-rLX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ILw-o4-tGC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="yVR-y9-srg"/>
                     <connections>
+                        <outlet property="editButton" destination="CD5-eq-g24" id="LqT-en-hfB"/>
                         <outlet property="email" destination="BAE-hh-s36" id="3tS-rb-GkO"/>
                         <outlet property="name" destination="ych-vu-9tZ" id="2Z9-4A-3y1"/>
                         <outlet property="phone" destination="XeI-Nh-gFI" id="qdg-2B-p3Z"/>
                         <outlet property="profilePicture" destination="Gde-l1-D9f" id="8KB-D7-v9A"/>
+                        <outlet property="saveButton" destination="m7T-zf-HEp" id="Opc-I3-Npz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyH-DF-vmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="-18"/>
+            <point key="canvasLocation" x="-1050.4000000000001" y="-18.440779610194905"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fhi-CT-R1E">
@@ -631,7 +650,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="p2h-A6-cIV"/>
         <segue reference="REz-Iz-cwm"/>
-        <segue reference="6mt-CH-KAH"/>
+        <segue reference="Z9U-PH-fvb"/>
     </inferredMetricsTieBreakers>
 </document>

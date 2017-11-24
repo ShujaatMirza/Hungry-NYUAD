@@ -10,8 +10,11 @@ import GoogleSignIn
 import Firebase
 
 class ProfileView: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     var ref: DatabaseReference!
+    var user: User!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phone: UITextField!
@@ -19,16 +22,18 @@ class ProfileView: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("here1")
+        self.hideKeyboardWhenTappedAround() 
+        saveButton.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
         
         self.profilePicture.frame.size.height = self.profilePicture.frame.size.width;
+        
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.clipsToBounds = true;
         ref = Database.database().reference()
         
         //let userID = Auth.auth().currentUser?.uid
-        let user = Auth.auth().currentUser
+        user = Auth.auth().currentUser
         ref.child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
@@ -37,7 +42,7 @@ class ProfileView: UIViewController, UITextFieldDelegate {
             self.phone.text = value?["phone"] as? String ?? ""
             
             
-             if let url = user?.photoURL {
+             if let url = self.user?.photoURL {
                 if let data = NSData(contentsOf: url) {
                     self.profilePicture.image = UIImage(data: data as Data)
                 }
@@ -49,8 +54,27 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         
     }
 
+    @IBAction func save(_ sender: Any) {
+        saveButton.isHidden = true
+        editButton.isHidden = false
+        name.isEnabled = false
+        name.isSelected = false
+        phone.isEnabled = false
+        //email.isEnabled = false
+        
+        self.ref.child("users/\(self.user.uid)/name").setValue(name.text)
+        //self.ref.child("users/\(self.user.uid)/email").setValue(user.email)
+        self.ref.child("users/\(self.user.uid)/phone").setValue(phone.text)
+    }
     
-
+    @IBAction func edit(_ sender: Any) {
+        editButton.isHidden = true
+        saveButton.isHidden = false
+        name.isEnabled = true
+        name.isSelected = true
+        phone.isEnabled = true
+        //email.isEnabled = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -89,5 +113,17 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         }
     }
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
