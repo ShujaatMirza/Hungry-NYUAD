@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034A964B1FC7B63900A630B6 /* SelectRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A964A1FC7B63900A630B6 /* SelectRestaurant.swift */; };
+		034A964F1FC863B700A630B6 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */; };
 		035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368B01FBC6FA500B20070 /* AppDelegate.swift */; };
 		035368B31FBC6FA500B20070 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368B21FBC6FA500B20070 /* SignUpView.swift */; };
 		035368B61FBC6FA500B20070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035368B41FBC6FA500B20070 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034A964A1FC7B63900A630B6 /* SelectRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRestaurant.swift; sourceTree = "<group>"; };
+		034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		035368AD1FBC6FA500B20070 /* Hungry-NYUAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungry-NYUAD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		035368B01FBC6FA500B20070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		035368B21FBC6FA500B20070 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				035368B01FBC6FA500B20070 /* AppDelegate.swift */,
 				035368B21FBC6FA500B20070 /* SignUpView.swift */,
 				03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */,
+				3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */,
 				C942394D1FBCF73D0097E34B /* GroupDetailsViewController.swift */,
 				C94239591FC1A8E10097E34B /* OrderGroupTableViewCell.swift */,
 				C9AE9D0F1FC1C7860063548D /* OrderGroup.swift */,
@@ -148,8 +153,9 @@
 				C9AE9D0D1FC1AF610063548D /* ListOrderGroupsTableViewController.swift */,
 				035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */,
 				03B3BDBD1FC2EB530024DF91 /* ProfileView.swift */,
+				034A964A1FC7B63900A630B6 /* SelectRestaurant.swift */,
 				035368B41FBC6FA500B20070 /* Main.storyboard */,
-				3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */,
+				034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -538,6 +544,8 @@
 				C9AE9D0E1FC1AF610063548D /* ListOrderGroupsTableViewController.swift in Sources */,
 				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,
 				03B3BDBE1FC2EB530024DF91 /* ProfileView.swift in Sources */,
+				034A964B1FC7B63900A630B6 /* SelectRestaurant.swift in Sources */,
+				034A964F1FC863B700A630B6 /* RestaurantTableViewCell.swift in Sources */,
 				3FD68BE11FC20E54006D3D75 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
