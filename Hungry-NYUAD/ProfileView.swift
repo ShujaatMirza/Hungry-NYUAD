@@ -12,6 +12,7 @@ import Firebase
 class ProfileView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var signOutButton: UIButton!
     
     var ref: DatabaseReference!
     var user: User!
@@ -22,14 +23,45 @@ class ProfileView: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
         self.hideKeyboardWhenTappedAround() 
         saveButton.isHidden = true
+        name.backgroundColor = UIColor.clear
+        email.backgroundColor = UIColor.clear
+        phone.backgroundColor = UIColor.clear
+        
+        name.borderStyle = UITextBorderStyle.none
+        email.borderStyle = UITextBorderStyle.none
+        phone.borderStyle = UITextBorderStyle.none
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         self.profilePicture.frame.size.height = self.profilePicture.frame.size.width;
         
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.clipsToBounds = true;
+        
+        
+        self.saveButton.layer.borderWidth = 2.0
+        self.saveButton.layer.borderColor = UIColor.lightText.cgColor
+        self.saveButton.layer.backgroundColor = UIColor.clear.cgColor
+        
+        self.editButton.layer.borderWidth = 2.0
+        self.editButton.layer.borderColor = UIColor.lightText.cgColor
+        self.editButton.layer.backgroundColor = UIColor.clear.cgColor
+        
+        self.signOutButton.layer.borderWidth = 2.0
+        self.signOutButton.layer.borderColor = UIColor.lightText.cgColor
+        
+        self.saveButton.layer.cornerRadius = self.saveButton.frame.size.height / 2;
+        self.saveButton.clipsToBounds = true;
+        
+        self.editButton.layer.cornerRadius = self.editButton.frame.size.height / 2;
+        self.editButton.clipsToBounds = true;
+        
+        self.signOutButton.layer.cornerRadius = self.signOutButton.frame.size.height / 2;
+        self.signOutButton.clipsToBounds = true;
+        
         ref = Database.database().reference()
         
         //let userID = Auth.auth().currentUser?.uid
@@ -62,6 +94,17 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         phone.isEnabled = false
         //email.isEnabled = false
         
+        name.borderStyle = UITextBorderStyle.none
+        //email.borderStyle = UITextBorderStyle.none
+        phone.borderStyle = UITextBorderStyle.none
+        
+        phone.textColor = UIColor.white
+        name.textColor = UIColor.white
+        
+        name.backgroundColor = UIColor.clear
+        email.backgroundColor = UIColor.clear
+        phone.backgroundColor = UIColor.clear
+        
         self.ref.child("users/\(self.user.uid)/name").setValue(name.text)
         //self.ref.child("users/\(self.user.uid)/email").setValue(user.email)
         self.ref.child("users/\(self.user.uid)/phone").setValue(phone.text)
@@ -70,6 +113,18 @@ class ProfileView: UIViewController, UITextFieldDelegate {
     @IBAction func edit(_ sender: Any) {
         editButton.isHidden = true
         saveButton.isHidden = false
+        
+        name.borderStyle = UITextBorderStyle.roundedRect
+        //email.borderStyle = UITextBorderStyle.roundedRect
+        phone.borderStyle = UITextBorderStyle.roundedRect
+        
+        name.backgroundColor = UIColor.white
+        //email.backgroundColor = UIColor.white
+        phone.backgroundColor = UIColor.white
+        
+        phone.textColor = UIColor.darkText
+        name.textColor = UIColor.darkText
+        
         name.isEnabled = true
         name.isSelected = true
         phone.isEnabled = true
@@ -124,6 +179,35 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func setTableViewBackgroundGradient(sender: UIViewController, _ topColor:CGColor, _ bottomColor:CGColor) {
+        
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = sender.view.bounds
+        gradientLayer.colors = [topColor,
+                                bottomColor]
+        
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        let newView = UIView(frame: sender.view.bounds)
+        newView.layer.addSublayer(gradientLayer)
+        if let senderT: UITableViewController = sender as? UITableViewController{
+            senderT.tableView.backgroundView = newView
+            print("Done")
+        } else {
+        
+        //sender.view.superview?.insertSubview(newView, belowSubview: sender.view)
+        //sender.view.sendSubview(toBack: newView)
+        sender.view.addSubview(newView)
+        sender.view.sendSubview(toBack: newView)
+        
+        }
+    }
+    
+    func cgColor(red: CGFloat, green: CGFloat, blue: CGFloat) -> CGColor {
+        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: 1.0).cgColor
     }
 }
 

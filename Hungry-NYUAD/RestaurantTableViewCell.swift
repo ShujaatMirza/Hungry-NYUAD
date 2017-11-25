@@ -11,6 +11,8 @@ class RestaurantTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBAction func signOutButton(_ sender: Any) {
+    }
     @IBOutlet weak var hours: UILabel!
     @IBOutlet weak var board: UIView!
     

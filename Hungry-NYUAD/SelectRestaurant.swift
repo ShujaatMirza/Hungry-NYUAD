@@ -42,10 +42,6 @@ class SelectRestaurant: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
-    
-    func cgColor(red: CGFloat, green: CGFloat, blue: CGFloat) -> CGColor {
-        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: 1.0).cgColor
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,21 +77,6 @@ class SelectRestaurant: UITableViewController {
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-    
-    func setTableViewBackgroundGradient(sender: UITableViewController, _ topColor:CGColor, _ bottomColor:CGColor) {
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = sender.tableView.bounds
-        gradientLayer.colors = [cgColor(red: 10, green: 143, blue: 173),
-                                cgColor(red: 66, green: 134, blue: 244)]
-        
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        let backgroundView = UIView(frame: sender.tableView.bounds)
-        backgroundView.layer.addSublayer(gradientLayer)
-        sender.tableView.backgroundView = backgroundView
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell: RestaurantTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! RestaurantTableViewCell
