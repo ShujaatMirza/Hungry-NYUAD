@@ -146,6 +146,7 @@
 				3FD68BE01FC20E54006D3D75 /* Constants.swift */,
 				035368B71FBC6FA500B20070 /* Assets.xcassets */,
 				035368B01FBC6FA500B20070 /* AppDelegate.swift */,
+				03D8AF7F1FC89FFA004DDBFE /* AddRestaurantViewController.swift */,
 				035368B21FBC6FA500B20070 /* SignUpView.swift */,
 				03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */,
 				3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */,
@@ -160,7 +161,6 @@
 				034A964A1FC7B63900A630B6 /* SelectRestaurant.swift */,
 				035368B41FBC6FA500B20070 /* Main.storyboard */,
 				034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */,
-				03D8AF7F1FC89FFA004DDBFE /* AddRestaurantViewController.swift */,
 				0390C1101FC8AA8600447E03 /* Restaurant.swift */,
 			);
 			path = "Hungry-NYUAD";

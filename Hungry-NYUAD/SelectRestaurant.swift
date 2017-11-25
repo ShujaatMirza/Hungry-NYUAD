@@ -18,6 +18,7 @@ class SelectRestaurant: UITableViewController {
     var restaurantInfo: [Restaurant] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, -15)
         ref = Database.database().reference()
         ref.child("restaurants").observeSingleEvent(of: .value, with: { snapshot in
             print("The count is\(Int(snapshot.childrenCount))") // I got the expected number of items
@@ -71,7 +72,7 @@ class SelectRestaurant: UITableViewController {
 
     // Set the spacing between sections
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     
     // Make the background color show through
@@ -106,11 +107,22 @@ class SelectRestaurant: UITableViewController {
         cell.backgroundColor = UIColor.clear
         // Configure the cell...
         // add border and color
-        cell.backgroundColor = UIColor.white
+        cell.backgroundColor = UIColor.clear
+        
+        cell.contentView.backgroundColor = UIColor.clear
+        cell.board.layer.masksToBounds = false
+        cell.board.layer.cornerRadius = 3
+        cell.board.layer.shadowColor = UIColor.black.cgColor
+        cell.board.layer.shadowOpacity = 0.5
+        cell.board.layer.shadowPath = UIBezierPath(rect: cell.board.bounds).cgPath
+        cell.board.layer.shadowOffset = CGSize(width: -1, height: 3)
+        cell.board.layer.shouldRasterize = true
+        //cell.contentView.layer.borderWidth = 1
+        //cell.contentView.layer.borderColor = UIColor.red.cgColor
         //cell.layer.borderColor = UIColor.black.cgColor
         //cell.layer.borderWidth = 1
         
-        cell.clipsToBounds = true;
+        cell.clipsToBounds = true
 
         return cell
     }

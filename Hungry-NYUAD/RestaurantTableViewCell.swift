@@ -12,6 +12,7 @@ class RestaurantTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var hours: UILabel!
+    @IBOutlet weak var board: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,4 @@ class RestaurantTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
