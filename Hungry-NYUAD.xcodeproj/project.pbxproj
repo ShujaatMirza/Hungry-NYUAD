@@ -17,6 +17,7 @@
 		035368C61FBC6FA500B20070 /* Hungry_NYUADTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368C51FBC6FA500B20070 /* Hungry_NYUADTests.swift */; };
 		035368D11FBC6FA600B20070 /* Hungry_NYUADUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */; };
 		0390C1111FC8AA8600447E03 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390C1101FC8AA8600447E03 /* Restaurant.swift */; };
+		039B9D4F1FC9C9E200B9EE81 /* dummylogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 039B9D4E1FC9C9E200B9EE81 /* dummylogo.png */; };
 		03B3BDBC1FC231C90024DF91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B3BDBB1FC231C90024DF91 /* GoogleService-Info.plist */; };
 		03B3BDBE1FC2EB530024DF91 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3BDBD1FC2EB530024DF91 /* ProfileView.swift */; };
 		03D8AF801FC89FFA004DDBFE /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8AF7F1FC89FFA004DDBFE /* AddRestaurantViewController.swift */; };
@@ -67,6 +68,7 @@
 		035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hungry_NYUADUITests.swift; sourceTree = "<group>"; };
 		035368D21FBC6FA600B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0390C1101FC8AA8600447E03 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		039B9D4E1FC9C9E200B9EE81 /* dummylogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dummylogo.png; path = "../../../Hungry-NYUAD/Hungry-NYUAD/dummylogo.png"; sourceTree = "<group>"; };
 		03B3BDBB1FC231C90024DF91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03B3BDBD1FC2EB530024DF91 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		03D8AF7F1FC89FFA004DDBFE /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		035368AF1FBC6FA500B20070 /* Hungry-NYUAD */ = {
 			isa = PBXGroup;
 			children = (
+				039B9D4E1FC9C9E200B9EE81 /* dummylogo.png */,
 				03B3BDBB1FC231C90024DF91 /* GoogleService-Info.plist */,
 				3FD68BE01FC20E54006D3D75 /* Constants.swift */,
 				035368B71FBC6FA500B20070 /* Assets.xcassets */,
@@ -327,6 +330,7 @@
 				035368BB1FBC6FA500B20070 /* LaunchScreen.storyboard in Resources */,
 				03B3BDBC1FC231C90024DF91 /* GoogleService-Info.plist in Resources */,
 				035368B81FBC6FA500B20070 /* Assets.xcassets in Resources */,
+				039B9D4F1FC9C9E200B9EE81 /* dummylogo.png in Resources */,
 				035368B61FBC6FA500B20070 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

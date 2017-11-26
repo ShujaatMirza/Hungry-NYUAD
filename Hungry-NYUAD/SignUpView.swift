@@ -14,13 +14,32 @@ import FirebasePhoneAuthUI
 import GoogleSignIn
 
 
-class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
-    @IBOutlet weak var signOutButton: UIButton!
+class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var signInButton: GIDSignInButton!
     var ref: DatabaseReference!
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool){
+        
+        
+        if viewController is RegistrationView{
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+        }
+        else {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.delegate = self
+        signInButton.colorScheme = GIDSignInButtonColorScheme.dark
+        
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -78,10 +97,10 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             if let user = user {
                 self.ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                     if snapshot.exists() {
-                        self.performSegue(withIdentifier: "toLandingFromSignIn", sender: self)
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: "landing")
                         self.present(vc, animated: true, completion: nil)
+                        
                     }
                     else {
                         self.performSegue(withIdentifier: "toRegistration", sender: self)

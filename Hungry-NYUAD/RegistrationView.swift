@@ -20,7 +20,6 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         // Try to find next responder
-        print("retfghjgj")
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
         } else {
@@ -33,8 +32,10 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("here")
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         user = Auth.auth().currentUser
         ref = Database.database().reference()
         name.delegate = self
