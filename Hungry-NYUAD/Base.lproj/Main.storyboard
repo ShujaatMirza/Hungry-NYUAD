@@ -30,7 +30,7 @@
         <!--Select Restaurant-->
         <scene sceneID="mWb-Rj-9bO">
             <objects>
-                <tableViewController title="Select Restaurant" id="WOj-0W-p7y" customClass="SelectRestaurant" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WOj-0W-p7y" customClass="SelectRestaurant" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qoh-8q-ZGF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,8 +79,17 @@
                             <outlet property="delegate" destination="WOj-0W-p7y" id="mC8-2D-PNj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Select Restaurant" id="snS-aZ-oCn">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="TuB-H4-z6Y">
+                            <connections>
+                                <action selector="next:" destination="WOj-0W-p7y" id="HDJ-Da-HdC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="nextButton" destination="TuB-H4-z6Y" id="j9x-kW-yVS"/>
                         <outlet property="theTableView" destination="Qoh-8q-ZGF" id="Z3C-2f-nVd"/>
+                        <segue destination="dZv-xf-xkf" kind="show" identifier="toSelectItems" id="pm6-Ok-IEL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFk-S5-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>

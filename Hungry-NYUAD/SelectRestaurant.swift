@@ -12,13 +12,17 @@ import Firebase
 class SelectRestaurant: UITableViewController {
     @IBOutlet var theTableView: UITableView!
     
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    var selectedRestaurant: Restaurant?
     var ref: DatabaseReference!
     let reuseIdentifier = "reuseIdentifier"
     var rowCount: Int = 0
     var restaurantInfo: [Restaurant] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.isEnabled = false
         //self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, -15)
+        //self.tableView.register(RestaurantTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         ref = Database.database().reference()
         ref.child("restaurants").observeSingleEvent(of: .value, with: { snapshot in
             print("The count is\(Int(snapshot.childrenCount))") // I got the expected number of items
@@ -26,14 +30,14 @@ class SelectRestaurant: UITableViewController {
             self.restaurantInfo.removeAll()
             for rest in snapshot.children.allObjects as! [DataSnapshot] {
                 let inf = rest.value as? NSDictionary
-                let r = Restaurant(name: inf!["name"] as! String, hours: inf!["hours"] as! String, phone: inf!["phone"] as! String, website: inf!["website"] as! String)
+                let r = Restaurant(name: inf!["name"] as! String, hours: inf!["hours"] as! String, phone: inf!["phone"] as! String, website: inf!["website"] as! String, menuId: inf!["menuId"] as! String)
                 self.restaurantInfo.append(r)
             }
             
             self.tableView.reloadData()
         })
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 66, green: 134, blue: 244))
-        //self.tableView.register(RestaurantTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
         print("Here")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -41,6 +45,17 @@ class SelectRestaurant: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSelectItems" {
+            let destVC = segue.destination as! RestaurantMenuView
+            destVC.currentRestaurant = selectedRestaurant
+        }
+    }
+    
+    @IBAction func next(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSelectItems", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +67,8 @@ class SelectRestaurant: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // note that indexPath.section is used rather than indexPath.row
         print("You tapped cell number \(indexPath.section).")
+        nextButton.isEnabled = true
+        selectedRestaurant = restaurantInfo[indexPath.section]
     }
 
     // MARK: - Table view data source
