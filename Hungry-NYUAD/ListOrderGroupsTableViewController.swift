@@ -98,7 +98,7 @@ import Firebase
     // MARK: - Navigation
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGroupDetail" {
+        if segue.identifier == "showGroupData" {
             if let ExchangeViewData = segue.destination as? GroupDetailsViewController{
                 ExchangeViewData.orderGroupObject = orderGroupObjectToSend!
             }

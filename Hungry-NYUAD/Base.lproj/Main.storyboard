@@ -89,7 +89,6 @@
                     <connections>
                         <outlet property="nextButton" destination="TuB-H4-z6Y" id="j9x-kW-yVS"/>
                         <outlet property="theTableView" destination="Qoh-8q-ZGF" id="Z3C-2f-nVd"/>
-                        <segue destination="dZv-xf-xkf" kind="show" identifier="toSelectItems" id="pm6-Ok-IEL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFk-S5-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,7 +377,7 @@
                                     <outlet property="idLabel" destination="rC6-Nn-a0V" id="U0x-YX-lid"/>
                                     <outlet property="orderNameLabel" destination="2oX-vh-Pjx" id="9Wu-Eg-ypb"/>
                                     <outlet property="restaurantLabel" destination="cD8-XQ-xpj" id="5Ks-Y4-Ihg"/>
-                                    <segue destination="lLo-9a-h9e" kind="show" id="KKO-fY-rMq"/>
+                                    <segue destination="lLo-9a-h9e" kind="show" identifier="showGroupData" id="KKO-fY-rMq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
