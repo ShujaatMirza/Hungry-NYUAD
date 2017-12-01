@@ -9,15 +9,19 @@
 import UIKit
 import Firebase
 
-class ListOrderGroupsTableViewController: UITableViewController {
+ class ListOrderGroupsTableViewController: UITableViewController {
+    
+    var orderGroupObjectToSend : OrderGroup? = nil
+    //var dataToSendId : String = ""
     
     var orderGroups = [OrderGroup]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 44.0;
         
         let databaseRef = Database.database().reference().child("order_group")
-        
         databaseRef.observe(DataEventType.value, with: { (snapshot) in
             
             //if the reference have some values
@@ -42,6 +46,7 @@ class ListOrderGroupsTableViewController: UITableViewController {
                     
                     let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
                     )
+                    self.orderGroupObjectToSend = orderGroup!
                     
                     //appending it to list
                     self.orderGroups.append(orderGroup!)
@@ -71,14 +76,11 @@ class ListOrderGroupsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "OrderGroupTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as? OrderGroupTableViewCell  else {
             fatalError("The dequeued cell is not an instance of OrderGroupTableViewCell.")
         }
-        
         // Fetches the appropriate meal for the data source layout.
         let orderGroup = orderGroups[indexPath.row]
         
@@ -86,17 +88,25 @@ class ListOrderGroupsTableViewController: UITableViewController {
         cell.restaurantLabel.text = orderGroup.restaurant
         cell.orderNameLabel.text = orderGroup.name
         
+        
+        //setting the data to pass to the next view-controller to the restaurant name
+        
         return cell
     }
     
     
     // MARK: - Navigation
     
-   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if segue.identifier == "showDetail"
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGroupDetail" {
+            if let ExchangeViewData = segue.destination as? GroupDetailsViewController{
+                ExchangeViewData.orderGroupObject = orderGroupObjectToSend!
+            }
+        }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-  //  }
+   }
  
 
     /*

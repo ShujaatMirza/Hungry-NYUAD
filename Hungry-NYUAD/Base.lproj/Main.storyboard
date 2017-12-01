@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CnH-Pp-ADf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +32,7 @@
             <objects>
                 <tableViewController id="WOj-0W-p7y" customClass="SelectRestaurant" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qoh-8q-ZGF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -47,7 +48,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlK-AF-qoG">
-                                                    <rect key="frame" x="8" y="43" width="194.5" height="36"/>
+                                                    <rect key="frame" x="8" y="43" width="195" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -93,7 +94,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFk-S5-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="2027"/>
+            <point key="canvasLocation" x="878" y="2026"/>
         </scene>
         <!--Sign Up View-->
         <scene sceneID="tne-QT-ifu">
@@ -222,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cwl-dS-eMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="963"/>
+            <point key="canvasLocation" x="-1290" y="1020"/>
         </scene>
         <!--Profile-->
         <scene sceneID="5rH-Tl-jch">
@@ -338,11 +339,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="185" id="AQd-AE-Yzs" customClass="OrderGroupTableViewCell" customModule="Hungry_NYUAD">
-                                <rect key="frame" x="0.0" y="28" width="375" height="185"/>
+                            <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="59" id="AQd-AE-Yzs" customClass="OrderGroupTableViewCell" customModule="Hungry_NYUAD">
+                                <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AQd-AE-Yzs" id="pAk-Oy-zOz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AQd-AE-Yzs" id="pAk-Oy-zOz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC6-Nn-a0V">
@@ -355,14 +356,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-XQ-xpj">
-                                            <rect key="frame" x="92" y="15" width="100" height="32"/>
+                                            <rect key="frame" x="124" y="15" width="100" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oX-vh-Pjx">
-                                            <rect key="frame" x="215" y="15" width="102" height="32"/>
+                                            <rect key="frame" x="232" y="15" width="102" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -371,13 +372,13 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" selected="YES"/>
+                                    <accessibilityTraits key="traits" selected="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
                                 <connections>
                                     <outlet property="idLabel" destination="rC6-Nn-a0V" id="U0x-YX-lid"/>
                                     <outlet property="orderNameLabel" destination="2oX-vh-Pjx" id="9Wu-Eg-ypb"/>
                                     <outlet property="restaurantLabel" destination="cD8-XQ-xpj" id="5Ks-Y4-Ihg"/>
-                                    <segue destination="lLo-9a-h9e" kind="show" identifier="showDetail" id="REz-Iz-cwm"/>
+                                    <segue destination="lLo-9a-h9e" kind="show" id="KKO-fY-rMq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -389,7 +390,7 @@
                     <navigationItem key="navigationItem" title="Order Groups" id="D0q-tb-v5N">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pek-n1-XQa">
                             <connections>
-                                <segue destination="mkV-Kn-TNP" kind="show" id="Ph9-X8-Vka"/>
+                                <segue destination="mkV-Kn-TNP" kind="show" id="de7-n1-q4Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -398,12 +399,12 @@
             </objects>
             <point key="canvasLocation" x="258" y="963"/>
         </scene>
-        <!--Create New GroupVC-->
+        <!--Create New Group-->
         <scene sceneID="0W9-jX-Eib">
             <objects>
                 <tableViewController wantsFullScreenLayout="YES" id="mkV-Kn-TNP" customClass="CreateNewGroupVC" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ViS-NP-XKX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -470,7 +471,10 @@
                                                     <state key="normal" title="Create Order Group!"/>
                                                     <connections>
                                                         <action selector="createOrderGroup:" destination="mkV-Kn-TNP" eventType="touchUpInside" id="wV4-JZ-2Ww"/>
-                                                        <segue destination="WOj-0W-p7y" kind="show" id="nOW-MQ-KoI"/>
+                                                        <segue destination="5HT-6X-XRE" kind="show" identifier="transferGroupData" id="bO6-Xy-Cnb">
+                                                            <segue key="commit" inheritsFrom="parent" id="Gvc-FR-0QF"/>
+                                                            <segue key="preview" inheritsFrom="commit" id="1Kd-pJ-3Ru"/>
+                                                        </segue>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -484,7 +488,8 @@
                             <outlet property="delegate" destination="mkV-Kn-TNP" id="7ou-Vc-Uvy"/>
                         </connections>
                     </tableView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationItem key="navigationItem" title="Create New Group" id="neU-bd-cRw"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="groupNameLabel" destination="qdx-q8-81M" id="ctF-jg-BS7"/>
@@ -495,9 +500,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEJ-k2-yHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="2028"/>
+            <point key="canvasLocation" x="1012" y="650"/>
         </scene>
-        <!--Owner Order GroupVC-->
+        <!--Owner View-->
         <scene sceneID="k8l-oS-uHS">
             <objects>
                 <tableViewController id="5HT-6X-XRE" customClass="OwnerOrderGroupVC" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
@@ -581,6 +586,7 @@
                             <outlet property="delegate" destination="5HT-6X-XRE" id="Cca-Da-CxG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Owner View" id="fes-4m-Ez7"/>
                     <connections>
                         <outlet property="OrderGroupLabel" destination="NTj-4g-Hlb" id="b9a-wo-QRN"/>
                         <outlet property="OrderGroupRestaurantLabel" destination="83U-4k-9ug" id="Vso-Ja-nJ0"/>
@@ -588,7 +594,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkh-eh-XIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="2702"/>
+            <point key="canvasLocation" x="1828" y="732.68365817091455"/>
         </scene>
         <!--Restaurant Menu View-->
         <scene sceneID="Okg-xI-yXi">
@@ -676,6 +682,7 @@
             <point key="canvasLocation" x="1989.5999999999999" y="2026.2368815592206"/>
         </scene>
         <!--Group Details View Controller-->
+        <!--Order Group Detail-->
         <scene sceneID="PrX-hN-JVB">
             <objects>
                 <viewController id="lLo-9a-h9e" customClass="GroupDetailsViewController" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
@@ -683,34 +690,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ4-H0-kKD">
-                                <rect key="frame" x="121" y="142" width="133" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0N-ap-uxK">
+                                <rect key="frame" x="166" y="261" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pull From Database"/>
-                                <connections>
-                                    <action selector="getFromDatabase:" destination="lLo-9a-h9e" eventType="touchUpInside" id="sL2-KR-53t"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data from database" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wdw-j5-Z99">
-                                <rect key="frame" x="45" y="318" width="292" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejl-hM-MX3">
+                                <rect key="frame" x="166" y="314" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-Ii-HUU">
+                                <rect key="frame" x="166" y="378" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HAD-RQ-9xA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="S4i-7e-r5M"/>
+                    <navigationItem key="navigationItem" title="Order Group Detail" id="144-bJ-ptQ"/>
                     <connections>
-                        <outlet property="dataDisplay" destination="Wdw-j5-Z99" id="NEE-YQ-Tmf"/>
-                        <outlet property="pullFromDatabase" destination="XZ4-H0-kKD" id="3Ol-vw-gkE"/>
+                        <outlet property="orderGroupId" destination="M0N-ap-uxK" id="17Q-Nd-DbW"/>
+                        <outlet property="orderGroupName" destination="ejl-hM-MX3" id="yFX-A2-Qmc"/>
+                        <outlet property="orderGroupRestaurant" destination="nSa-Ii-HUU" id="iUo-LI-1KJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bl-lt-Qjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="1005"/>
+            <point key="canvasLocation" x="1649" y="1432"/>
         </scene>
         <!--Item-->
         <scene sceneID="3md-sR-ZzR">
@@ -818,29 +832,11 @@
             </objects>
             <point key="canvasLocation" x="-830" y="2772"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jdh-yM-4nQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrh-PF-Atr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v6b-OX-UlF">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lLo-9a-h9e" kind="relationship" relationship="rootViewController" id="iWt-nF-8OU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dae-og-h16" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1756" y="135"/>
-        </scene>
     </scenes>
     <resources>
         <image name="dummylogo.png" width="387" height="387"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="REz-Iz-cwm"/>
+        <segue reference="bO6-Xy-Cnb"/>
     </inferredMetricsTieBreakers>
 </document>
