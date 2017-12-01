@@ -13,12 +13,14 @@ class Restaurant {
     var hours: String
     var phone: String
     var website: String
+    var menuId: String
     
-    init(name: String, hours: String, phone: String, website: String) {
+    init(name: String, hours: String, phone: String, website: String, menuId: String) {
         self.name = name
         self.hours = hours
         self.phone = phone
         self.website = website
+        self.menuId = menuId
     }
     
 }
