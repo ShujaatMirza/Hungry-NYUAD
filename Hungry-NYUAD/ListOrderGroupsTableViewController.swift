@@ -34,9 +34,15 @@ import Firebase
                 for ordergroups in snapshot.children.allObjects as! [DataSnapshot] {
                     //getting values
                     let ordergroupObject = ordergroups.value as? [String: AnyObject]
-                    let ordergroupName  = ordergroupObject?["groupName"]
+                    let ordergroupName  = ordergroupObject?["name"]
                     let ordergroupId  = ordergroupObject?["id"]
-                    let ordergroupRestaurant = ordergroupObject?["restaurantName"]
+                    let ordergroupRestaurant = ordergroupObject?["restaurant"]
+                    let ordergroupOwnerId = ordergroupObject?["ownerId"]
+                    let ordergroupIsPlaced = ordergroupObject?["IsPlaced"]
+                    let ordergroupIsDelivered = ordergroupObject?["IsDelivered"]
+                    let ordergroupIsCompleted = ordergroupObject?["IsCompleted"]
+                    let ordergrouphasReachedCapacity = ordergroupObject?["hasReachedCapacity"]
+                    let ordergroupnumMembers = ordergroupObject?["numMembers"]
                     
                     let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!)
                     self.orderGroupObjectToSend = orderGroup!

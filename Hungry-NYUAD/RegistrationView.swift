@@ -9,7 +9,7 @@ import FirebaseAuthUI
 import Firebase
 import UIKit
 
-class RegistrationView: UIViewController {
+class RegistrationView: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var name: UITextField!
@@ -17,21 +17,44 @@ class RegistrationView: UIViewController {
     var ref: DatabaseReference!
     var user: User?
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("here")
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         user = Auth.auth().currentUser
         ref = Database.database().reference()
+        name.delegate = self
         name.text = user?.displayName ?? ""
+        phone.returnKeyType = UIReturnKeyType.done
     }
     
     @IBAction func submitDetails(_ sender: Any) {
         if let user = user{
-            self.ref.child("users/\(user.uid)/name").setValue(user.displayName)
+            self.ref.child("users/\(user.uid)/name").setValue(name.text)
             self.ref.child("users/\(user.uid)/email").setValue(user.email)
             self.ref.child("users/\(user.uid)/phone").setValue(phone.text)
-            performSegue(withIdentifier: "toLanding", sender: self)
+            //performSegue(withIdentifier: "toLanding", sender: self)
+            
+            print("Auth in keychain")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "landing")
+            self.present(vc, animated: true, completion: nil)
+ 
         }
         else {
             print("No user signed in")

@@ -42,12 +42,18 @@ class CreateNewGroupVC: UITableViewController {
         //generating a new key inside artists node
         //and also getting the generated key
         let key = refOrderGroups.childByAutoId().key
-        
-        //creating artist with the given values
+        //OrderGroup(id: key, name: groupNameTextField.text! as String, restaurant: restaurantNameTextField.text! as String)
+        //creating order group with the given values
         let group = ["id":key,
-                      "groupName": groupNameTextField.text! as String,
-                      "restaurantName": restaurantNameTextField.text! as String
-        ]
+                      "name": groupNameTextField.text! as String,
+                      "restaurant": restaurantNameTextField.text! as String,
+                      "ownerId": Auth.auth().currentUser?.uid,
+                      "IsPlaced": false,
+                      "IsDelivered": false,
+                      "IsCompleted": false,
+                      "hasReachedCapacity": false,
+                      "numMembers": 1
+            ] as [String : Any]
         
         //adding the artist inside the generated unique key
         refOrderGroups.child(key).setValue(group)
