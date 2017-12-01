@@ -44,7 +44,8 @@ import Firebase
                     let ordergrouphasReachedCapacity = ordergroupObject?["hasReachedCapacity"]
                     let ordergroupnumMembers = ordergroupObject?["numMembers"]
                     
-                    let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!)
+                    let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
+                    )
                     self.orderGroupObjectToSend = orderGroup!
                     
                     //appending it to list
