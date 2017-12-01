@@ -6,6 +6,8 @@
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //
 
+//This will be expanded as more detail elements need to be added to the database
+
 import UIKit
 
 class OrderGroup {

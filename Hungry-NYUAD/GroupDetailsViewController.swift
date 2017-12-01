@@ -10,13 +10,19 @@ import Foundation
 import Firebase
 
 class GroupDetailsViewController : UIViewController {
+    var orderGroupObject : OrderGroup? = nil
     
-    @IBOutlet weak var pullFromDatabase: UIButton!
-    @IBOutlet weak var dataDisplay: UITextField!
+    @IBOutlet weak var orderGroupRestaurant: UILabel!
+    @IBOutlet weak var orderGroupName: UILabel!
+    @IBOutlet weak var orderGroupId: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.orderGroupId.text = orderGroupObject?.id
+        self.orderGroupName.text = orderGroupObject?.name
+        self.orderGroupRestaurant.text = orderGroupObject?.restaurant
+        
     }
     
 

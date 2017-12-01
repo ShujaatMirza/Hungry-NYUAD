@@ -143,15 +143,15 @@
 				035368B01FBC6FA500B20070 /* AppDelegate.swift */,
 				035368B21FBC6FA500B20070 /* SignUpView.swift */,
 				03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */,
+				C9AE9D0D1FC1AF610063548D /* ListOrderGroupsTableViewController.swift */,
 				C942394D1FBCF73D0097E34B /* GroupDetailsViewController.swift */,
 				C94239591FC1A8E10097E34B /* OrderGroupTableViewCell.swift */,
 				C9AE9D0F1FC1C7860063548D /* OrderGroup.swift */,
-				3F6C49C11FC0898C004BBDCB /* CreateNewGroupVC.swift */,
 				035368BC1FBC6FA500B20070 /* Info.plist */,
-				C9AE9D0D1FC1AF610063548D /* ListOrderGroupsTableViewController.swift */,
 				035368B91FBC6FA500B20070 /* LaunchScreen.storyboard */,
 				03B3BDBD1FC2EB530024DF91 /* ProfileView.swift */,
 				035368B41FBC6FA500B20070 /* Main.storyboard */,
+				3F6C49C11FC0898C004BBDCB /* CreateNewGroupVC.swift */,
 				3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */,
 			);
 			path = "Hungry-NYUAD";
