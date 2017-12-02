@@ -15,6 +15,8 @@ class GroupDetailsViewController : UIViewController {
     @IBOutlet weak var orderGroupRestaurant: UILabel!
     @IBOutlet weak var orderGroupName: UILabel!
     @IBOutlet weak var orderGroupId: UILabel!
+    @IBOutlet weak var orderGroupCapacity: UILabel!
+    @IBOutlet weak var orderGroupNumber: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,14 @@ class GroupDetailsViewController : UIViewController {
         self.orderGroupId.text = orderGroupObject?.id
         self.orderGroupName.text = orderGroupObject?.name
         self.orderGroupRestaurant.text = orderGroupObject?.restaurant
+        self.orderGroupNumber.text = String(describing: orderGroupObject!.numMembers)
+        self.orderGroupCapacity.text = "You cannot join this group"
+        
+        if (orderGroupObject?.hasReachedCapacity == false) {
+            self.orderGroupCapacity.text = "You can join this group"
+        }
+        
+        
         
     }
     
