@@ -18,7 +18,9 @@ class MenuTableViewCell: UITableViewCell {
     
     var count: Int = 0
     
-    var menuItem: MenuItem?
+    var delegate: MaintainOrder?
+    
+    var menuItem: MenuItem!
     var listOfItems: [MenuItem : Int]!
 
     override func awakeFromNib() {
@@ -27,22 +29,13 @@ class MenuTableViewCell: UITableViewCell {
         // Initialization code
     }
     @IBAction func increment(_ sender: Any) {
+        self.delegate?.addItem(menuItem: menuItem)
         count = count + 1
         countLabel.text = String(count)
-        print("\(menuItem?.name ?? "nil")")
-        /*if let val = listOfItems[menuItem!] {
-            listOfItems[menuItem!] = val + 1
-        }
-        else {
-            listOfItems[menuItem!] = 0
-        }
-        */
-        /*for (key, val) in listOfItems {
-            print("\(key.name), \(val)")
-        }*/
     }
     
     @IBAction func decrement(_ sender: Any) {
+        self.delegate?.removeItem(menuItem: menuItem)
         if count > 0 {
             count = count - 1
             countLabel.text = String(count)
