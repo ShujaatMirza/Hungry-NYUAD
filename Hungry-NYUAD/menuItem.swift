@@ -7,11 +7,22 @@
 //
 
 import Foundation
-class MenuItem{
+class MenuItem: Hashable{
+    
+    var id: String
     var name: String
     var price: Double
     
-    init(name: String, price: Double) {
+    var hashValue: Int {
+        return id.hashValue
+    }
+    
+    static func ==(lhs: MenuItem, rhs: MenuItem) -> Bool {
+            return lhs.id == rhs.id
+    }
+    
+    init(name: String, price: Double, id: String) {
+        self.id = id
         self.name = name
         self.price = price
     }

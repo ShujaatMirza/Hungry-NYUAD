@@ -11,6 +11,7 @@ import Firebase
 
 class CreateNewGroupVC: UITableViewController {
     var dataToSend = [String: Any]()
+    var orderGroup: OrderGroup!
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableView.delegate = self
@@ -36,6 +37,8 @@ class CreateNewGroupVC: UITableViewController {
 
     @IBAction func createOrderGroup(_ sender: UIButton) {
         addGroup()
+        
+       self.performSegue(withIdentifier: "toSelectRestaurant", sender: self)
     }
 
     func addGroup(){
@@ -55,22 +58,50 @@ class CreateNewGroupVC: UITableViewController {
                       "numMembers": 1
             ] as [String : Any]
         
+        let name = groupNameTextField.text! as String
+        let restaurant = restaurantNameTextField.text! as String
+        let ownerId = Auth.auth().currentUser!.uid
+        let IsPlaced = false
+        let IsDelivered = false
+        let IsCompleted = false
+        let hasReachedCapacity = false
+        let numMembers = 1
+        
+        let orderGroup = OrderGroup(id: key,
+                                    name: name,
+                                    restaurant: restaurant,
+                                    ownerId: ownerId,
+                                    IsPlaced: IsPlaced,
+                                    IsDelivered: IsDelivered,
+                                    IsCompleted: IsCompleted,
+                                    hasReachedCapacity: hasReachedCapacity,
+                                    numMembers: numMembers
+        )
+        
+        self.orderGroup = orderGroup
+        
         //adding the artist inside the generated unique key
         refOrderGroups.child(key).setValue(group)
-        dataToSend = group
+        
+        //dataToSend = group
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         //Check your segue, this way you can transfer different data to different view. also make sure the identifier match your segue.
+        if segue.identifier == "toSelectRestaurant" {
+            print("Performing Segue")
+            if let selectRestaurant = segue.destination as? SelectRestaurant{
+                selectRestaurant.orderGroup = self.orderGroup
+            }
+            
+        }
         if segue.identifier == "transferGroupData" {
             
             //Initial your second view data control
-            if let ExchangeViewData = segue.destination as? OwnerOrderGroupVC{
+            //if let ExchangeViewData = segue.destination as? OwnerOrderGroupVC{
                 //Send your data with segue
-                ExchangeViewData.dataToReceive = dataToSend
-            }
-            
-            
+            //    ExchangeViewData.dataToReceive = dataToSend
+           //}
         }
     }
 

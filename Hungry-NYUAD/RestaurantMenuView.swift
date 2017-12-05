@@ -12,6 +12,7 @@ import Firebase
 class RestaurantMenuView: UITableViewController {
     var ref: DatabaseReference!
     var currentRestaurant: Restaurant?
+    var listOfItems: [MenuItem : Int]!
     var rowCount: Int = 0
     let reuseIdentifier = "reuseIdentifier"
     var menuItems: [MenuItem] = []
@@ -28,7 +29,7 @@ class RestaurantMenuView: UITableViewController {
                 for category in snapshot.children.allObjects as! [DataSnapshot] {
                     for item in category.children.allObjects as! [DataSnapshot] {
                         let dItem = item.value as? NSDictionary
-                        let menuItem  = MenuItem(name: dItem!["name"] as! String, price: dItem!["price"] as! Double)
+                        let menuItem  = MenuItem(name: dItem!["name"] as! String, price: dItem!["price"] as! Double, id: item.key as! String)
                         count += 1
                         self.menuItems.append(menuItem)
                     }
@@ -70,6 +71,8 @@ class RestaurantMenuView: UITableViewController {
         }
 
         // Configure the cell...
+        cell.listOfItems = self.listOfItems
+        cell.menuItem = menuItems[indexPath.section]
         cell.itemName.text = menuItems[indexPath.section].name
         cell.itemPrice.text = String(menuItems[indexPath.section].price)
         

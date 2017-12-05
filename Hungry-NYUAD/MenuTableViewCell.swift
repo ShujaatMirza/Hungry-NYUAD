@@ -18,6 +18,9 @@ class MenuTableViewCell: UITableViewCell {
     
     var count: Int = 0
     
+    var menuItem: MenuItem?
+    var listOfItems: [MenuItem : Int]!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         count = 0
@@ -26,11 +29,25 @@ class MenuTableViewCell: UITableViewCell {
     @IBAction func increment(_ sender: Any) {
         count = count + 1
         countLabel.text = String(count)
+        print("\(menuItem?.name ?? "nil")")
+        /*if let val = listOfItems[menuItem!] {
+            listOfItems[menuItem!] = val + 1
+        }
+        else {
+            listOfItems[menuItem!] = 0
+        }
+        */
+        /*for (key, val) in listOfItems {
+            print("\(key.name), \(val)")
+        }*/
     }
     
     @IBAction func decrement(_ sender: Any) {
-        count = count - 1
-        countLabel.text = String(count)
+        if count > 0 {
+            count = count - 1
+            countLabel.text = String(count)
+        }
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

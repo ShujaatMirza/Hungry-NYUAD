@@ -14,6 +14,7 @@ class SelectRestaurant: UITableViewController {
     
     @IBOutlet weak var nextButton: UIBarButtonItem!
     var selectedRestaurant: Restaurant?
+    var orderGroup: OrderGroup?
     var ref: DatabaseReference!
     let reuseIdentifier = "reuseIdentifier"
     var rowCount: Int = 0
