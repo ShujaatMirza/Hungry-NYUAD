@@ -12,8 +12,6 @@ import Firebase
  class ListOrderGroupsTableViewController: UITableViewController {
     
     var orderGroupObjectToSend : OrderGroup? = nil
-    //var dataToSendId : String = ""
-    
     var orderGroups = [OrderGroup]()
     
     override func viewDidLoad() {
@@ -46,8 +44,8 @@ import Firebase
                     
                     let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
                     )
-                    self.orderGroupObjectToSend = orderGroup!
-                    
+                    //self.orderGroupObjectToSend = orderGroup
+                    //print("The object capacity is as follows " + (self.orderGroupObjectToSend?.hasReachedCapacity.description)!)
                     //appending it to list
                     self.orderGroups.append(orderGroup!)
                 }
@@ -99,8 +97,14 @@ import Firebase
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGroupData" {
+            
             if let ExchangeViewData = segue.destination as? GroupDetailsViewController{
-                ExchangeViewData.orderGroupObject = orderGroupObjectToSend!
+                //ExchangeViewData.orderGroupObject = self.orderGroupObjectToSend!
+                let index = tableView.indexPathForSelectedRow?.row
+                ExchangeViewData.orderGroupObject = orderGroups[index!]
+                print(ExchangeViewData.orderGroupObject.id)
+                print(ExchangeViewData.orderGroupObject.restaurant)
+                print(ExchangeViewData.orderGroupObject.hasReachedCapacity.description)
             }
         }
         

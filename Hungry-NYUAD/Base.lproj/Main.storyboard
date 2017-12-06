@@ -686,7 +686,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0N-ap-uxK">
-                                <rect key="frame" x="166" y="162" width="42" height="21"/>
+                                <rect key="frame" x="35" y="162" width="299" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -701,13 +701,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-Ii-HUU">
                                 <rect key="frame" x="166" y="301" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-MH-KDx">
-                                <rect key="frame" x="48" y="406" width="278" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -734,7 +727,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Order Group Detail" id="144-bJ-ptQ"/>
                     <connections>
-                        <outlet property="orderGroupCapacity" destination="bS6-MH-KDx" id="2ZA-Hd-hxd"/>
+                        <outlet property="joinGroup" destination="r8s-dU-e0N" id="AKA-AB-LpN"/>
                         <outlet property="orderGroupId" destination="M0N-ap-uxK" id="17Q-Nd-DbW"/>
                         <outlet property="orderGroupName" destination="ejl-hM-MX3" id="yFX-A2-Qmc"/>
                         <outlet property="orderGroupNumber" destination="etZ-kL-2Qt" id="QHS-X0-ScG"/>
@@ -743,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bl-lt-Qjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="1829"/>
+            <point key="canvasLocation" x="256.80000000000001" y="1828.3358320839582"/>
         </scene>
         <!--Item-->
         <scene sceneID="3md-sR-ZzR">
