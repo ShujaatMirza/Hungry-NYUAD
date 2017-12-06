@@ -18,19 +18,29 @@ class MenuTableViewCell: UITableViewCell {
     
     var count: Int = 0
     
+    var delegate: MaintainOrder?
+    
+    var menuItem: MenuItem!
+    var listOfItems: [MenuItem : Int]!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         count = 0
         // Initialization code
     }
     @IBAction func increment(_ sender: Any) {
+        self.delegate?.addItem(menuItem: menuItem)
         count = count + 1
         countLabel.text = String(count)
     }
     
     @IBAction func decrement(_ sender: Any) {
-        count = count - 1
-        countLabel.text = String(count)
+        self.delegate?.removeItem(menuItem: menuItem)
+        if count > 0 {
+            count = count - 1
+            countLabel.text = String(count)
+        }
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

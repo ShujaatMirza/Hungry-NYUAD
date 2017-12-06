@@ -9,16 +9,51 @@
 import UIKit
 import Firebase
 
-class RestaurantMenuView: UITableViewController {
+class RestaurantMenuView: UITableViewController, MaintainOrder {
+    
+    
     var ref: DatabaseReference!
     var currentRestaurant: Restaurant?
+    var listOfItems: [MenuItem : Int] = [:]
     var rowCount: Int = 0
     let reuseIdentifier = "reuseIdentifier"
     var menuItems: [MenuItem] = []
+    
+    func addItem(menuItem: MenuItem) {
+        if let val = listOfItems[menuItem] {
+            listOfItems[menuItem] = val + 1
+        }
+        else {
+            listOfItems[menuItem] = 1
+        }
+        
+        for (key, val) in listOfItems {
+            print("\(key.name), \(val)")
+        }
+        print("Added")
+    }
+    
+    func removeItem(menuItem: MenuItem) {
+        if let val = listOfItems[menuItem] {
+            var new = val - 1
+            if (new == 0) {
+                listOfItems.removeValue(forKey: menuItem)
+            }
+            else {
+                listOfItems[menuItem] = new
+            }
+            
+        }
+        
+        for (key, val) in listOfItems {
+            print("\(key.name), \(key.price), \(val)")
+        }
+        print("Removing")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference() 
+        ref = Database.database().reference()
         //self.tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         if let restaurant = currentRestaurant{
@@ -28,7 +63,9 @@ class RestaurantMenuView: UITableViewController {
                 for category in snapshot.children.allObjects as! [DataSnapshot] {
                     for item in category.children.allObjects as! [DataSnapshot] {
                         let dItem = item.value as? NSDictionary
-                        let menuItem  = MenuItem(name: dItem!["name"] as! String, price: dItem!["price"] as! Double)
+                        let menuItem  = MenuItem(name: dItem!["name"] as! String,
+                                                 price: dItem!["price"] as! Double,
+                                                 id: item.key )
                         count += 1
                         self.menuItems.append(menuItem)
                     }
@@ -70,6 +107,9 @@ class RestaurantMenuView: UITableViewController {
         }
 
         // Configure the cell...
+        cell.delegate = self
+        cell.listOfItems = self.listOfItems
+        cell.menuItem = menuItems[indexPath.section]
         cell.itemName.text = menuItems[indexPath.section].name
         cell.itemPrice.text = String(menuItems[indexPath.section].price)
         

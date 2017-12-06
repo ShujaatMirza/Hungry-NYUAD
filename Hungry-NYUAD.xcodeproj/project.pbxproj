@@ -17,6 +17,7 @@
 		035368C61FBC6FA500B20070 /* Hungry_NYUADTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368C51FBC6FA500B20070 /* Hungry_NYUADTests.swift */; };
 		035368D11FBC6FA600B20070 /* Hungry_NYUADUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */; };
 		0390C1111FC8AA8600447E03 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390C1101FC8AA8600447E03 /* Restaurant.swift */; };
+		03B168C21FD6D31F00D09EB8 /* MaintainOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B168C11FD6D31F00D09EB8 /* MaintainOrder.swift */; };
 		03B3BDBC1FC231C90024DF91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B3BDBB1FC231C90024DF91 /* GoogleService-Info.plist */; };
 		03B3BDBE1FC2EB530024DF91 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3BDBD1FC2EB530024DF91 /* ProfileView.swift */; };
 		03C859371FD1BB7300C7DB99 /* RestaurantMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C859361FD1BB7300C7DB99 /* RestaurantMenuView.swift */; };
@@ -70,6 +71,7 @@
 		035368D01FBC6FA600B20070 /* Hungry_NYUADUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hungry_NYUADUITests.swift; sourceTree = "<group>"; };
 		035368D21FBC6FA600B20070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0390C1101FC8AA8600447E03 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		03B168C11FD6D31F00D09EB8 /* MaintainOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintainOrder.swift; sourceTree = "<group>"; };
 		03B3BDBB1FC231C90024DF91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03B3BDBD1FC2EB530024DF91 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		03C859361FD1BB7300C7DB99 /* RestaurantMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */,
 				0390C1101FC8AA8600447E03 /* Restaurant.swift */,
 				03C8593C1FD1D6B100C7DB99 /* MenuItem.swift */,
+				03B168C11FD6D31F00D09EB8 /* MaintainOrder.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				3F119C771FC215D60028F293 /* OwnerOrderGroupVC.swift in Sources */,
 				3F6C49C21FC0898C004BBDCB /* CreateNewGroupVC.swift in Sources */,
 				C9AE9D0E1FC1AF610063548D /* ListOrderGroupsTableViewController.swift in Sources */,
+				03B168C21FD6D31F00D09EB8 /* MaintainOrder.swift in Sources */,
 				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,
 				03B3BDBE1FC2EB530024DF91 /* ProfileView.swift in Sources */,
 				03C859371FD1BB7300C7DB99 /* RestaurantMenuView.swift in Sources */,
