@@ -1,5 +1,5 @@
 //
-//  OrderManViewController.swift
+//  GroupDetailsViewController.swift
 //  Hungry-NYUAD
 //
 //  Created by Andrew Callender on 11/16/17.
@@ -18,6 +18,9 @@ class GroupDetailsViewController : UIViewController {
     @IBOutlet weak var orderGroupCapacity: UILabel!
     @IBOutlet weak var orderGroupNumber: UILabel!
     
+//    @IBAction func joinOrderGroup(_ sender: Any) {
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,12 +33,12 @@ class GroupDetailsViewController : UIViewController {
         if (orderGroupObject?.hasReachedCapacity == false) {
             self.orderGroupCapacity.text = "You can join this group"
         }
-        
+    }
+    
+    func joinGroup() {
+        var currentUserId : String = (Auth.auth().currentUser?.uid)!
         
         
     }
     
-
-
-        
 }
