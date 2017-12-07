@@ -37,6 +37,7 @@
 		C9AE9D101FC1C7860063548D /* OrderGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE9D0F1FC1C7860063548D /* OrderGroup.swift */; };
 		E29DBDB21FD93814000749E3 /* ListMyOrderGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */; };
 		E29DBDB41FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */; };
+		E29DBDB61FD966AB000749E3 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		D8038DB90F2840797C6F230C /* Pods-Hungry-NYUADTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADTests/Pods-Hungry-NYUADTests.release.xcconfig"; sourceTree = "<group>"; };
 		E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMyOrderGroups.swift; sourceTree = "<group>"; };
 		E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMyOrderGroupsTableViewCell.swift; sourceTree = "<group>"; };
+		E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUADTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8154EADD2EA73FFADF3F6F4 /* Pods-Hungry-NYUADUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +182,7 @@
 				03B168C11FD6D31F00D09EB8 /* MaintainOrder.swift */,
 				E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */,
 				E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */,
+				E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				C942394E1FBCF73D0097E34B /* GroupDetailsViewController.swift in Sources */,
 				E29DBDB41FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift in Sources */,
 				E29DBDB21FD93814000749E3 /* ListMyOrderGroups.swift in Sources */,
+				E29DBDB61FD966AB000749E3 /* OrderDetailsViewController.swift in Sources */,
 				C942395A1FC1A8E10097E34B /* OrderGroupTableViewCell.swift in Sources */,
 				03C859391FD1BFB200C7DB99 /* MenuTableViewCell.swift in Sources */,
 				0390C1111FC8AA8600447E03 /* Restaurant.swift in Sources */,

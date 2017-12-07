@@ -93,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFk-S5-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="963"/>
+            <point key="canvasLocation" x="1406" y="1913"/>
         </scene>
         <!--Sign Up View-->
         <scene sceneID="tne-QT-ifu">
@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyH-DF-vmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050.4000000000001" y="-18.440779610194905"/>
+            <point key="canvasLocation" x="-946" y="-665"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fhi-CT-R1E">
@@ -322,11 +322,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="yBs-rJ-1Ha" customClass="ListMyOrderGroupsTableViewCell" customModule="Hungry_NYUAD" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="112" id="yBs-rJ-1Ha" customClass="ListMyOrderGroupsTableViewCell" customModule="Hungry_NYUAD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yBs-rJ-1Ha" id="lkh-KU-ecY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvS-0v-4Di">
@@ -356,6 +356,7 @@
                                     <outlet property="OrderNameLabel" destination="m5l-q4-g27" id="DMB-gA-J1h"/>
                                     <outlet property="idLabel" destination="gvS-0v-4Di" id="V7A-zw-WJF"/>
                                     <outlet property="restaurantLabel" destination="Ond-rr-cix" id="QST-PQ-X2j"/>
+                                    <segue destination="ZyV-sN-E1d" kind="show" identifier="showOrderDetails" id="ysy-dw-TdM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -368,7 +369,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajX-Af-ki8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="7.6461769115442282"/>
+            <point key="canvasLocation" x="201" y="820"/>
         </scene>
         <!--My Orders-->
         <scene sceneID="JH6-eA-jC5">
@@ -385,7 +386,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-945" y="796"/>
+            <point key="canvasLocation" x="-946" y="820"/>
         </scene>
         <!--Order Groups-->
         <scene sceneID="iy6-uQ-rn6">
@@ -454,7 +455,79 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsy-sr-mIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="962.96851574212906"/>
+            <point key="canvasLocation" x="-946" y="1913"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="o7w-jb-Loo">
+            <objects>
+                <viewController id="ZyV-sN-E1d" customClass="OrderDetailsViewController" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pAu-oa-kdN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvh-6g-gbl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Order Details" id="fCN-f2-A93"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eO-dY-AS2">
+                                <rect key="frame" x="220" y="105" width="122" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-Q6-7hx">
+                                <rect key="frame" x="220" y="293" width="122" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ff-4s-RVL">
+                                <rect key="frame" x="220" y="198" width="122" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-mr-qXo">
+                                <rect key="frame" x="17" y="105" width="146" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgP-wk-ZuH">
+                                <rect key="frame" x="17" y="209" width="98" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQm-0f-h66">
+                                <rect key="frame" x="17" y="293" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Z07-73-FzA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="MMO-qI-Byf"/>
+                    <connections>
+                        <outlet property="orderGroupNameLabel" destination="1eO-dY-AS2" id="MxZ-tc-Een"/>
+                        <outlet property="orderGroupRestaurantLabel" destination="pnq-Q6-7hx" id="PVc-uB-0oz"/>
+                        <outlet property="orderGroupStatusLabel" destination="2Ff-4s-RVL" id="Z9i-aT-C6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAh-iw-8Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.5999999999999" y="819.94002998500753"/>
         </scene>
         <!--Create New Group-->
         <scene sceneID="0W9-jX-Eib">
@@ -554,7 +627,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEJ-k2-yHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="963"/>
+            <point key="canvasLocation" x="230" y="1913"/>
         </scene>
         <!--Owner View-->
         <scene sceneID="k8l-oS-uHS">
@@ -648,7 +721,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkh-eh-XIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="1828"/>
+            <point key="canvasLocation" x="1084" y="3001"/>
         </scene>
         <!--Restaurant Menu View-->
         <scene sceneID="Okg-xI-yXi">
@@ -733,7 +806,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pe2-kf-3Ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2878" y="963"/>
+            <point key="canvasLocation" x="2458" y="1913"/>
         </scene>
         <!--Order Group Detail-->
         <scene sceneID="PrX-hN-JVB">
@@ -794,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bl-lt-Qjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="1828.3358320839582"/>
+            <point key="canvasLocation" x="-946" y="2908"/>
         </scene>
         <!--Item-->
         <scene sceneID="3md-sR-ZzR">
@@ -813,7 +886,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-XU-4Go" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="2027"/>
+            <point key="canvasLocation" x="-2124" y="1913"/>
         </scene>
         <!--Add Restaurant View Controller-->
         <scene sceneID="50R-JW-Gyh">
@@ -900,7 +973,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FON-Ii-aej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-830" y="2772"/>
+            <point key="canvasLocation" x="-2266" y="3169"/>
         </scene>
     </scenes>
     <resources>

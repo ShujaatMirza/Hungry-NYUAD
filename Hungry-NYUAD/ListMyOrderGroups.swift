@@ -100,15 +100,14 @@ class ListMyOrderGroups: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGroupData" {
+        if segue.identifier == "showOrderDetails" {
             
-            if let ExchangeViewData = segue.destination as? GroupDetailsViewController{
+            if let ExchangeViewData = segue.destination as? OrderDetailsViewController{
                 //ExchangeViewData.orderGroupObject = self.orderGroupObjectToSend!
                 let index = tableView.indexPathForSelectedRow?.row
                 ExchangeViewData.orderGroupObject = orderGroups[index!]
+                print("Hello")
                 print(ExchangeViewData.orderGroupObject.id)
-                print(ExchangeViewData.orderGroupObject.restaurant)
-                print(ExchangeViewData.orderGroupObject.hasReachedCapacity.description)
             }
         }
         
