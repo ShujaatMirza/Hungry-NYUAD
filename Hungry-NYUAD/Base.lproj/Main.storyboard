@@ -457,7 +457,7 @@
             </objects>
             <point key="canvasLocation" x="-946" y="1913"/>
         </scene>
-        <!--Title-->
+        <!--Order Details-->
         <scene sceneID="o7w-jb-Loo">
             <objects>
                 <viewController id="ZyV-sN-E1d" customClass="OrderDetailsViewController" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
@@ -518,7 +518,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Z07-73-FzA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="MMO-qI-Byf"/>
+                    <navigationItem key="navigationItem" title="Order Details" id="MMO-qI-Byf"/>
                     <connections>
                         <outlet property="orderGroupNameLabel" destination="1eO-dY-AS2" id="MxZ-tc-Een"/>
                         <outlet property="orderGroupRestaurantLabel" destination="pnq-Q6-7hx" id="PVc-uB-0oz"/>
