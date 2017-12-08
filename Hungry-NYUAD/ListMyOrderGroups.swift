@@ -13,15 +13,16 @@ class ListMyOrderGroups: UITableViewController {
     
     var orderGroupObjectToSend : OrderGroup? = nil
     var orderGroups = [OrderGroup]()
+    var orderGroupsMembers = [OrderGroupMembers]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
 
-        let databaseRef = Database.database().reference().child("order_group")
-        databaseRef.observe(DataEventType.value, with: { (snapshot) in
-            
+        let databaseOrderGroupRef = Database.database().reference()
+
+        databaseOrderGroupRef.child("order_group").observe(DataEventType.value, with: { (snapshot) in
             //if the reference have some values
             if snapshot.childrenCount > 0 {
                 
@@ -32,9 +33,10 @@ class ListMyOrderGroups: UITableViewController {
                 for ordergroups in snapshot.children.allObjects as! [DataSnapshot] {
                     //getting values
                     let ordergroupObject = ordergroups.value as? [String: AnyObject]
-                    //Condition to check if the Order Group belongs to this owner
-                    if ((ordergroupObject?["ownerId"] as! String) == Auth.auth().currentUser?.uid){
-                        
+                    //Condition to check if user id the member of the group (right now, it only displays owner)
+
+                    
+                    if (((ordergroupObject?["ownerId"] as! String) == Auth.auth().currentUser?.uid)){
                         let ordergroupName  = ordergroupObject?["name"]
                         let ordergroupId  = ordergroupObject?["id"]
                         let ordergroupRestaurant = ordergroupObject?["restaurant"]
@@ -47,11 +49,14 @@ class ListMyOrderGroups: UITableViewController {
                         
                         let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
                         )
+                        
                         //self.orderGroupObjectToSend = orderGroup
                         //print("The object capacity is as follows " + (self.orderGroupObjectToSend?.hasReachedCapacity.description)!)
                         //appending it to list
                         self.orderGroups.append(orderGroup!)
+
                     }
+
                     
                 }
                 

@@ -38,6 +38,7 @@
 		E29DBDB21FD93814000749E3 /* ListMyOrderGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */; };
 		E29DBDB41FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */; };
 		E29DBDB61FD966AB000749E3 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */; };
+		E2BD504E1FDAB5950099F46E /* OrderGroupMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BD504D1FDAB5950099F46E /* OrderGroupMembers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMyOrderGroups.swift; sourceTree = "<group>"; };
 		E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMyOrderGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		E2BD504D1FDAB5950099F46E /* OrderGroupMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGroupMembers.swift; sourceTree = "<group>"; };
 		F5639ED0CF307D8376F6F2C2 /* Pods_Hungry_NYUADTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hungry_NYUADTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8154EADD2EA73FFADF3F6F4 /* Pods-Hungry-NYUADUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungry-NYUADUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungry-NYUADUITests/Pods-Hungry-NYUADUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 				E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */,
 				E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */,
 				E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */,
+				E2BD504D1FDAB5950099F46E /* OrderGroupMembers.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				03C859371FD1BB7300C7DB99 /* RestaurantMenuView.swift in Sources */,
 				034A964B1FC7B63900A630B6 /* SelectRestaurant.swift in Sources */,
 				03C8593D1FD1D6B100C7DB99 /* MenuItem.swift in Sources */,
+				E2BD504E1FDAB5950099F46E /* OrderGroupMembers.swift in Sources */,
 				034A964F1FC863B700A630B6 /* RestaurantTableViewCell.swift in Sources */,
 				3FD68BE11FC20E54006D3D75 /* Constants.swift in Sources */,
 			);
