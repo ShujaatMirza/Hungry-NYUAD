@@ -7,32 +7,26 @@
 //
 import FirebaseAuthUI
 import Firebase
+import GoogleSignIn
 import UIKit
 
 class RegistrationView: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var name: UITextField!
     
     var ref: DatabaseReference!
     var user: User?
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
-        // Try to find next responder
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
-            // Not found, so remove keyboard.
-            textField.resignFirstResponder()
-        }
-        // Do not add a line break
-        return false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view, typically from a nib.
+        //phone.placeholder = "phone"
+        //name.placeholder = "name"
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
@@ -42,9 +36,31 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         name.text = user?.displayName ?? ""
         phone.returnKeyType = UIReturnKeyType.done
     }
+    @IBAction func beganEditingName(_ sender: UITextField) {
+        nameLabel.text = "NAME"
+    }
+    
+    @IBAction func beganEditingPhone(_ sender: Any) {
+        phoneLabel.text = "PHONE"
+    }
+    
+    
+    @IBAction func exitSignUp(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)  // ...
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func submitDetails(_ sender: Any) {
         if let user = user{
+            if !isValid() {
+                return
+            }
             self.ref.child("users/\(user.uid)/name").setValue(name.text)
             self.ref.child("users/\(user.uid)/email").setValue(user.email)
             self.ref.child("users/\(user.uid)/phone").setValue(phone.text)
@@ -59,6 +75,51 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         else {
             print("No user signed in")
         }
+    }
+    
+    func isValid() -> Bool{
+        var rval = true
+        var nameErrorText: String = "NAME"
+        var phoneErrorText: String = "PHONE"
+        
+        if let name = self.name.text{
+            if name.isEmpty {
+                nameErrorText = "NAME CANNOT BE EMPTY."
+                rval = false
+            }
+            else if name.count > 50 {
+                nameErrorText = "NAME CANNOT BE MORE THAN 50 CHARACTERS."
+                rval = false
+            }
+        }
+        
+        if let phone = self.phone.text {
+            if phone.isEmpty {
+                phoneErrorText = "PHONE CANNOT BE EMPTY."
+                rval = false
+            }
+            else if phone.count != 10 {
+                phoneErrorText = "PHONE NUMBER MUST BE 10 DIGITS LONG."
+                rval = false
+            }
+        }
+        
+        phoneLabel.text = phoneErrorText
+        nameLabel.text = nameErrorText
+        return rval
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
     
     override func didReceiveMemoryWarning() {
