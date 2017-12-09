@@ -15,5 +15,6 @@ struct Constants
         static let databaseRoot = Database.database().reference()
         static let databaseOrders = databaseRoot.child("orders")
         static let databaseOrderGroup = databaseRoot.child("order_group")
+        static let databaseOrderGroupMembers = databaseRoot.child("members")
     }
 }

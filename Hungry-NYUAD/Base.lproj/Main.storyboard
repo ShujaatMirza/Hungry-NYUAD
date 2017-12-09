@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFk-S5-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="963"/>
+            <point key="canvasLocation" x="1406" y="1913"/>
         </scene>
         <!--Sign Up View-->
         <scene sceneID="tne-QT-ifu">
@@ -208,22 +208,6 @@
             </objects>
             <point key="canvasLocation" x="-2994" y="820"/>
         </scene>
-        <!--My Orders-->
-        <scene sceneID="hOB-yN-SaR">
-            <objects>
-                <viewController id="YOq-7Z-Sda" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8G9-Eh-ntJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="pwH-mR-FRD"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="My Orders" id="to1-1C-GZl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cwl-dS-eMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1290" y="1020"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="5rH-Tl-jch">
             <objects>
@@ -308,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyH-DF-vmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050.4000000000001" y="-18.440779610194905"/>
+            <point key="canvasLocation" x="-946" y="-665"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fhi-CT-R1E">
@@ -321,13 +305,88 @@
                     </tabBar>
                     <connections>
                         <segue destination="bhL-TL-OTU" kind="relationship" relationship="viewControllers" id="dp8-FA-EDo"/>
-                        <segue destination="YOq-7Z-Sda" kind="relationship" relationship="viewControllers" id="hp5-ta-O26"/>
                         <segue destination="wgl-1b-M1x" kind="relationship" relationship="viewControllers" id="9Zt-20-XZp"/>
+                        <segue destination="HLe-6c-e8f" kind="relationship" relationship="viewControllers" id="6aT-NQ-f14"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pr7-bE-P4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2124" y="820"/>
+        </scene>
+        <!--My Orders-->
+        <scene sceneID="2zD-m5-h1D">
+            <objects>
+                <tableViewController id="Nr8-AT-pgm" customClass="ListMyOrderGroups" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MBU-1U-KPl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="112" id="yBs-rJ-1Ha" customClass="ListMyOrderGroupsTableViewCell" customModule="Hungry_NYUAD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yBs-rJ-1Ha" id="lkh-KU-ecY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvS-0v-4Di">
+                                            <rect key="frame" x="36" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5l-q4-g27">
+                                            <rect key="frame" x="244" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ond-rr-cix">
+                                            <rect key="frame" x="139" y="5" width="42" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="OrderNameLabel" destination="m5l-q4-g27" id="DMB-gA-J1h"/>
+                                    <outlet property="idLabel" destination="gvS-0v-4Di" id="V7A-zw-WJF"/>
+                                    <outlet property="restaurantLabel" destination="Ond-rr-cix" id="QST-PQ-X2j"/>
+                                    <segue destination="ZyV-sN-E1d" kind="show" identifier="showOrderDetails" id="ysy-dw-TdM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nr8-AT-pgm" id="gD0-yx-vyf"/>
+                            <outlet property="delegate" destination="Nr8-AT-pgm" id="58T-42-Qcy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Orders" id="KoM-Mn-bxw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajX-Af-ki8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="820"/>
+        </scene>
+        <!--My Orders-->
+        <scene sceneID="JH6-eA-jC5">
+            <objects>
+                <navigationController id="HLe-6c-e8f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Orders" id="foM-4I-ecH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nTx-lR-Fcg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Nr8-AT-pgm" kind="relationship" relationship="rootViewController" id="ZO6-pu-gpj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rqw-R2-WKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946" y="820"/>
         </scene>
         <!--Order Groups-->
         <scene sceneID="iy6-uQ-rn6">
@@ -396,7 +455,79 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsy-sr-mIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="963"/>
+            <point key="canvasLocation" x="-946" y="1913"/>
+        </scene>
+        <!--Order Details-->
+        <scene sceneID="o7w-jb-Loo">
+            <objects>
+                <viewController id="ZyV-sN-E1d" customClass="OrderDetailsViewController" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pAu-oa-kdN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvh-6g-gbl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Order Details" id="fCN-f2-A93"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eO-dY-AS2">
+                                <rect key="frame" x="220" y="105" width="122" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-Q6-7hx">
+                                <rect key="frame" x="220" y="293" width="122" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ff-4s-RVL">
+                                <rect key="frame" x="220" y="198" width="122" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-mr-qXo">
+                                <rect key="frame" x="17" y="105" width="146" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgP-wk-ZuH">
+                                <rect key="frame" x="17" y="209" width="98" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQm-0f-h66">
+                                <rect key="frame" x="17" y="293" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Z07-73-FzA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order Details" id="MMO-qI-Byf"/>
+                    <connections>
+                        <outlet property="orderGroupNameLabel" destination="1eO-dY-AS2" id="MxZ-tc-Een"/>
+                        <outlet property="orderGroupRestaurantLabel" destination="pnq-Q6-7hx" id="PVc-uB-0oz"/>
+                        <outlet property="orderGroupStatusLabel" destination="2Ff-4s-RVL" id="Z9i-aT-C6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAh-iw-8Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.5999999999999" y="819.94002998500753"/>
         </scene>
         <!--Create New Group-->
         <scene sceneID="0W9-jX-Eib">
@@ -496,7 +627,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEJ-k2-yHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="963"/>
+            <point key="canvasLocation" x="230" y="1913"/>
         </scene>
         <!--Owner View-->
         <scene sceneID="k8l-oS-uHS">
@@ -590,7 +721,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkh-eh-XIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="1828"/>
+            <point key="canvasLocation" x="1084" y="3001"/>
         </scene>
         <!--Restaurant Menu View-->
         <scene sceneID="Okg-xI-yXi">
@@ -675,7 +806,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pe2-kf-3Ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2878" y="963"/>
+            <point key="canvasLocation" x="2458" y="1913"/>
         </scene>
         <!--Order Group Detail-->
         <scene sceneID="PrX-hN-JVB">
@@ -713,12 +844,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8s-dU-e0N">
-                                <rect key="frame" x="116" y="498" width="142" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93g-Eo-nVs">
+                                <rect key="frame" x="128" y="423" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Join Group!"/>
+                                <state key="normal" title="Join this Group"/>
                                 <connections>
-                                    <action selector="joinOrderGroup:" destination="lLo-9a-h9e" eventType="touchUpInside" id="zMz-B4-HNF"/>
+                                    <action selector="joinOrderGroup:" destination="lLo-9a-h9e" eventType="touchUpInside" id="UCo-e6-R1c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -727,7 +858,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Order Group Detail" id="144-bJ-ptQ"/>
                     <connections>
-                        <outlet property="joinGroup" destination="r8s-dU-e0N" id="AKA-AB-LpN"/>
+                        <outlet property="joinOrderButton" destination="93g-Eo-nVs" id="6SM-ee-TTo"/>
                         <outlet property="orderGroupId" destination="M0N-ap-uxK" id="17Q-Nd-DbW"/>
                         <outlet property="orderGroupName" destination="ejl-hM-MX3" id="yFX-A2-Qmc"/>
                         <outlet property="orderGroupNumber" destination="etZ-kL-2Qt" id="QHS-X0-ScG"/>
@@ -736,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bl-lt-Qjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="1828.3358320839582"/>
+            <point key="canvasLocation" x="-946" y="2908"/>
         </scene>
         <!--Item-->
         <scene sceneID="3md-sR-ZzR">
@@ -755,7 +886,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-XU-4Go" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="2027"/>
+            <point key="canvasLocation" x="-2124" y="1913"/>
         </scene>
         <!--Add Restaurant View Controller-->
         <scene sceneID="50R-JW-Gyh">
@@ -842,7 +973,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FON-Ii-aej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-830" y="2772"/>
+            <point key="canvasLocation" x="-2266" y="3169"/>
         </scene>
     </scenes>
     <resources>

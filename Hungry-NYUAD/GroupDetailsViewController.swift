@@ -11,25 +11,29 @@ import Firebase
 
 class GroupDetailsViewController : UIViewController {
     var orderGroupObject : OrderGroup!
+    var refOrderGroupMembers: DatabaseReference!
+
     
     @IBOutlet weak var orderGroupRestaurant: UILabel!
     @IBOutlet weak var orderGroupName: UILabel!
     @IBOutlet weak var orderGroupId: UILabel!
     @IBOutlet weak var orderGroupNumber: UILabel!
-    @IBOutlet weak var joinGroup: UIButton!
     
-    @IBAction func joinOrderGroup(_ sender: Any) {
-        //put the join order group function in here
+    @IBOutlet weak var joinOrderButton: UIButton!
+    @IBAction func joinOrderGroup(_ sender: UIButton) {
+        joinGroupFunc()
     }
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        refOrderGroupMembers = Constants.refs.databaseOrderGroupMembers
+
         print((orderGroupObject?.hasReachedCapacity).debugDescription)
         print(orderGroupObject.name)
         
-        if (orderGroupObject?.hasReachedCapacity == true) {
-            self.joinGroup.isHidden = true
+        if (orderGroupObject?.hasReachedCapacity == true || (orderGroupObject.ownerId == Auth.auth().currentUser?.uid)) {
+            self.joinOrderButton.isHidden = true
         }
         
         self.orderGroupId.text = orderGroupObject?.id
@@ -40,9 +44,11 @@ class GroupDetailsViewController : UIViewController {
     }
     
     func joinGroupFunc() {
-        var currentUserId : String = (Auth.auth().currentUser?.uid)!
-        
-        
+        let currentUserId : String = (Auth.auth().currentUser?.uid)!
+        let key = orderGroupObject.id
+        let member = [currentUserId : true] as [String : Any]
+        refOrderGroupMembers.child(key).setValue(member)
+
     }
     
 }
