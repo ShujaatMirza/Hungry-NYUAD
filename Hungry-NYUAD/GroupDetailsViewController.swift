@@ -12,7 +12,6 @@ import Firebase
 class GroupDetailsViewController : UIViewController {
     var orderGroupObject : OrderGroup!
     var refOrderGroupMembers: DatabaseReference!
-
     
     @IBOutlet weak var orderGroupRestaurant: UILabel!
     @IBOutlet weak var orderGroupName: UILabel!
@@ -28,7 +27,6 @@ class GroupDetailsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refOrderGroupMembers = Constants.refs.databaseOrderGroupMembers
-
         print((orderGroupObject?.hasReachedCapacity).debugDescription)
         print(orderGroupObject.name)
         
@@ -41,14 +39,15 @@ class GroupDetailsViewController : UIViewController {
         self.orderGroupRestaurant.text = orderGroupObject?.restaurant
         self.orderGroupNumber.text = String(describing: orderGroupObject!.numMembers)
     
+
     }
-    
     func joinGroupFunc() {
         let currentUserId : String = (Auth.auth().currentUser?.uid)!
         let key = orderGroupObject.id
         let member = [currentUserId : true] as [String : Any]
-        refOrderGroupMembers.child(key).setValue(member)
-
+        Constants.refs.databaseOrderGroup.child(key).child("members").setValue(member)
+        
     }
+
     
 }
