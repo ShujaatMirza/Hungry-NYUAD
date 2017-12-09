@@ -16,6 +16,8 @@ import Firebase
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
+        self.hideKeyboardWhenTappedAround()
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
         
