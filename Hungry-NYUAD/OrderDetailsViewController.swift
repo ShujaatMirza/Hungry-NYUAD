@@ -22,8 +22,8 @@ class OrderDetailsViewController: UIViewController {
         let btnsendtag: UIButton = sender
         btnsendtag.isHidden = true
         
-        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
-        btn.backgroundColor = UIColor.blue
+        let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        newbtn.backgroundColor = UIColor.blue
        
         if btnsendtag.tag == 1 {
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsPlaced": true])
@@ -46,15 +46,17 @@ class OrderDetailsViewController: UIViewController {
             newbtn.tag = 4
             self.view.addSubview(newbtn)
         }
+        if btnsendtag.tag == 4{
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "ListMyOrderGroupsIdentifier") as! ListMyOrderGroups
+            self.present(newViewController, animated: true, completion: nil)
+            
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //print((orderGroupObject?.hasReachedCapacity).debugDescription)
-        //print(orderGroupObject?.name)
-        print("1")
 
         //Create a button to place order only if it is owner trying to access it and if the order has not been placed
 

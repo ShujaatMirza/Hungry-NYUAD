@@ -47,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlK-AF-qoG">
-                                                    <rect key="frame" x="8" y="43" width="194" height="36"/>
+                                                    <rect key="frame" x="8" y="43" width="195" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -339,7 +339,7 @@
         <!--My Orders-->
         <scene sceneID="2zD-m5-h1D">
             <objects>
-                <tableViewController id="Nr8-AT-pgm" customClass="ListMyOrderGroups" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListMyOrderGroupsIdentifier" id="Nr8-AT-pgm" customClass="ListMyOrderGroups" customModule="Hungry_NYUAD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MBU-1U-KPl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
