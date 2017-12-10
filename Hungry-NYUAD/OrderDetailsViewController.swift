@@ -21,7 +21,34 @@ class OrderDetailsViewController: UIViewController {
         let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
             //do Firbase Databse Chnages here and show appropriate confirmation message
-            
+            btnsendtag.isHidden = true
+            Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsPlaced": true])
+            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
+            btn.backgroundColor = UIColor.green
+            btn.setTitle("Order Delivered ?", for: .normal)
+            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            btn.tag = 2
+            self.view.addSubview(btn)
+        }
+        if btnsendtag.tag == 2{
+            btnsendtag.isHidden = true
+            Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsDelivered": true])
+            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
+            btn.backgroundColor = UIColor.red
+            btn.setTitle("Order Completed ?", for: .normal)
+            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            btn.tag = 3
+            self.view.addSubview(btn)
+        }
+        if btnsendtag.tag == 3{
+            btnsendtag.isHidden = true
+            Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsCompleted": true])
+            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
+            btn.backgroundColor = UIColor.blue
+            btn.setTitle("Bye", for: .normal)
+            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            btn.tag = 4
+            self.view.addSubview(btn)
         }
     }
 
