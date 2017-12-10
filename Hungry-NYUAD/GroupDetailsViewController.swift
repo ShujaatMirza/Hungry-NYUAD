@@ -18,11 +18,11 @@ class GroupDetailsViewController : UIViewController {
     @IBOutlet weak var orderGroupId: UILabel!
     @IBOutlet weak var orderGroupNumber: UILabel!
     
-    @IBOutlet weak var joinOrderButton: UIButton!
+    @IBOutlet weak var joinOrderGroupButton: UIButton!
+    
     @IBAction func joinOrderGroup(_ sender: UIButton) {
         joinGroupFunc()
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,9 @@ class GroupDetailsViewController : UIViewController {
         print((orderGroupObject?.hasReachedCapacity).debugDescription)
         print(orderGroupObject.name)
         
-        if (orderGroupObject?.hasReachedCapacity == true || (orderGroupObject.ownerId == Auth.auth().currentUser?.uid)) {
-            self.joinOrderButton.isHidden = true
-        }
+        /*if (orderGroupObject?.hasReachedCapacity == true || (orderGroupObject.ownerId == Auth.auth().currentUser?.uid)) {
+            //self.joinOrderButton.isHidden = true
+        }*/
         
         self.orderGroupId.text = orderGroupObject?.id
         self.orderGroupName.text = orderGroupObject?.name
@@ -45,8 +45,14 @@ class GroupDetailsViewController : UIViewController {
         let currentUserId : String = (Auth.auth().currentUser?.uid)!
         let key = orderGroupObject.id
         let member = [currentUserId : true] as [String : Any]
+        
+        //join the members of the group
         Constants.refs.databaseOrderGroup.child(key).child("members").setValue(member)
         
+        //incrmenet the num_memeber counter
+        let currentNumMebers = orderGroupObject.numMembers
+        print(currentNumMebers + 1)
+        Constants.refs.databaseOrderGroup.child(key).updateChildValues(["numMembers":(currentNumMebers+1)])
     }
 
     

@@ -67,7 +67,7 @@ class CreateNewGroupVC: UITableViewController {
         let IsDelivered = false
         let IsCompleted = false
         let hasReachedCapacity = false
-        let numMembers = 1
+        let numMembers = 0
         
         let orderGroup = OrderGroup(id: key,
                                     name: name,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -924,12 +924,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93g-Eo-nVs" customClass="ButtonBaseClass" customModule="Hungry_NYUAD" customModuleProvider="target">
-                                <rect key="frame" x="128" y="423" width="104" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2R-Nf-O0T">
+                                <rect key="frame" x="124" y="495" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Join this Group"/>
+                                <state key="normal" title="New Join Button"/>
                                 <connections>
-                                    <action selector="joinOrderGroup:" destination="lLo-9a-h9e" eventType="touchUpInside" id="UCo-e6-R1c"/>
+                                    <action selector="joinOrderGroup:" destination="lLo-9a-h9e" eventType="touchUpInside" id="MyY-Lm-uHE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -938,7 +938,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Order Group Detail" id="144-bJ-ptQ"/>
                     <connections>
-                        <outlet property="joinOrderButton" destination="93g-Eo-nVs" id="6SM-ee-TTo"/>
+                        <outlet property="joinOrderGroupButton" destination="m2R-Nf-O0T" id="hz4-Ls-EWz"/>
                         <outlet property="orderGroupId" destination="M0N-ap-uxK" id="17Q-Nd-DbW"/>
                         <outlet property="orderGroupName" destination="ejl-hM-MX3" id="yFX-A2-Qmc"/>
                         <outlet property="orderGroupNumber" destination="etZ-kL-2Qt" id="QHS-X0-ScG"/>
