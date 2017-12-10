@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 
 class RestaurantMenuView: UITableViewController, MaintainOrder {
-    
-    
     var ref: DatabaseReference!
     var currentRestaurant: Restaurant?
     var listOfItems: [MenuItem : Int] = [:]
@@ -45,7 +43,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
             else {
                 listOfItems[menuItem] = new
             }
-            
         }
         
         for (key, val) in listOfItems {
@@ -53,10 +50,25 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         }
         print("Removing")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReview" {
+            let destVC = segue.destination as! ReviewOrderViewController
+            destVC.selectedItems = listOfItems
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return !listOfItems.isEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        //red: 248, green: 205, blue: 70
+        //setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 241, green: 216, blue: 75))
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 248, green: 205, blue: 70))
+        //setTableViewBackgroundGradient(sender: self, cgColor(red: 241, green: 216, blue: 75), cgColor(red: 248, green: 205, blue: 70))
         //self.tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         if let restaurant = currentRestaurant{
@@ -87,8 +99,11 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
             })
             
         }
+        else {
+            print("No restaurant")
+        }
         
-        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 66, green: 134, blue: 244))
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -108,6 +123,23 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         // #warning Incomplete implementation, return the number of sections
         return self.sectionCount
     }
+    
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
+        let v = UIView()
+        v.backgroundColor = UIColor.clear
+        
+        let headerLabel = UILabel(frame: CGRect(x: 20, y: 10, width:
+            tableView.bounds.size.width, height: tableView.bounds.size.height))
+        
+        headerLabel.font = UIFont(name: "Verdana", size: 20)
+        headerLabel.textColor = UIColor.darkGray
+        headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
+        headerLabel.sizeToFit()
+        v.addSubview(headerLabel)
+        
+        return v
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -119,6 +151,10 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
             return sectionItemCount[section] - sectionItemCount[section - 1]
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -21,6 +21,7 @@ class ListMyOrderGroups: UITableViewController {
         self.tableView.estimatedRowHeight = 44.0;
 
         let databaseOrderGroupRef = Database.database().reference()
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
 
         databaseOrderGroupRef.child("order_group").observe(DataEventType.value, with: { (snapshot) in
             //if the reference have some values

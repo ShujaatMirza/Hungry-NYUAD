@@ -9,9 +9,14 @@
 import UIKit
 
 class ReviewOrderTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.priceLabel.textColor = UIColor.white
+        self.nameLabel.textColor = UIColor.white
+        self.backgroundColor = UIColor.clear
         // Initialization code
     }
 
