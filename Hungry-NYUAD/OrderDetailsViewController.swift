@@ -11,7 +11,8 @@ import Firebase
 
 class OrderDetailsViewController: UIViewController {
     var orderGroupObject : OrderGroup!
-    
+
+
     @IBOutlet weak var orderGroupNameLabel: UILabel!
     @IBOutlet weak var orderGroupStatusLabel: UILabel!
     @IBOutlet weak var orderGroupRestaurantLabel: UILabel!
@@ -19,56 +20,47 @@ class OrderDetailsViewController: UIViewController {
     //programatically created Button
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
+        btnsendtag.isHidden = true
+        
+        let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        newbtn.backgroundColor = UIColor.blue
+       
         if btnsendtag.tag == 1 {
-            //do Firbase Databse Chnages here and show appropriate confirmation message
-            btnsendtag.isHidden = true
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsPlaced": true])
-            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
-            btn.backgroundColor = UIColor.green
-            btn.setTitle("Order Delivered ?", for: .normal)
-            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            btn.tag = 2
-            self.view.addSubview(btn)
+            newbtn.setTitle("Order Delivered ?", for: .normal)
+            newbtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            newbtn.tag = 2
+            self.view.addSubview(newbtn)
         }
         if btnsendtag.tag == 2{
-            btnsendtag.isHidden = true
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsDelivered": true])
-            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
-            btn.backgroundColor = UIColor.red
-            btn.setTitle("Order Completed ?", for: .normal)
-            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            btn.tag = 3
-            self.view.addSubview(btn)
+            newbtn.setTitle("Order Completed ?", for: .normal)
+            newbtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            newbtn.tag = 3
+            self.view.addSubview(newbtn)
         }
         if btnsendtag.tag == 3{
-            btnsendtag.isHidden = true
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsCompleted": true])
-            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
-            btn.backgroundColor = UIColor.blue
-            btn.setTitle("Bye", for: .normal)
-            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            btn.tag = 4
-            self.view.addSubview(btn)
+            newbtn.setTitle("Bye", for: .normal)
+            newbtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            newbtn.tag = 4
+            self.view.addSubview(newbtn)
+        }
+        if btnsendtag.tag == 4{
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "ListMyOrderGroupsIdentifier") as! ListMyOrderGroups
+            self.present(newViewController, animated: true, completion: nil)
+            
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        print((orderGroupObject?.hasReachedCapacity).debugDescription)
-        print(orderGroupObject?.name)
-        
         //Create a button to place order only if it is owner trying to access it and if the order has not been placed
-        if ((orderGroupObject?.ownerId == Auth.auth().currentUser?.uid) && (orderGroupObject?.IsPlaced == false)) {
-            let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 150, height: 50))
-            btn.backgroundColor = UIColor.blue
-            btn.setTitle("Place Order", for: .normal)
-            btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            btn.tag = 1
-            self.view.addSubview(btn)
-        }
 
+        RightButtonDisplay()
         self.orderGroupNameLabel.text = orderGroupObject?.name
         
         if((orderGroupObject?.IsCompleted) == true){
@@ -82,6 +74,37 @@ class OrderDetailsViewController: UIViewController {
         }
         self.orderGroupRestaurantLabel.text = orderGroupObject?.restaurant
 
+    }
+    
+    func RightButtonDisplay(){
+        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        btn.backgroundColor = UIColor.blue
+        if ((orderGroupObject?.ownerId == Auth.auth().currentUser?.uid)) {
+
+            if(orderGroupObject?.IsPlaced == false){
+                btn.setTitle("Place Order", for: .normal)
+                btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+                btn.tag = 1
+                //self.view.addSubview(btn)
+            }else if(orderGroupObject?.IsDelivered == false){
+                btn.setTitle("Order Delivered ?", for: .normal)
+                btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+                btn.tag = 2
+                //self.view.addSubview(btn)
+            }else if(orderGroupObject?.IsCompleted == false){
+                btn.setTitle("Order Completed ?", for: .normal)
+                btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+                btn.tag = 3
+                //self.view.addSubview(btn)
+            }else{
+                btn.setTitle("Exit", for: .normal)
+                btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+                btn.tag = 4
+                //self.view.addSubview(btn)
+            }
+            btn.isHidden = false
+            self.view.addSubview(btn)
+        }
     }
 
     override func didReceiveMemoryWarning() {
