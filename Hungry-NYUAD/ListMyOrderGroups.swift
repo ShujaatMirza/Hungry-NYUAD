@@ -33,10 +33,10 @@ class ListMyOrderGroups: UITableViewController {
                 for ordergroups in snapshot.children.allObjects as! [DataSnapshot] {
                     //getting values
                     let ordergroupObject = ordergroups.value as? [String: AnyObject]
-                    var isMember = false
-                    var listofmembers = ordergroupObject?["members"] as? [String : Bool]
                     
                     //Condition to check if user id the member of the group
+                    var isMember = false
+                    var listofmembers = ordergroupObject?["members"] as? [String : Bool]
                     if listofmembers != nil {
                         for (key, value) in listofmembers! {
                             if(key ==  Auth.auth().currentUser?.uid){

@@ -30,9 +30,9 @@ class GroupDetailsViewController : UIViewController {
         print((orderGroupObject?.hasReachedCapacity).debugDescription)
         print(orderGroupObject.name)
         
-        /*if (orderGroupObject?.hasReachedCapacity == true || (orderGroupObject.ownerId == Auth.auth().currentUser?.uid)) {
-            //self.joinOrderButton.isHidden = true
-        }*/
+        if (orderGroupObject?.hasReachedCapacity == true || (orderGroupObject.ownerId == Auth.auth().currentUser?.uid)) {
+            self.joinOrderGroupButton.isHidden = true
+        }
         
         self.orderGroupId.text = orderGroupObject?.id
         self.orderGroupName.text = orderGroupObject?.name
@@ -51,7 +51,6 @@ class GroupDetailsViewController : UIViewController {
         
         //incrmenet the num_memeber counter
         let currentNumMebers = orderGroupObject.numMembers
-        print(currentNumMebers + 1)
         Constants.refs.databaseOrderGroup.child(key).updateChildValues(["numMembers":(currentNumMebers+1)])
     }
 
