@@ -37,7 +37,7 @@ class SelectRestaurant: UITableViewController {
             
             self.tableView.reloadData()
         })
-        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 66, green: 134, blue: 244))
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
         
         print("Here")
         // Uncomment the following line to preserve selection between presentations
@@ -55,8 +55,8 @@ class SelectRestaurant: UITableViewController {
         }
     }
     
-    @IBAction func next(_ sender: Any) {
-        self.performSegue(withIdentifier: "toSelectItems", sender: self)
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,12 +75,10 @@ class SelectRestaurant: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return self.rowCount
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 1
     }
 

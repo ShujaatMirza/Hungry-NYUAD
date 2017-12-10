@@ -14,7 +14,7 @@ class CreateNewGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 240, green: 145, blue: 53), cgColor(red: 230, green: 73, blue: 37))
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
