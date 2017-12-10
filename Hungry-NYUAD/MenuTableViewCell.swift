@@ -25,6 +25,7 @@ class MenuTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         count = 0
         // Initialization code
     }

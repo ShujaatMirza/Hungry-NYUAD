@@ -11,7 +11,6 @@ import UIKit
 class OrderGroupTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var restaurantLabel: UILabel!
     @IBOutlet weak var orderNameLabel: UILabel!
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odN-0a-wtG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,17 +78,10 @@
                             <outlet property="delegate" destination="WOj-0W-p7y" id="mC8-2D-PNj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select Restaurant" id="snS-aZ-oCn">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="TuB-H4-z6Y">
-                            <connections>
-                                <action selector="next:" destination="WOj-0W-p7y" id="HDJ-Da-HdC"/>
-                                <segue destination="dZv-xf-xkf" kind="show" identifier="toSelectItems" id="AZE-Di-Uxi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Select Restaurant" id="snS-aZ-oCn"/>
                     <connections>
-                        <outlet property="nextButton" destination="TuB-H4-z6Y" id="j9x-kW-yVS"/>
                         <outlet property="theTableView" destination="Qoh-8q-ZGF" id="Z3C-2f-nVd"/>
+                        <segue destination="dZv-xf-xkf" kind="show" identifier="toSelectItems" id="yot-zg-8Ec"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFk-S5-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -301,7 +294,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ILw-o4-tGC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="yVR-y9-srg"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="yVR-y9-srg"/>
                     <connections>
                         <outlet property="editButton" destination="CD5-eq-g24" id="LqT-en-hfB"/>
                         <outlet property="email" destination="BAE-hh-s36" id="3tS-rb-GkO"/>
@@ -398,7 +391,7 @@
         <scene sceneID="JH6-eA-jC5">
             <objects>
                 <navigationController id="HLe-6c-e8f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Orders" id="foM-4I-ecH"/>
+                    <tabBarItem key="tabBarItem" title="My Orders" image="order" id="foM-4I-ecH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nTx-lR-Fcg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -427,15 +420,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC6-Nn-a0V">
-                                            <rect key="frame" x="6" y="11" width="95" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="wcA-0K-YVn"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-XQ-xpj">
                                             <rect key="frame" x="124" y="15" width="100" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -456,7 +440,6 @@
                                     <accessibilityTraits key="traits" selected="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
                                 <connections>
-                                    <outlet property="idLabel" destination="rC6-Nn-a0V" id="U0x-YX-lid"/>
                                     <outlet property="orderNameLabel" destination="2oX-vh-Pjx" id="9Wu-Eg-ypb"/>
                                     <outlet property="restaurantLabel" destination="cD8-XQ-xpj" id="5Ks-Y4-Ihg"/>
                                     <segue destination="lLo-9a-h9e" kind="show" identifier="showGroupData" id="KKO-fY-rMq"/>
@@ -478,7 +461,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsy-sr-mIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946" y="1913"/>
+            <point key="canvasLocation" x="-946.39999999999998" y="1912.8935532233884"/>
         </scene>
         <!--Order Details-->
         <scene sceneID="o7w-jb-Loo">
@@ -594,7 +577,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-IH-Tkq" customClass="ButtonBaseClass" customModule="Hungry_NYUAD" customModuleProvider="target">
-                                <rect key="frame" x="88" y="372" width="199" height="45"/>
+                                <rect key="frame" x="88" y="372" width="200" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Group"/>
                             </button>
@@ -786,13 +769,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Select Items" id="cNQ-OV-2et">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="LKK-Yq-qS4">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="LKK-Yq-qS4">
                             <connections>
                                 <segue destination="hiv-fE-Nxg" kind="show" identifier="toReview" id="RJ3-GD-Jfq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nextButton" destination="LKK-Yq-qS4" id="eNy-Ug-eGb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pe2-kf-3Ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -875,9 +861,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="YsW-Ty-Kwb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Review" id="1CV-nJ-a9m">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="hNl-wQ-4It"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Review" id="1CV-nJ-a9m"/>
                     <connections>
                         <outlet property="orderTotal" destination="UXi-Sb-ZvQ" id="Jen-Hc-8eQ"/>
                         <outlet property="tableView" destination="7ye-Uz-txA" id="cwA-R9-fiD"/>
@@ -923,10 +907,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2R-Nf-O0T">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2R-Nf-O0T" customClass="ButtonBaseClass" customModule="Hungry_NYUAD" customModuleProvider="target">
                                 <rect key="frame" x="124" y="495" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New Join Button"/>
+                                <state key="normal" title="Join this Group"/>
                                 <connections>
                                     <action selector="joinOrderGroup:" destination="lLo-9a-h9e" eventType="touchUpInside" id="MyY-Lm-uHE"/>
                                 </connections>
@@ -952,7 +936,7 @@
         <scene sceneID="3md-sR-ZzR">
             <objects>
                 <navigationController title="Order Groups" automaticallyAdjustsScrollViewInsets="NO" id="wgl-1b-M1x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Order Groups" id="fa2-qW-R33"/>
+                    <tabBarItem key="tabBarItem" title="All Groups" image="group" id="fa2-qW-R33"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s2v-Mw-Caw">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1057,5 +1041,8 @@
     </scenes>
     <resources>
         <image name="dummylogo" width="387" height="387"/>
+        <image name="group" width="25" height="25"/>
+        <image name="order" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
     </resources>
 </document>

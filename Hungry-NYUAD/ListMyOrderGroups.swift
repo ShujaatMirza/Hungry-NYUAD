@@ -21,6 +21,7 @@ class ListMyOrderGroups: UITableViewController {
         self.tableView.estimatedRowHeight = 44.0;
 
         let databaseOrderGroupRef = Database.database().reference()
+        self.tableView.backgroundColor = UIColor.clear
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
 
         databaseOrderGroupRef.child("order_group").observe(DataEventType.value, with: { (snapshot) in
@@ -104,7 +105,9 @@ class ListMyOrderGroups: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let orderGroup = orderGroups[indexPath.row]
         
+        cell.backgroundColor = UIColor.clear
         cell.idLabel.text = orderGroup.id
+        cell.idLabel.text = ""
         cell.restaurantLabel.text = orderGroup.restaurant
         cell.OrderNameLabel.text = orderGroup.name
         

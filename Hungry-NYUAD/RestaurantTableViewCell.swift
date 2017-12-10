@@ -18,6 +18,7 @@ class RestaurantTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         // Initialization code
         //restaurantNameLabel.font = UIFont(name: restaurantNameLabel.font.fontName, size: 20)
     }

@@ -20,6 +20,7 @@ import Firebase
         self.hideKeyboardWhenTappedAround()
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
+        self.tableView.backgroundColor = UIColor.clear
         
         let databaseRef = Database.database().reference().child("order_group")
         databaseRef.observe(DataEventType.value, with: { (snapshot) in
@@ -100,7 +101,8 @@ import Firebase
         // Fetches the appropriate meal for the data source layout.
         let orderGroup = orderGroups[indexPath.row]
         
-        cell.idLabel.text = orderGroup.id
+        cell.backgroundColor = UIColor.clear
+        
         cell.restaurantLabel.text = orderGroup.restaurant
         cell.orderNameLabel.text = orderGroup.name
         

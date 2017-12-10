@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class RestaurantMenuView: UITableViewController, MaintainOrder {
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     var ref: DatabaseReference!
     var currentRestaurant: Restaurant?
     var listOfItems: [MenuItem : Int] = [:]
@@ -31,6 +32,7 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         for (key, val) in listOfItems {
             print("\(key.name), \(val)")
         }
+        nextButton.isEnabled = true
         print("Added")
     }
     
@@ -43,6 +45,10 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
             else {
                 listOfItems[menuItem] = new
             }
+        }
+        
+        if listOfItems.isEmpty {
+            nextButton.isEnabled = false
         }
         
         for (key, val) in listOfItems {

@@ -12,7 +12,6 @@ import Firebase
 class SelectRestaurant: UITableViewController {
     @IBOutlet var theTableView: UITableView!
     
-    @IBOutlet weak var nextButton: UIBarButtonItem!
     var selectedRestaurant: Restaurant?
     var orderGroup: OrderGroup?
     var ref: DatabaseReference!
@@ -21,7 +20,6 @@ class SelectRestaurant: UITableViewController {
     var restaurantInfo: [Restaurant] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.isEnabled = false
         //self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, -15)
         //self.tableView.register(RestaurantTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         ref = Database.database().reference()
@@ -37,7 +35,8 @@ class SelectRestaurant: UITableViewController {
             
             self.tableView.reloadData()
         })
-        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
+        //setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
         
         print("Here")
         // Uncomment the following line to preserve selection between presentations
@@ -68,8 +67,8 @@ class SelectRestaurant: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // note that indexPath.section is used rather than indexPath.row
         print("You tapped cell number \(indexPath.section).")
-        nextButton.isEnabled = true
         selectedRestaurant = restaurantInfo[indexPath.section]
+        self.performSegue(withIdentifier: "toSelectItems", sender: self)
     }
 
     // MARK: - Table view data source
@@ -104,7 +103,6 @@ class SelectRestaurant: UITableViewController {
         cell.backgroundColor = UIColor.clear
         // Configure the cell...
         // add border and color
-        cell.backgroundColor = UIColor.clear
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.board.layer.masksToBounds = false

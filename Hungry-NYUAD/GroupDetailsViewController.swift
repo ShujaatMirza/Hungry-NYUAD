@@ -29,7 +29,7 @@ class GroupDetailsViewController : UIViewController {
         refOrderGroupMembers = Constants.refs.databaseOrderGroupMembers
         print((orderGroupObject?.hasReachedCapacity).debugDescription)
         print(orderGroupObject.name)
-        
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
         if (orderGroupObject?.hasReachedCapacity == true || (orderGroupObject.ownerId == Auth.auth().currentUser?.uid)) {
             self.joinOrderGroupButton.isHidden = true
         }

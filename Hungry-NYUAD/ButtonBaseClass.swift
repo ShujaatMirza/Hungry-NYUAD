@@ -12,6 +12,8 @@ class ButtonBaseClass: UIButton {
 
     override func awakeFromNib() {
         self.setTitleColor(UIColor.white, for: .normal)
+        self.frame.size = CGSize(width: 200, height: 45)
+        self.center.x = (self.superview?.center.x)!
         layer.backgroundColor = UIColor.clear.cgColor
         layer.borderWidth = 2.0
         layer.borderColor = UIColor.lightText.cgColor
