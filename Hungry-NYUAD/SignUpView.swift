@@ -35,7 +35,7 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         self.navigationController?.delegate = self
         signInButton.colorScheme = GIDSignInButtonColorScheme.dark
         
@@ -60,18 +60,12 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         }
         
         ref = Database.database().reference()
-        
-        //GIDSignIn.sharedInstance().signIn()
-        
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
-        
+                
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
@@ -113,8 +107,6 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -138,20 +130,13 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         GIDSignIn.sharedInstance().signOut()
         print("\nSign out clicked")
         let user = Auth.auth().currentUser
-        //print(user)
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
             
             if let user = user {
-                // The user's ID, unique to the Firebase project.
-                // Do NOT use this value to authenticate with your backend server,
-                // if you have one. Use getTokenWithCompletion:completion: instead.
-                //let uid = user.uid
                 let email = user.email
                 print(email ?? "")
-                //let photoURL = user.photoURL
-                // ...
             }
             print("Signed out")
         } catch let signOutError as NSError {

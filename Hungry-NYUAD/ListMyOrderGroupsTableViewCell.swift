@@ -15,7 +15,6 @@ class ListMyOrderGroupsTableViewCell: UITableViewCell {
     @IBOutlet weak var OrderNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,7 +29,6 @@ class ListMyOrderGroupsTableViewCell: UITableViewCell {
         self.board.layer.shadowPath = UIBezierPath(rect: self.board.bounds).cgPath
         self.board.layer.shadowOffset = CGSize(width: -1, height: 3)
 
-        // Configure the view for the selected state
     }
 
 }

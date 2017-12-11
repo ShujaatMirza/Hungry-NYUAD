@@ -42,7 +42,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
             uid = (user?.uid)!
         }
         
-        //saveButton.isHidden = true
         name.backgroundColor = UIColor.clear
         email.backgroundColor = UIColor.clear
         phone.backgroundColor = UIColor.clear
@@ -51,7 +50,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         email.borderStyle = UITextBorderStyle.none
         phone.borderStyle = UITextBorderStyle.none
         
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.profilePicture.frame.size.height = self.profilePicture.frame.size.width;
         
@@ -61,7 +59,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         
         ref = Database.database().reference()
         
-        //let userID = Auth.auth().currentUser?.uid
         
         ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -89,10 +86,8 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         name.isEnabled = false
         name.isSelected = false
         phone.isEnabled = false
-        //email.isEnabled = false
         
         name.borderStyle = UITextBorderStyle.none
-        //email.borderStyle = UITextBorderStyle.none
         phone.borderStyle = UITextBorderStyle.none
         
         phone.textColor = UIColor.white
@@ -103,7 +98,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         phone.backgroundColor = UIColor.clear
         
         self.ref.child("users/\(self.user.uid)/name").setValue(name.text)
-        //self.ref.child("users/\(self.user.uid)/email").setValue(user.email)
         self.ref.child("users/\(self.user.uid)/phone").setValue(phone.text)
     }
     
@@ -112,11 +106,9 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         saveButton.isHidden = false
         
         name.borderStyle = UITextBorderStyle.roundedRect
-        //email.borderStyle = UITextBorderStyle.roundedRect
         phone.borderStyle = UITextBorderStyle.roundedRect
         
         name.backgroundColor = UIColor.white
-        //email.backgroundColor = UIColor.white
         phone.backgroundColor = UIColor.white
         
         phone.textColor = UIColor.darkText
@@ -125,12 +117,10 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         name.isEnabled = true
         name.isSelected = true
         phone.isEnabled = true
-        //email.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textField(_ textField: UITextField,
@@ -181,8 +171,6 @@ extension UIViewController {
             print("Done")
         } else {
         
-        //sender.view.superview?.insertSubview(newView, belowSubview: sender.view)
-        //sender.view.sendSubview(toBack: newView)
         sender.view.addSubview(newView)
         sender.view.sendSubview(toBack: newView)
         

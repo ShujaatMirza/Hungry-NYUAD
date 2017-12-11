@@ -75,11 +75,8 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         super.viewDidLoad()
         ref = Database.database().reference()
         print("The menuID is: \(currentRestaurant?.menuId)")
-        //red: 248, green: 205, blue: 70
-        //setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 241, green: 216, blue: 75))
         setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 248, green: 205, blue: 70))
-        //setTableViewBackgroundGradient(sender: self, cgColor(red: 241, green: 216, blue: 75), cgColor(red: 248, green: 205, blue: 70))
-        //self.tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+
         
         if let restaurant = currentRestaurant{
             ref.child("menus").child(restaurant.menuId).observeSingleEvent(of: .value, with: { snapshot in
@@ -112,14 +109,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         else {
             print("No restaurant")
         }
-        
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,7 +119,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return self.sectionCount
     }
     
@@ -152,7 +140,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         print("There are, \(section),  \(sectionItemCount[section])")
         if section == 0 {
             return sectionItemCount[section]
@@ -193,50 +180,5 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         
         return cell
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

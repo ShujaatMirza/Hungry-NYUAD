@@ -27,7 +27,6 @@ class MenuTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = UITableViewCellSelectionStyle.none
         count = 0
-        // Initialization code
     }
     @IBAction func increment(_ sender: Any) {
         self.delegate?.addItem(menuItem: menuItem)
@@ -46,7 +45,6 @@ class MenuTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

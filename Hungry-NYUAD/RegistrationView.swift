@@ -24,9 +24,7 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
         self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view, typically from a nib.
-        //phone.placeholder = "phone"
-        //name.placeholder = "name"
+
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
@@ -64,9 +62,6 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
             self.ref.child("users/\(user.uid)/name").setValue(name.text)
             self.ref.child("users/\(user.uid)/email").setValue(user.email)
             self.ref.child("users/\(user.uid)/phone").setValue(phone.text)
-            //self.ref.child("users/\(user.uid)/photoURL").setValue(phone.text)
-            //performSegue(withIdentifier: "toLanding", sender: self)
-            
             print("Auth in keychain")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "landing")
@@ -125,7 +120,6 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

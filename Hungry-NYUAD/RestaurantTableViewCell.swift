@@ -29,15 +29,10 @@ class RestaurantTableViewCell: UITableViewCell {
         self.board.layer.shadowOpacity = 0.5
         self.board.layer.shadowPath = UIBezierPath(rect: self.board.bounds).cgPath
         self.board.layer.shadowOffset = CGSize(width: -1, height: 3)
-        //self.board.layer.shouldRasterize = true
-        
-        // Initialization code
-        //restaurantNameLabel.font = UIFont(name: restaurantNameLabel.font.fontName, size: 20)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 }
