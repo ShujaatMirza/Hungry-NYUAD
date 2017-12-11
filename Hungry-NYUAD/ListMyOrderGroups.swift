@@ -22,6 +22,7 @@ class ListMyOrderGroups: UITableViewController {
 
         let databaseOrderGroupRef = Database.database().reference()
         self.tableView.backgroundColor = UIColor.clear
+        self.tableView.separatorStyle = .none
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
 
         databaseOrderGroupRef.child("order_group").observe(DataEventType.value, with: { (snapshot) in
@@ -128,8 +129,6 @@ class ListMyOrderGroups: UITableViewController {
         let orderGroup = orderGroups[indexPath.section]
         
         cell.backgroundColor = UIColor.clear
-        cell.idLabel.text = orderGroup.id
-        cell.idLabel.text = ""
         cell.restaurantLabel.text = orderGroup.restaurant
         cell.OrderNameLabel.text = orderGroup.name
         

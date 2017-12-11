@@ -18,9 +18,8 @@ import Firebase
         super.viewDidLoad()
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
         self.hideKeyboardWhenTappedAround()
-        //self.tableView.rowHeight = UITableViewAutomaticDimension;
-        //self.tableView.estimatedRowHeight = 44.0;
         self.tableView.backgroundColor = UIColor.clear
+        self.tableView.separatorStyle = .none
         
         let databaseRef = Database.database().reference().child("order_group")
         databaseRef.observe(DataEventType.value, with: { (snapshot) in

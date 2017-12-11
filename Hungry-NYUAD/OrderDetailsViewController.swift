@@ -129,6 +129,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.backgroundColor = UIColor.clear
+        self.tableView.separatorStyle = .none
         ref = Database.database().reference()
         orderDate.text = "Order placed on " + orderGroupObject.orderDate 
         

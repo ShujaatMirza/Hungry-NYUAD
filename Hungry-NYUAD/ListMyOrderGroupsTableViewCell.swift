@@ -11,7 +11,6 @@ import UIKit
 class ListMyOrderGroupsTableViewCell: UITableViewCell {
     @IBOutlet weak var board: UIView! 
     
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var restaurantLabel: UILabel!
     @IBOutlet weak var OrderNameLabel: UILabel!
     override func awakeFromNib() {

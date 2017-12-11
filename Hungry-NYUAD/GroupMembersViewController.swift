@@ -33,19 +33,21 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
         else {
             print(indexPath.row)
             print(costs.count)
+            var txt = ""
             let key = Array(costs.keys)[indexPath.row]
             if key == Auth.auth().currentUser?.uid {
-                cell.name.text = "You"
+                txt = "You"
             }
             else {
                 if let name = names[key] {
-                    var txt = name
-                    if key == orderGroupObject.ownerId {
-                        txt = txt + " (Owner)"
-                    }
-                    cell.name.text = txt
+                    txt = name
                 }
             }
+            
+            if key == orderGroupObject.ownerId {
+                txt = txt + " (Owner)"
+            }
+            cell.name.text = txt
             
             
             if let cost = costs[key] {
@@ -63,29 +65,40 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
         return costs.count + 1
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewProfile" {
+            let path = self.tableView.indexPathForSelectedRow!
+            let destVC = segue.destination as! ProfileView
+            destVC.isStranger = true
+            destVC.strangerUid = Array(costs.keys)[path.row]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
         
-        setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 248, green: 205, blue: 70))
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
         
         ref = Database.database().reference()
         names.removeAll()
         costs.removeAll()
-        print("The object is: an \(orderGroupObject)")
+        var orderSummary: String = ""
         ref.child("order_group").child(orderGroupObject.id).child("members").observeSingleEvent(of: .value, with: {snapshot in
             let count = snapshot.childrenCount
             var n = 0
             for member in snapshot.children.allObjects as! [DataSnapshot] {
                 let key = member.key
-                var orderSummary: String = ""
+                
                 for item in member.children.allObjects as! [DataSnapshot] {
                     if let dItem = item.value as? NSDictionary {
                         if (key == Auth.auth().currentUser?.uid) {
-                            //var text = "x\(dItem["count"]) \(dItem["name"]) - \(dItem["price"])\n"
+                            var text = "x\(dItem["count"] ?? "") \(dItem["name"] ?? "") - \(dItem["price"] ?? "")\n"
+                            orderSummary = orderSummary + text
                         }
                         
                         let price = dItem["price"] as! Int
@@ -103,6 +116,7 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
                         n = n + 1
                     }
                     if (n == count) {
+                        self.yourOrder.text = orderSummary
                         self.tableView.reloadData()
                     }
                 })

@@ -60,8 +60,8 @@ class GroupDetailsViewController : UIViewController {
         //Constants.refs.databaseOrderGroup.child(key).child("members").setValue(member)
         
         //incrmenet the num_memeber counter
-        let currentNumMebers = orderGroupObject.numMembers
-        Constants.refs.databaseOrderGroup.child(key).updateChildValues(["numMembers":(currentNumMebers+1)])
+        //let currentNumMebers = orderGroupObject.numMembers
+        //Constants.refs.databaseOrderGroup.child(key).updateChildValues(["numMembers":(currentNumMebers+1)])
     
     }
 

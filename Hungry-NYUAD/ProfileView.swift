@@ -16,6 +16,8 @@ class ProfileView: UIViewController, UITextFieldDelegate {
     
     var ref: DatabaseReference!
     var user: User!
+    var isStranger: Bool = false
+    var strangerUid: String?
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phone: UITextField!
@@ -26,8 +28,21 @@ class ProfileView: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        
         saveButton.isHidden = true
+        var uid: String = ""
+        if isStranger {
+            editButton.isHidden = true
+            signOutButton.isHidden = true
+            uid = strangerUid!
+        }
+        else {
+            user = Auth.auth().currentUser
+            uid = (user?.uid)!
+        }
+        
+        //saveButton.isHidden = true
         name.backgroundColor = UIColor.clear
         email.backgroundColor = UIColor.clear
         phone.backgroundColor = UIColor.clear
@@ -47,16 +62,16 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         ref = Database.database().reference()
         
         //let userID = Auth.auth().currentUser?.uid
-        user = Auth.auth().currentUser
-        ref.child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
             self.name.text = value?["name"] as? String ?? ""
             self.email.text = value?["email"] as? String ?? ""
             self.phone.text = value?["phone"] as? String ?? ""
             
-            
              if let url = self.user?.photoURL {
+                print(url)
                 if let data = NSData(contentsOf: url) {
                     self.profilePicture.image = UIImage(data: data as Data)
                 }

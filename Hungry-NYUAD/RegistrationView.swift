@@ -64,6 +64,7 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
             self.ref.child("users/\(user.uid)/name").setValue(name.text)
             self.ref.child("users/\(user.uid)/email").setValue(user.email)
             self.ref.child("users/\(user.uid)/phone").setValue(phone.text)
+            //self.ref.child("users/\(user.uid)/photoURL").setValue(phone.text)
             //performSegue(withIdentifier: "toLanding", sender: self)
             
             print("Auth in keychain")
