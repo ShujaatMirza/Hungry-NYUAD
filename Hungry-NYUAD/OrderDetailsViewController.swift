@@ -91,6 +91,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         if btnsendtag.tag == 1 {
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsPlaced": true])
             newbtn.setTitle("Order Delivered ?", for: .normal)
+            self.orderGroupStatusLabel.text = "Order Placed"
             newbtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             newbtn.tag = 2
             self.view.addSubview(newbtn)
@@ -99,6 +100,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         if btnsendtag.tag == 2{
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsDelivered": true])
             newbtn.setTitle("Order Completed ?", for: .normal)
+            self.orderGroupStatusLabel.text = "Order Delivered"
             newbtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             newbtn.tag = 3
             self.view.addSubview(newbtn)
@@ -106,7 +108,8 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         }
         if btnsendtag.tag == 3{
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsCompleted": true])
-            newbtn.setTitle("Bye", for: .normal)
+            newbtn.setTitle("Exit", for: .normal)
+            self.orderGroupStatusLabel.text = "Order Completed"
             newbtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             newbtn.tag = 4
             self.view.addSubview(newbtn)
