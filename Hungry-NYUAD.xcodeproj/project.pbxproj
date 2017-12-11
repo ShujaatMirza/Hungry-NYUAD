@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031FA8ED1FDEA5BD00B90065 /* CostBreakdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FA8EC1FDEA5BD00B90065 /* CostBreakdownTableViewCell.swift */; };
 		032056221FDC83CA00B089AB /* ReviewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032056211FDC83CA00B089AB /* ReviewOrderViewController.swift */; };
 		034A964B1FC7B63900A630B6 /* SelectRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A964A1FC7B63900A630B6 /* SelectRestaurant.swift */; };
 		034A964F1FC863B700A630B6 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */; };
@@ -29,6 +30,8 @@
 		03C859391FD1BFB200C7DB99 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C859381FD1BFB200C7DB99 /* MenuTableViewCell.swift */; };
 		03C8593D1FD1D6B100C7DB99 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8593C1FD1D6B100C7DB99 /* MenuItem.swift */; };
 		03D8AF801FC89FFA004DDBFE /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8AF7F1FC89FFA004DDBFE /* AddRestaurantViewController.swift */; };
+		03DAA6951FDE6898003FD57F /* TotalOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAA6941FDE6898003FD57F /* TotalOrderTableViewCell.swift */; };
+		03DAA6971FDE9ED8003FD57F /* GroupMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAA6961FDE9ED8003FD57F /* GroupMembersViewController.swift */; };
 		03DF56A01FBD83B300F9B5E5 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */; };
 		3F119C771FC215D60028F293 /* OwnerOrderGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */; };
 		3F6C49C21FC0898C004BBDCB /* CreateNewGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C49C11FC0898C004BBDCB /* CreateNewGroupVC.swift */; };
@@ -64,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031FA8EC1FDEA5BD00B90065 /* CostBreakdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostBreakdownTableViewCell.swift; sourceTree = "<group>"; };
 		032056211FDC83CA00B089AB /* ReviewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewOrderViewController.swift; sourceTree = "<group>"; };
 		034A964A1FC7B63900A630B6 /* SelectRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRestaurant.swift; sourceTree = "<group>"; };
 		034A964E1FC863B700A630B6 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		03C859381FD1BFB200C7DB99 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		03C8593C1FD1D6B100C7DB99 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		03D8AF7F1FC89FFA004DDBFE /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
+		03DAA6941FDE6898003FD57F /* TotalOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOrderTableViewCell.swift; sourceTree = "<group>"; };
+		03DAA6961FDE9ED8003FD57F /* GroupMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersViewController.swift; sourceTree = "<group>"; };
 		03DF569F1FBD83B300F9B5E5 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3F119C761FC215D60028F293 /* OwnerOrderGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerOrderGroupVC.swift; sourceTree = "<group>"; };
 		3F6C49C11FC0898C004BBDCB /* CreateNewGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupVC.swift; sourceTree = "<group>"; };
@@ -190,8 +196,8 @@
 				0390C1101FC8AA8600447E03 /* Restaurant.swift */,
 				03C8593C1FD1D6B100C7DB99 /* MenuItem.swift */,
 				03B168C11FD6D31F00D09EB8 /* MaintainOrder.swift */,
-				E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */,
 				E29DBDB31FD93BB1000749E3 /* ListMyOrderGroupsTableViewCell.swift */,
+				E29DBDB11FD93814000749E3 /* ListMyOrderGroups.swift */,
 				E29DBDB51FD966AB000749E3 /* OrderDetailsViewController.swift */,
 				E2BD504D1FDAB5950099F46E /* OrderGroupMembers.swift */,
 				0374ADEE1FDBD25A00BF6529 /* ButtonBaseClass.swift */,
@@ -201,6 +207,9 @@
 				032056211FDC83CA00B089AB /* ReviewOrderViewController.swift */,
 				035B95521FDD44F4008A607C /* ReviewOrderTableViewCell.swift */,
 				0374ADEC1FDBC67800BF6529 /* CreateNewGroupViewController.swift */,
+				03DAA6941FDE6898003FD57F /* TotalOrderTableViewCell.swift */,
+				03DAA6961FDE9ED8003FD57F /* GroupMembersViewController.swift */,
+				031FA8EC1FDEA5BD00B90065 /* CostBreakdownTableViewCell.swift */,
 			);
 			path = "Hungry-NYUAD";
 			sourceTree = "<group>";
@@ -595,11 +604,14 @@
 				03D8AF801FC89FFA004DDBFE /* AddRestaurantViewController.swift in Sources */,
 				3F119C771FC215D60028F293 /* OwnerOrderGroupVC.swift in Sources */,
 				3F6C49C21FC0898C004BBDCB /* CreateNewGroupVC.swift in Sources */,
+				03DAA6951FDE6898003FD57F /* TotalOrderTableViewCell.swift in Sources */,
 				C9AE9D0E1FC1AF610063548D /* ListOrderGroupsTableViewController.swift in Sources */,
 				03B168C21FD6D31F00D09EB8 /* MaintainOrder.swift in Sources */,
 				035368B11FBC6FA500B20070 /* AppDelegate.swift in Sources */,
 				03B3BDBE1FC2EB530024DF91 /* ProfileView.swift in Sources */,
+				031FA8ED1FDEA5BD00B90065 /* CostBreakdownTableViewCell.swift in Sources */,
 				0374ADEF1FDBD25A00BF6529 /* ButtonBaseClass.swift in Sources */,
+				03DAA6971FDE9ED8003FD57F /* GroupMembersViewController.swift in Sources */,
 				03C859371FD1BB7300C7DB99 /* RestaurantMenuView.swift in Sources */,
 				034A964B1FC7B63900A630B6 /* SelectRestaurant.swift in Sources */,
 				03C8593D1FD1D6B100C7DB99 /* MenuItem.swift in Sources */,

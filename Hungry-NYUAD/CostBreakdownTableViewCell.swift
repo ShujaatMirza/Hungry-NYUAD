@@ -1,30 +1,31 @@
 //
-//  ReviewOrderTableViewCell.swift
+//  CostBreakdownTableViewCell.swift
 //  Hungry-NYUAD
 //
-//  Created by Mawutor Ama Abalo on 12/10/17.
+//  Created by Mawutor Ama Abalo on 12/11/17.
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //
 
 import UIKit
 
-class ReviewOrderTableViewCell: UITableViewCell {
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+class CostBreakdownTableViewCell: UITableViewCell {
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var name: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = UITableViewCellSelectionStyle.none
-        self.priceLabel.textColor = UIColor.white
-        self.nameLabel.textColor = UIColor.white
-        self.backgroundColor = UIColor.clear
         // Initialization code
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+        self.price.textColor = UIColor.white
+        self.name.textColor = UIColor.white
+        self.backgroundColor = UIColor.clear
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
+
 
 }
