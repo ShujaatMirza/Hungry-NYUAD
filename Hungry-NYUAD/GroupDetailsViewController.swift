@@ -46,7 +46,6 @@ class GroupDetailsViewController : UIViewController {
         self.orderGroupName.text = orderGroupObject?.name
         self.orderGroupRestaurant.text = orderGroupObject?.restaurant
         self.orderGroupNumber.text = String(describing: orderGroupObject!.numMembers)
-    
 
     }
     func joinGroupFunc() {
