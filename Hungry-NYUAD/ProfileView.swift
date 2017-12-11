@@ -50,7 +50,7 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         email.borderStyle = UITextBorderStyle.none
         phone.borderStyle = UITextBorderStyle.none
         
-        
+        // profile picture formatting
         self.profilePicture.frame.size.height = self.profilePicture.frame.size.width;
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.clipsToBounds = true;

@@ -33,7 +33,8 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Do any additional setup after loading the view, typically from a nib.
+        ref = Database.database().reference()
         self.navigationController?.delegate = self
         signInButton.colorScheme = GIDSignInButtonColorScheme.dark
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
