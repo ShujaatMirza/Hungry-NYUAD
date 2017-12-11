@@ -15,9 +15,7 @@ class GroupDetailsViewController : UIViewController {
     
     @IBOutlet weak var orderGroupRestaurant: UILabel!
     @IBOutlet weak var orderGroupName: UILabel!
-    @IBOutlet weak var orderGroupId: UILabel!
-    @IBOutlet weak var orderGroupNumber: UILabel!
-    
+    @IBOutlet weak var OrderDate: UILabel!
     @IBOutlet weak var joinOrderGroupButton: UIButton!
     
     @IBAction func joinOrderGroup(_ sender: UIButton) {
@@ -42,10 +40,10 @@ class GroupDetailsViewController : UIViewController {
             self.joinOrderGroupButton.isHidden = true
         }
         
-        self.orderGroupId.text = orderGroupObject?.id
         self.orderGroupName.text = orderGroupObject?.name
         self.orderGroupRestaurant.text = orderGroupObject?.restaurant
-        self.orderGroupNumber.text = String(describing: orderGroupObject!.numMembers)
+        self.OrderDate.text = "Expected Time:" + (orderGroupObject?.orderDate)!
+
 
     }
     func joinGroupFunc() {
