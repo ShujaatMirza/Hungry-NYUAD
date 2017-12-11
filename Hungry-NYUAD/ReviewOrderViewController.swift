@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -14,6 +15,8 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     var selectedItems: [MenuItem : Int]?
     var currentRestaurant: Restaurant?
+    var orderGroupObject: OrderGroup?
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.reloadData()
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.tableFooterView = UIView()
-        
+        ref = Database.database().reference()
         var total = 0.0
         for (key, val) in selectedItems! {
             total = total + (Double(val) * key.price)
@@ -36,6 +39,38 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func confirmOrder(_ sender: Any) {
+        if !(currentRestaurant?.name.isEmpty)!{
+            self.performSegue(withIdentifier: "toCreateGroup", sender: self)
+        }
+        else {
+            let user = Auth.auth().currentUser!
+            var listedOrders: [String : Any] = [:]
+            for (key, val) in selectedItems! {
+                let temp = ["name": key.name,
+                            "count": val,
+                            "price": val * Int(key.price)] as [String : Any]
+                listedOrders[key.id] = temp
+            }
+            
+            let myOrders = [user.uid : listedOrders]
+            let myInfo = ["name": orderGroupObject?.name,
+                          "restaurant": orderGroupObject?.restaurant,
+                          "orderDate": orderGroupObject?.orderDate,
+                          "order": listedOrders] as [String : Any]
+            
+            
+            // Then write info:
+            if let key = orderGroupObject?.id {
+                let childUpdates = ["/order_group/\(key)/members/\(user.uid)/": listedOrders,
+                                    "/users/\(user.uid)/order_groups/\(key)": myInfo]
+                ref.updateChildValues(childUpdates)
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

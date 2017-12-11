@@ -59,8 +59,19 @@ import Firebase
                         let ordergroupIsCompleted = ordergroupObject?["IsCompleted"]
                         let ordergrouphasReachedCapacity = ordergroupObject?["hasReachedCapacity"]
                         let ordergroupnumMembers = ordergroupObject?["numMembers"]
+                        var ordergroupMenuId = ""
+                        var ordergroupOrderDate = ""
                         
-                        let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
+                        if let date = ordergroupObject?["orderDate"] {
+                            ordergroupOrderDate = date as! String
+                        }
+                        
+                        if let id = ordergroupObject?["menuId"] {
+                            ordergroupMenuId = id as! String
+                        }
+                        
+                        
+                        let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!, menuId: ordergroupMenuId as! String, orderDate: ordergroupOrderDate
                         )
                         //self.orderGroupObjectToSend = orderGroup
                         //print("The object capacity is as follows " + (self.orderGroupObjectToSend?.hasReachedCapacity.description)!)

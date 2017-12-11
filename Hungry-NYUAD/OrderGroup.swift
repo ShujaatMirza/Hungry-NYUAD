@@ -12,7 +12,7 @@ import UIKit
 
 class OrderGroup {
     
-    init?(id:String, name:String, restaurant:String, ownerId:String, IsPlaced: Bool, IsDelivered: Bool, IsCompleted: Bool, hasReachedCapacity: Bool, numMembers: Int) {
+    init?(id:String, name:String, restaurant:String, ownerId:String, IsPlaced: Bool, IsDelivered: Bool, IsCompleted: Bool, hasReachedCapacity: Bool, numMembers: Int, menuId: String, orderDate: String) {
         self.id = id
         self.name = name
         self.restaurant = restaurant
@@ -22,6 +22,8 @@ class OrderGroup {
         self.IsCompleted = IsCompleted
         self.hasReachedCapacity = hasReachedCapacity
         self.numMembers = numMembers
+        self.menuId = menuId
+        self.orderDate = orderDate
     }
     
     //MARK: Properties
@@ -34,6 +36,8 @@ class OrderGroup {
     var IsCompleted: Bool
     var hasReachedCapacity: Bool
     var numMembers: Int
+    var menuId: String
+    var orderDate: String
 }
 
 

@@ -20,6 +20,7 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     var rowCount: Int = 0
     let reuseIdentifier = "reuseIdentifier"
     var menuItems: [MenuItem] = []
+    var orderGroupObject: OrderGroup?
     
     func addItem(menuItem: MenuItem) {
         if let val = listOfItems[menuItem] {
@@ -62,6 +63,7 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
             let destVC = segue.destination as! ReviewOrderViewController
             destVC.selectedItems = listOfItems
             destVC.currentRestaurant = currentRestaurant
+            destVC.orderGroupObject = orderGroupObject
         }
     }
     
@@ -72,6 +74,7 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        print("The menuID is: \(currentRestaurant?.menuId)")
         //red: 248, green: 205, blue: 70
         //setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 241, green: 216, blue: 75))
         setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 248, green: 205, blue: 70))

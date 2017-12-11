@@ -77,7 +77,9 @@ class CreateNewGroupVC: UITableViewController {
                                     IsDelivered: IsDelivered,
                                     IsCompleted: IsCompleted,
                                     hasReachedCapacity: hasReachedCapacity,
-                                    numMembers: numMembers
+                                    numMembers: numMembers,
+                                    menuId: "",
+                                    orderDate: ""
         )
         
         self.orderGroup = orderGroup

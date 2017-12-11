@@ -59,7 +59,18 @@ class ListMyOrderGroups: UITableViewController {
                         let ordergrouphasReachedCapacity = ordergroupObject?["hasReachedCapacity"]
                         let ordergroupnumMembers = ordergroupObject?["numMembers"]
                         
-                        let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!
+                        var ordergroupDate = ""
+                        if let id = ordergroupObject?["orderDate"] {
+                            ordergroupDate = id as! String
+                        }
+                        
+                        var ordergroupMenuId = ""
+                        if let id = ordergroupObject?["menuId"] {
+                            ordergroupMenuId = id as! String
+                        }
+                        
+                        let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!, menuId: ordergroupMenuId, orderDate: ordergroupDate
+                                                    
                         )
                         
                         //self.orderGroupObjectToSend = orderGroup

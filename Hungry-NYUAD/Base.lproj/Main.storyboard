@@ -852,14 +852,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-me-5rv" customClass="ButtonBaseClass" customModule="Hungry_NYUAD" customModuleProvider="target">
-                                <rect key="frame" x="99" y="530" width="177" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm Order"/>
-                                <connections>
-                                    <segue destination="onb-GX-rLr" kind="show" identifier="toCreateGroup" id="Urg-GV-rbr"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dhs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m26-up-kQd">
                                 <rect key="frame" x="84" y="182" width="207" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -867,6 +859,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-me-5rv" customClass="ButtonBaseClass" customModule="Hungry_NYUAD" customModuleProvider="target">
+                                <rect key="frame" x="99" y="530" width="177" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm Order"/>
+                                <connections>
+                                    <action selector="confirmOrder:" destination="hiv-fE-Nxg" eventType="touchUpInside" id="GXG-09-rcp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="YsW-Ty-Kwb"/>
@@ -875,6 +875,7 @@
                     <connections>
                         <outlet property="orderTotal" destination="UXi-Sb-ZvQ" id="Jen-Hc-8eQ"/>
                         <outlet property="tableView" destination="7ye-Uz-txA" id="cwA-R9-fiD"/>
+                        <segue destination="onb-GX-rLr" kind="show" identifier="toCreateGroup" id="nTq-ov-hff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7D-hq-fHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -923,6 +924,7 @@
                                 <state key="normal" title="Join this Group"/>
                                 <connections>
                                     <action selector="joinOrderGroup:" destination="lLo-9a-h9e" eventType="touchUpInside" id="MyY-Lm-uHE"/>
+                                    <segue destination="dZv-xf-xkf" kind="show" identifier="toSelectItems" id="gk9-Tl-vpe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1056,6 +1058,7 @@
         <image name="profile" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zGD-cg-wzn"/>
+        <segue reference="nTq-ov-hff"/>
+        <segue reference="gk9-Tl-vpe"/>
     </inferredMetricsTieBreakers>
 </document>

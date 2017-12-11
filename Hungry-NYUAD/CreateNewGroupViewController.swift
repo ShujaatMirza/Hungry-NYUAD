@@ -80,7 +80,7 @@ class CreateNewGroupViewController: UIViewController {
             listedOrders[key.id] = temp
         }
         
-        let myOrders = [user.uid : listedOrders]
+        let myOrders = [user.uid : listedOrders] as [String : Any]
         let myInfo = ["name": groupName.text,
                       "restaurant": currentRestaurant?.name,
                       "orderDate": orderDate.text,
@@ -96,10 +96,11 @@ class CreateNewGroupViewController: UIViewController {
                     "hasReachedCapacity": false,
                     "numMembers": 1,
                     "ownerId": user.uid,
+                    "menuId": currentRestaurant?.menuId,
                     "restaurant": currentRestaurant?.name] as [String : Any]
         
         // Then write info:
-        let childUpdates = ["/order_group/\(key)": post,
+        let childUpdates = ["/order_group/\(key)/": post,
                             "/users/\(user.uid)/order_groups/\(key)": myInfo]
         ref.updateChildValues(childUpdates)
         self.navigationController?.popToRootViewController(animated: true)

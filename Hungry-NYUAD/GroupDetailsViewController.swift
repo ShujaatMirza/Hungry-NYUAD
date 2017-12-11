@@ -23,6 +23,14 @@ class GroupDetailsViewController : UIViewController {
     @IBAction func joinOrderGroup(_ sender: UIButton) {
         joinGroupFunc()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSelectItems" {
+            let destVC = segue.destination as! RestaurantMenuView
+            destVC.currentRestaurant = Restaurant(name: "", hours: "", phone: "", website: "", menuId: orderGroupObject.menuId)
+            destVC.orderGroupObject = orderGroupObject
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +52,17 @@ class GroupDetailsViewController : UIViewController {
     func joinGroupFunc() {
         let currentUserId : String = (Auth.auth().currentUser?.uid)!
         let key = orderGroupObject.id
-        let member = [currentUserId : true] as [String : Any]
+        //let member = [currentUserId : true] as [String : Any]
+        
+        
         
         //join the members of the group
-        Constants.refs.databaseOrderGroup.child(key).child("members").setValue(member)
+        //Constants.refs.databaseOrderGroup.child(key).child("members").setValue(member)
         
         //incrmenet the num_memeber counter
         let currentNumMebers = orderGroupObject.numMembers
         Constants.refs.databaseOrderGroup.child(key).updateChildValues(["numMembers":(currentNumMebers+1)])
+    
     }
 
     
