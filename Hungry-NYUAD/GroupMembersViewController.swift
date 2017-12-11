@@ -81,17 +81,19 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
             var n = 0
             for member in snapshot.children.allObjects as! [DataSnapshot] {
                 let key = member.key
+                var orderSummary: String = ""
                 for item in member.children.allObjects as! [DataSnapshot] {
                     if let dItem = item.value as? NSDictionary {
+                        if (key == Auth.auth().currentUser?.uid) {
+                            //var text = "x\(dItem["count"]) \(dItem["name"]) - \(dItem["price"])\n"
+                        }
+                        
                         let price = dItem["price"] as! Int
-                        print("\(key) \(price)")
                         if let _ = self.costs[key] {
-                            print("1")
                             self.costs[key] = self.costs[key]! + price
                         }
                         else {
                             self.costs[key] = price
-                            print("2")
                         }
                     }
                 }
