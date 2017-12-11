@@ -2,6 +2,8 @@
 //  MenuItem.swift
 //  Hungry-NYUAD
 //
+//  Class to hold attributes of a menu item.
+//
 //  Created by Mawutor Ama Abalo on 12/1/17.
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //

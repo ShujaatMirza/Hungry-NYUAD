@@ -73,10 +73,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
         btnsendtag.isHidden = true
-        
-        //let newbtn = UIButton(type: .custom) as! ButtonBaseClass
-        //let newbtn = ButtonBaseClass(type: .custom)
-    
+            
         let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 550, width: 250, height: 70))
         newbtn.setTitleColor(UIColor.white, for: .normal)
         newbtn.frame.size = CGSize(width: 200, height: 45)
@@ -86,7 +83,6 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         newbtn.layer.borderColor = UIColor.lightText.cgColor
         newbtn.layer.cornerRadius = newbtn.frame.size.height / 2;
         newbtn.clipsToBounds = true;
-        //newbtn.backgroundColor = UIColor.blue
        
         if btnsendtag.tag == 1 {
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsPlaced": true])
@@ -116,12 +112,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
             newbtn.center.x = (newbtn.superview?.center.x)!
         }
         if btnsendtag.tag == 4{
-            
-            //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            //let newViewController = storyBoard.instantiateViewController(withIdentifier: "ListMyOrderGroupsIdentifier") as! ListMyOrderGroups
-            //self.present(newViewController, animated: true, completion: nil)
             self.navigationController?.popToRootViewController(animated: true)
-            
         }
     }
 
@@ -225,17 +216,5 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

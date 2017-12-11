@@ -42,24 +42,14 @@ class GroupDetailsViewController : UIViewController {
         
         self.orderGroupName.text = orderGroupObject?.name
         self.orderGroupRestaurant.text = orderGroupObject?.restaurant
-        self.OrderDate.text = "Expected Time:" + (orderGroupObject?.orderDate)!
+        self.OrderDate.text = "Expected Time: " + (orderGroupObject?.orderDate)!
 
 
     }
+    
     func joinGroupFunc() {
         let currentUserId : String = (Auth.auth().currentUser?.uid)!
         let key = orderGroupObject.id
-        //let member = [currentUserId : true] as [String : Any]
-        
-        
-        
-        //join the members of the group
-        //Constants.refs.databaseOrderGroup.child(key).child("members").setValue(member)
-        
-        //incrmenet the num_memeber counter
-        //let currentNumMebers = orderGroupObject.numMembers
-        //Constants.refs.databaseOrderGroup.child(key).updateChildValues(["numMembers":(currentNumMebers+1)])
-    
     }
 
     

@@ -25,8 +25,6 @@ class CreateNewGroupViewController: UIViewController {
         setTableViewBackgroundGradient(sender: self, cgColor(red: 240, green: 145, blue: 53), cgColor(red: 230, green: 73, blue: 37))
         self.hideKeyboardWhenTappedAround()
         ref = Database.database().reference()
-
-
     }
     
     // Do any additional setup after loading the view.
@@ -34,6 +32,7 @@ class CreateNewGroupViewController: UIViewController {
         nameLabel.text = "GROUP NAME"
     }
     
+    // Input validation
     func isValid() -> Bool{
         var rval = true
         var nameErrorText: String = "GROUP NAME"
@@ -66,7 +65,7 @@ class CreateNewGroupViewController: UIViewController {
             return
         }
         
-        //First construct info
+        // First construct info
         let c = ref.child("order_group").childByAutoId()
         let key = c.key
         let user = Auth.auth().currentUser!
@@ -108,21 +107,14 @@ class CreateNewGroupViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func editingOrderDate(_ sender: UITextField) {
-        
         dateLabel.text = "ORDER DATE"
-        
         let datePickerView:UIDatePicker = UIDatePicker()
-        
         datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
-        
         datePickerView.minimumDate = NSDate() as Date
-        
         sender.inputView = datePickerView
-        
         datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
@@ -132,15 +124,4 @@ class CreateNewGroupViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.short
         orderDate.text = dateFormatter.string(from: sender.date)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Hungry_NYUAD
+@testable import Hungry_NYUAD 
 
 class Hungry_NYUADTests: XCTestCase {
     

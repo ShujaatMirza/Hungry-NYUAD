@@ -17,8 +17,6 @@ class ListMyOrderGroups: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.rowHeight = UITableViewAutomaticDimension;
-        //self.tableView.estimatedRowHeight = 44.0;
 
         let databaseOrderGroupRef = Database.database().reference()
         self.tableView.backgroundColor = UIColor.clear
@@ -74,16 +72,11 @@ class ListMyOrderGroups: UITableViewController {
                                                     
                         )
                         
-                        //self.orderGroupObjectToSend = orderGroup
-                        //print("The object capacity is as follows " + (self.orderGroupObjectToSend?.hasReachedCapacity.description)!)
                         //appending it to list
                         self.orderGroups.append(orderGroup!)
 
                     }
-
-                    
                 }
-                
                 //reloading the tableview
                 self.tableView.reloadData()
             }

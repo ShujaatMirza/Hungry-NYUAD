@@ -31,42 +31,26 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         }
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ref = Database.database().reference()
         self.navigationController?.delegate = self
         signInButton.colorScheme = GIDSignInButtonColorScheme.dark
-        
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
-        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
         GIDSignIn.sharedInstance().uiDelegate = self
         
         if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
-            
-            
             print("Auth in keychain")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "landing")
             self.present(vc, animated: true, completion: nil)
-            
         }
         else {
             print("Auth not in keychain")
         }
-        
-        ref = Database.database().reference()
-        
-        //GIDSignIn.sharedInstance().signIn()
-        
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,15 +58,12 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         // Dispose of any resources that can be recreated.
     }
     
+    // Sign in procedure
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        print("sign called")
-        
         if let error = error {
-            // ...
             print (error)
             return
         }
-        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
@@ -113,8 +94,6 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -131,10 +110,8 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
                                                      annotation: [:])
     }
     
-    
+    /*
     @IBAction func signOut(_ sender: UIButton) {
-        
-        
         GIDSignIn.sharedInstance().signOut()
         print("\nSign out clicked")
         let user = Auth.auth().currentUser
@@ -144,24 +121,14 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
             try firebaseAuth.signOut()
             
             if let user = user {
-                // The user's ID, unique to the Firebase project.
-                // Do NOT use this value to authenticate with your backend server,
-                // if you have one. Use getTokenWithCompletion:completion: instead.
-                //let uid = user.uid
                 let email = user.email
                 print(email ?? "")
-                //let photoURL = user.photoURL
-                // ...
             }
             print("Signed out")
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)  // ...
         }
-        
-       
-        
-    }
-
+    }*/
 }
 
 

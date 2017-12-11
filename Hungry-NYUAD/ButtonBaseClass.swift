@@ -2,6 +2,8 @@
 //  ButtonBaseClass.swift
 //  Hungry-NYUAD
 //
+//  Desired appearance for all buttons. 
+//
 //  Created by Mawutor Ama Abalo on 12/9/17.
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //

@@ -23,8 +23,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var profilePicture: UIImageView!
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
@@ -33,16 +31,17 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         saveButton.isHidden = true
         var uid: String = ""
         if isStranger {
+            // viewing someone else's profile
             editButton.isHidden = true
             signOutButton.isHidden = true
             uid = strangerUid!
         }
         else {
+            // viewing your own profile
             user = Auth.auth().currentUser
             uid = (user?.uid)!
         }
         
-        //saveButton.isHidden = true
         name.backgroundColor = UIColor.clear
         email.backgroundColor = UIColor.clear
         phone.backgroundColor = UIColor.clear
@@ -51,18 +50,13 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         email.borderStyle = UITextBorderStyle.none
         phone.borderStyle = UITextBorderStyle.none
         
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        // profile picture formatting
         self.profilePicture.frame.size.height = self.profilePicture.frame.size.width;
-        
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.clipsToBounds = true;
         
-        
+        // Get a reference to the database
         ref = Database.database().reference()
-        
-        //let userID = Auth.auth().currentUser?.uid
-        
         ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
@@ -76,7 +70,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
                     self.profilePicture.image = UIImage(data: data as Data)
                 }
              }
-     
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -89,10 +82,8 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         name.isEnabled = false
         name.isSelected = false
         phone.isEnabled = false
-        //email.isEnabled = false
         
         name.borderStyle = UITextBorderStyle.none
-        //email.borderStyle = UITextBorderStyle.none
         phone.borderStyle = UITextBorderStyle.none
         
         phone.textColor = UIColor.white
@@ -103,20 +94,18 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         phone.backgroundColor = UIColor.clear
         
         self.ref.child("users/\(self.user.uid)/name").setValue(name.text)
-        //self.ref.child("users/\(self.user.uid)/email").setValue(user.email)
         self.ref.child("users/\(self.user.uid)/phone").setValue(phone.text)
     }
     
+    // Only the phone number and name can be edited.
     @IBAction func edit(_ sender: Any) {
         editButton.isHidden = true
         saveButton.isHidden = false
         
         name.borderStyle = UITextBorderStyle.roundedRect
-        //email.borderStyle = UITextBorderStyle.roundedRect
         phone.borderStyle = UITextBorderStyle.roundedRect
         
         name.backgroundColor = UIColor.white
-        //email.backgroundColor = UIColor.white
         phone.backgroundColor = UIColor.white
         
         phone.textColor = UIColor.darkText
@@ -125,7 +114,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         name.isEnabled = true
         name.isSelected = true
         phone.isEnabled = true
-        //email.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -154,6 +142,8 @@ class ProfileView: UIViewController, UITextFieldDelegate {
 }
 
 extension UIViewController {
+    
+    // call this function so the keyboard doesn't hang around when the user is done typing.s
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -164,9 +154,8 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    // function for setting the background of a view
     func setTableViewBackgroundGradient(sender: UIViewController, _ topColor:CGColor, _ bottomColor:CGColor) {
-        
-        
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = sender.view.bounds
         gradientLayer.colors = [topColor,
@@ -178,11 +167,8 @@ extension UIViewController {
         newView.layer.addSublayer(gradientLayer)
         if let senderT: UITableViewController = sender as? UITableViewController{
             senderT.tableView.backgroundView = newView
-            print("Done")
         } else {
         
-        //sender.view.superview?.insertSubview(newView, belowSubview: sender.view)
-        //sender.view.sendSubview(toBack: newView)
         sender.view.addSubview(newView)
         sender.view.sendSubview(toBack: newView)
         
