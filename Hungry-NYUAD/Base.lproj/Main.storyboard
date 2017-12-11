@@ -390,7 +390,7 @@
         <!--My Orders-->
         <scene sceneID="JH6-eA-jC5">
             <objects>
-                <navigationController id="HLe-6c-e8f" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="myOrders" id="HLe-6c-e8f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Orders" image="order" id="foM-4I-ecH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nTx-lR-Fcg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -550,6 +550,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="beganEditingName:" destination="onb-GX-rLr" eventType="editingDidBegin" id="aVi-uE-2Fn"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yz-7w-haE" customClass="BaseTextFieldClass" customModule="Hungry_NYUAD" customModuleProvider="target">
                                 <rect key="frame" x="67" y="256" width="241" height="32"/>
@@ -563,14 +566,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GROUP NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-ie-l5h">
-                                <rect key="frame" x="67" y="142" width="87" height="21"/>
+                                <rect key="frame" x="67" y="142" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORDER DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V2-pY-FQW">
-                                <rect key="frame" x="67" y="239" width="87" height="21"/>
+                                <rect key="frame" x="67" y="239" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -580,6 +583,9 @@
                                 <rect key="frame" x="88" y="372" width="200" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Group"/>
+                                <connections>
+                                    <action selector="create:" destination="onb-GX-rLr" eventType="touchUpInside" id="I2I-m1-h2h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -587,13 +593,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create" id="ffc-Qs-4Kx"/>
                     <connections>
+                        <outlet property="createButton" destination="ROo-IH-Tkq" id="hlX-Y4-9Er"/>
+                        <outlet property="dateLabel" destination="6V2-pY-FQW" id="9f8-zq-aWD"/>
                         <outlet property="groupName" destination="xBM-6r-Cls" id="ml9-CH-z5O"/>
+                        <outlet property="nameLabel" destination="6Yu-ie-l5h" id="ypc-p5-rRy"/>
                         <outlet property="orderDate" destination="8yz-7w-haE" id="MJv-nj-OcD"/>
+                        <segue destination="p44-uE-tYs" kind="show" identifier="toLanding" id="zGD-cg-wzn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYz-eO-oyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="1913"/>
+            <point key="canvasLocation" x="2357.5999999999999" y="1912.8935532233884"/>
         </scene>
         <!--Owner View-->
         <scene sceneID="k8l-oS-uHS">
@@ -800,7 +810,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXi-Sb-ZvQ">
-                                <rect key="frame" x="84" y="107" width="207" height="67"/>
+                                <rect key="frame" x="16" y="107" width="332" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="71"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -847,7 +857,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Confirm Order"/>
                                 <connections>
-                                    <segue destination="onb-GX-rLr" kind="show" id="Urg-GV-rbr"/>
+                                    <segue destination="onb-GX-rLr" kind="show" identifier="toCreateGroup" id="Urg-GV-rbr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dhs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m26-up-kQd">
@@ -1045,4 +1055,7 @@
         <image name="order" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zGD-cg-wzn"/>
+    </inferredMetricsTieBreakers>
 </document>

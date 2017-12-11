@@ -61,6 +61,7 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         if segue.identifier == "toReview" {
             let destVC = segue.destination as! ReviewOrderViewController
             destVC.selectedItems = listOfItems
+            destVC.currentRestaurant = currentRestaurant
         }
     }
     

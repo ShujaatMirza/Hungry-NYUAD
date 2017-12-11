@@ -22,8 +22,11 @@ class OrderDetailsViewController: UIViewController {
         let btnsendtag: UIButton = sender
         btnsendtag.isHidden = true
         
-        let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
-        newbtn.backgroundColor = UIColor.blue
+        //let newbtn = UIButton(type: .custom) as! ButtonBaseClass
+        let newbtn = ButtonBaseClass(type: .custom)
+    
+        //let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        //newbtn.backgroundColor = UIColor.blue
        
         if btnsendtag.tag == 1 {
             Constants.refs.databaseOrderGroup.child(orderGroupObject.id).updateChildValues(["IsPlaced": true])
@@ -77,8 +80,9 @@ class OrderDetailsViewController: UIViewController {
     }
     
     func RightButtonDisplay(){
-        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
-        btn.backgroundColor = UIColor.blue
+        //let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        //btn.backgroundColor = UIColor.blue
+        let btn = ButtonBaseClass(type: .custom) as ButtonBaseClass
         if ((orderGroupObject?.ownerId == Auth.auth().currentUser?.uid)) {
 
             if(orderGroupObject?.IsPlaced == false){

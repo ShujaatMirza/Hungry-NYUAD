@@ -13,6 +13,7 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var orderTotal: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var selectedItems: [MenuItem : Int]?
+    var currentRestaurant: Restaurant?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,14 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateGroup" {
+            let destVC = segue.destination as! CreateNewGroupViewController
+            destVC.selectedItems = selectedItems
+            destVC.currentRestaurant = currentRestaurant
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? ReviewOrderTableViewCell else {
             fatalError("The dequeued cell is not an instance of ReviewOrderTableViewCell.")
@@ -59,7 +68,6 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("From no of rows \(selectedItems?.count)")
         return selectedItems?.count ?? 0
     }
     
