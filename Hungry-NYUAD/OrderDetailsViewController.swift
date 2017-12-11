@@ -23,9 +23,17 @@ class OrderDetailsViewController: UIViewController {
         btnsendtag.isHidden = true
         
         //let newbtn = UIButton(type: .custom) as! ButtonBaseClass
-        let newbtn = ButtonBaseClass(type: .custom)
+        //let newbtn = ButtonBaseClass(type: .custom)
     
-        //let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        newbtn.setTitleColor(UIColor.white, for: .normal)
+        newbtn.frame.size = CGSize(width: 200, height: 45)
+        newbtn.center.x = (newbtn.superview?.center.x)!
+        newbtn.layer.backgroundColor = UIColor.clear.cgColor
+        newbtn.layer.borderWidth = 2.0
+        newbtn.layer.borderColor = UIColor.lightText.cgColor
+        newbtn.layer.cornerRadius = newbtn.frame.size.height / 2;
+        newbtn.clipsToBounds = true;
         //newbtn.backgroundColor = UIColor.blue
        
         if btnsendtag.tag == 1 {
@@ -62,7 +70,7 @@ class OrderDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         //Create a button to place order only if it is owner trying to access it and if the order has not been placed
-
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
         RightButtonDisplay()
         self.orderGroupNameLabel.text = orderGroupObject?.name
         
@@ -80,9 +88,19 @@ class OrderDetailsViewController: UIViewController {
     }
     
     func RightButtonDisplay(){
-        //let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 250, height: 70))
+        btn.isHidden = false
+        self.view.addSubview(btn)
         //btn.backgroundColor = UIColor.blue
-        let btn = ButtonBaseClass(type: .custom) as ButtonBaseClass
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.frame.size = CGSize(width: 200, height: 45)
+        btn.center.x = (btn.superview?.center.x)!
+        btn.layer.backgroundColor = UIColor.clear.cgColor
+        btn.layer.borderWidth = 2.0
+        btn.layer.borderColor = UIColor.lightText.cgColor
+        btn.layer.cornerRadius = btn.frame.size.height / 2;
+        btn.clipsToBounds = true;
+        //let btn = ButtonBaseClass(type: .custom) as ButtonBaseClass
         if ((orderGroupObject?.ownerId == Auth.auth().currentUser?.uid)) {
 
             if(orderGroupObject?.IsPlaced == false){
@@ -106,8 +124,7 @@ class OrderDetailsViewController: UIViewController {
                 btn.tag = 4
                 //self.view.addSubview(btn)
             }
-            btn.isHidden = false
-            self.view.addSubview(btn)
+            
         }
     }
 

@@ -17,8 +17,8 @@ class ListMyOrderGroups: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 44.0;
+        //self.tableView.rowHeight = UITableViewAutomaticDimension;
+        //self.tableView.estimatedRowHeight = 44.0;
 
         let databaseOrderGroupRef = Database.database().reference()
         self.tableView.backgroundColor = UIColor.clear
@@ -38,7 +38,7 @@ class ListMyOrderGroups: UITableViewController {
                     
                     //Condition to check if user id the member of the group
                     var isMember = false
-                    var listofmembers = ordergroupObject?["members"] as? [String : Bool]
+                    var listofmembers = ordergroupObject?["members"] as? [String : Any]
                     if listofmembers != nil {
                         for (key, value) in listofmembers! {
                             if(key ==  Auth.auth().currentUser?.uid){
@@ -99,12 +99,23 @@ class ListMyOrderGroups: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return orderGroups.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return orderGroups.count
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    // Make the background color show through
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,7 +125,7 @@ class ListMyOrderGroups: UITableViewController {
             fatalError("The dequeued cell is not an instance of ListMyOrderGroupsTableViewCell.")
         }
         // Fetches the appropriate meal for the data source layout.
-        let orderGroup = orderGroups[indexPath.row]
+        let orderGroup = orderGroups[indexPath.section]
         
         cell.backgroundColor = UIColor.clear
         cell.idLabel.text = orderGroup.id
@@ -134,7 +145,7 @@ class ListMyOrderGroups: UITableViewController {
             
             if let ExchangeViewData = segue.destination as? OrderDetailsViewController{
                 //ExchangeViewData.orderGroupObject = self.orderGroupObjectToSend!
-                let index = tableView.indexPathForSelectedRow?.row
+                let index = tableView.indexPathForSelectedRow?.section
                 ExchangeViewData.orderGroupObject = orderGroups[index!]
                 print("Hello")
                 print(ExchangeViewData.orderGroupObject.id)

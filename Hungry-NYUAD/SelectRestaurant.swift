@@ -101,22 +101,6 @@ class SelectRestaurant: UITableViewController {
         cell.hours.text = restaurantInfo[indexPath.section].hours
         cell.nameLabel.text = restaurantInfo[indexPath.section].name
         cell.backgroundColor = UIColor.clear
-        // Configure the cell...
-        // add border and color
-        
-        cell.contentView.backgroundColor = UIColor.clear
-        cell.board.layer.masksToBounds = false
-        cell.board.layer.cornerRadius = 3
-        cell.board.layer.shadowColor = UIColor.black.cgColor
-        cell.board.layer.shadowOpacity = 0.5
-        cell.board.layer.shadowPath = UIBezierPath(rect: cell.board.bounds).cgPath
-        cell.board.layer.shadowOffset = CGSize(width: -1, height: 3)
-        cell.board.layer.shouldRasterize = true
-        //cell.contentView.layer.borderWidth = 1
-        //cell.contentView.layer.borderColor = UIColor.red.cgColor
-        //cell.layer.borderColor = UIColor.black.cgColor
-        //cell.layer.borderWidth = 1
-        
         cell.clipsToBounds = true
 
         return cell

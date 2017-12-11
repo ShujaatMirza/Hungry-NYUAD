@@ -10,12 +10,24 @@ import UIKit
 
 class OrderGroupTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var board: UIView!
     //MARK: Properties
     @IBOutlet weak var restaurantLabel: UILabel!
     @IBOutlet weak var orderNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.restaurantLabel.textColor = UIColor.darkText
+        self.orderNameLabel.textColor = UIColor.darkText
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        self.board.layer.masksToBounds = false
+        self.board.layer.cornerRadius = 3
+        self.board.layer.shadowColor = UIColor.black.cgColor
+        self.board.layer.shadowOpacity = 0.5
+        self.board.layer.shadowPath = UIBezierPath(rect: self.board.bounds).cgPath
+        self.board.layer.shadowOffset = CGSize(width: -1, height: 3)
+        //self.board.layer.shouldRasterize = true
         // Initialization code
     }
 

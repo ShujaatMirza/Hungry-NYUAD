@@ -19,6 +19,18 @@ class RestaurantTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        self.backgroundColor = UIColor.clear
+        
+        self.contentView.backgroundColor = UIColor.clear
+        self.board.layer.masksToBounds = false
+        self.board.layer.cornerRadius = 3
+        self.board.layer.shadowColor = UIColor.black.cgColor
+        self.board.layer.shadowOpacity = 0.5
+        self.board.layer.shadowPath = UIBezierPath(rect: self.board.bounds).cgPath
+        self.board.layer.shadowOffset = CGSize(width: -1, height: 3)
+        //self.board.layer.shouldRasterize = true
+        
         // Initialization code
         //restaurantNameLabel.font = UIFont(name: restaurantNameLabel.font.fontName, size: 20)
     }
