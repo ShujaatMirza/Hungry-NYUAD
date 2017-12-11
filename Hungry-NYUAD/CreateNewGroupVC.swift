@@ -20,6 +20,7 @@ class CreateNewGroupVC: UITableViewController {
         self.tableView.estimatedRowHeight = 44.0;
         refOrderGroups = Constants.refs.databaseOrderGroup
     }
+    
     //MARK: Properties
     //defining firebase reference var
     var refOrderGroups: DatabaseReference!
@@ -93,7 +94,6 @@ class CreateNewGroupVC: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

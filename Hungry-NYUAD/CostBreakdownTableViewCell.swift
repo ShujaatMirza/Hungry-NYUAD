@@ -25,6 +25,4 @@ class CostBreakdownTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
-
-
 }

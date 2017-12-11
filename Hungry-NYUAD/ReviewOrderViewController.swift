@@ -86,7 +86,7 @@ class ReviewOrderViewController: UIViewController, UITableViewDelegate, UITableV
             fatalError("The dequeued cell is not an instance of ReviewOrderTableViewCell.")
         }
         guard let items = selectedItems else {
-            fatalError("The dequeued cell is not an instance of MenuTableViewCell.")
+            fatalError("SelectedItems does not exist")
         }
         print(selectedItems?.count ?? 0)
         let key = Array(items.keys)[indexPath.row]

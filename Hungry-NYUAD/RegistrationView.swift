@@ -34,14 +34,16 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         name.text = user?.displayName ?? ""
         phone.returnKeyType = UIReturnKeyType.done
     }
+    
     @IBAction func beganEditingName(_ sender: UITextField) {
+        // clear any error text
         nameLabel.text = "NAME"
     }
     
     @IBAction func beganEditingPhone(_ sender: Any) {
+        // clear any error text
         phoneLabel.text = "PHONE"
     }
-    
     
     @IBAction func exitSignUp(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
@@ -49,7 +51,7 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)  // ...
+            print ("Error signing out: %@", signOutError)
         }
         self.navigationController?.popViewController(animated: true)
     }
@@ -73,6 +75,7 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // validate input
     func isValid() -> Bool{
         var rval = true
         var nameErrorText: String = "NAME"
@@ -105,6 +108,7 @@ class RegistrationView: UIViewController, UITextFieldDelegate {
         return rval
     }
     
+    // Jump to next text field when return is clicked
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         // Try to find next responder

@@ -1,6 +1,7 @@
 //
 //  AddRestaurantViewController.swift
 //  Hungry-NYUAD
+// A single viewcontroller for adding restaurants to the database. Must set application to start from this view controller.
 //
 //  Created by Mawutor Ama Abalo on 11/24/17.
 //  Copyright © 2017 Software Engineering Group. All rights reserved.

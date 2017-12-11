@@ -42,10 +42,11 @@ class GroupDetailsViewController : UIViewController {
         
         self.orderGroupName.text = orderGroupObject?.name
         self.orderGroupRestaurant.text = orderGroupObject?.restaurant
-        self.OrderDate.text = "Expected Time:" + (orderGroupObject?.orderDate)!
+        self.OrderDate.text = "Expected Time: " + (orderGroupObject?.orderDate)!
 
 
     }
+    
     func joinGroupFunc() {
         let currentUserId : String = (Auth.auth().currentUser?.uid)!
         let key = orderGroupObject.id

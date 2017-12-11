@@ -31,29 +31,21 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         }
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.delegate = self
         signInButton.colorScheme = GIDSignInButtonColorScheme.dark
-        
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
-        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
         GIDSignIn.sharedInstance().uiDelegate = self
         
         if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
-            
-            
             print("Auth in keychain")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "landing")
             self.present(vc, animated: true, completion: nil)
-            
         }
         else {
             print("Auth not in keychain")
@@ -68,15 +60,12 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         super.didReceiveMemoryWarning()
     }
     
+    // Sign in procedure
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        print("sign called")
-        
         if let error = error {
-            // ...
             print (error)
             return
         }
-        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
@@ -123,10 +112,8 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
                                                      annotation: [:])
     }
     
-    
+    /*
     @IBAction func signOut(_ sender: UIButton) {
-        
-        
         GIDSignIn.sharedInstance().signOut()
         print("\nSign out clicked")
         let user = Auth.auth().currentUser
@@ -142,11 +129,7 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)  // ...
         }
-        
-       
-        
-    }
-
+    }*/
 }
 
 

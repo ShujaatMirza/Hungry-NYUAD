@@ -30,7 +30,6 @@ class SelectRestaurant: UITableViewController {
                 let r = Restaurant(name: inf!["name"] as! String, hours: inf!["hours"] as! String, phone: inf!["phone"] as! String, website: inf!["website"] as! String, menuId: inf!["menuId"] as! String)
                 self.restaurantInfo.append(r)
             }
-            
             self.tableView.reloadData()
         })
 
@@ -86,6 +85,8 @@ class SelectRestaurant: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? RestaurantTableViewCell  else {
             fatalError("The dequeued cell is not an instance of RestaurantTableViewCell.")
         }
+        
+        // configure cell
         cell.hours.text = restaurantInfo[indexPath.section].hours
         cell.nameLabel.text = restaurantInfo[indexPath.section].name
         cell.backgroundColor = UIColor.clear

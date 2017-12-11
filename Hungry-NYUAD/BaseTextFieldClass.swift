@@ -2,6 +2,8 @@
 //  BaseTextFieldClass.swift
 //  Hungry-NYUAD
 //
+//  Desired appearance for all text fields.
+//
 //  Created by Mawutor Ama Abalo on 12/9/17.
 //  Copyright © 2017 Software Engineering Group. All rights reserved.
 //
@@ -16,9 +18,7 @@ class BaseTextFieldClass: UITextField {
         
         self.attributedPlaceholder = NSAttributedString(string: "",
                                                         attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightText])
-        
         self.borderStyle = .none
-        
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: 1.0)
         bottomLine.backgroundColor = UIColor.lightText.cgColor

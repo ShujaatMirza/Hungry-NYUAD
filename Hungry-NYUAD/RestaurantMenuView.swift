@@ -78,6 +78,8 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 248, green: 205, blue: 70))
 
         
+        
+        // Retrieving menu for selected restaurant
         if let restaurant = currentRestaurant{
             ref.child("menus").child(restaurant.menuId).observeSingleEvent(of: .value, with: { snapshot in
                 print("The number of categories is:\(Int(snapshot.childrenCount))")
@@ -104,10 +106,9 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
                 
                 self.tableView.reloadData()
             })
-            
         }
         else {
-            print("No restaurant")
+            print("No such restaurant")
         }
     }
 
@@ -117,11 +118,9 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionCount
     }
-    
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
         let v = UIView()
@@ -135,7 +134,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
         headerLabel.sizeToFit()
         v.addSubview(headerLabel)
-        
         return v
     }
 
@@ -147,7 +145,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         else {
             return sectionItemCount[section] - sectionItemCount[section - 1]
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -170,7 +167,6 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
             i = sectionItemCount[indexPath.section - 1] + indexPath.row
         }
         
-        print(i)
         // Configure the cell...
         cell.delegate = self
         cell.listOfItems = self.listOfItems

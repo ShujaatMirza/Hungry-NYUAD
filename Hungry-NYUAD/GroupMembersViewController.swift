@@ -12,11 +12,10 @@ import Firebase
 class GroupMembersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var yourOrder: UITextView!
     @IBOutlet weak var tableView: UITableView!
-    var orderGroupObject: OrderGroup!
-    var ref: DatabaseReference!
-    
     var names: [String : String] = [:]
     var costs: [String : Int] = [:]
+    var orderGroupObject: OrderGroup!
+    var ref: DatabaseReference!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? CostBreakdownTableViewCell else {
@@ -48,8 +47,6 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
                 txt = txt + " (Owner)"
             }
             cell.name.text = txt
-            
-            
             if let cost = costs[key] {
                 cell.price.text = String(cost)
             }
@@ -77,6 +74,7 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // initialise the tableview
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -88,6 +86,8 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
         names.removeAll()
         costs.removeAll()
         var orderSummary: String = ""
+        
+        // Get the order totals for all members of the group, and create an order summary from the current user
         ref.child("order_group").child(orderGroupObject.id).child("members").observeSingleEvent(of: .value, with: {snapshot in
             let count = snapshot.childrenCount
             var n = 0
@@ -115,6 +115,7 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
                         self.names[key] = name
                         n = n + 1
                     }
+                    // If condition so that the functions are only called once all the data has been gathered
                     if (n == count) {
                         self.yourOrder.text = orderSummary
                         self.tableView.reloadData()

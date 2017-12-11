@@ -17,8 +17,6 @@ class ListMyOrderGroups: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.rowHeight = UITableViewAutomaticDimension;
-        //self.tableView.estimatedRowHeight = 44.0;
 
         let databaseOrderGroupRef = Database.database().reference()
         self.tableView.backgroundColor = UIColor.clear
@@ -78,10 +76,7 @@ class ListMyOrderGroups: UITableViewController {
                         self.orderGroups.append(orderGroup!)
 
                     }
-
-                    
                 }
-                
                 //reloading the tableview
                 self.tableView.reloadData()
             }

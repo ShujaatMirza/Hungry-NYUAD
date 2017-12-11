@@ -17,9 +17,7 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var incrementButton: UIButton!
     
     var count: Int = 0
-    
     var delegate: MaintainOrder?
-    
     var menuItem: MenuItem!
     var listOfItems: [MenuItem : Int]!
 
@@ -28,6 +26,7 @@ class MenuTableViewCell: UITableViewCell {
         self.selectionStyle = UITableViewCellSelectionStyle.none
         count = 0
     }
+    
     @IBAction func increment(_ sender: Any) {
         self.delegate?.addItem(menuItem: menuItem)
         count = count + 1
@@ -40,8 +39,8 @@ class MenuTableViewCell: UITableViewCell {
             count = count - 1
             countLabel.text = String(count)
         }
-        
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
