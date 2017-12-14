@@ -25,11 +25,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? TotalOrderTableViewCell else {
             fatalError("The dequeued cell is not an instance of TotalOrderTableViewCell.")
         }
-        //guard let items = selectedItems else {
-          //  fatalError("The dequeued cell is not an instance of MenuTableViewCell.")
-        //}
-        
-        
+
         
         if indexPath.row == totalOrderCounts.count {
             var total = 0
@@ -73,7 +69,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
         btnsendtag.isHidden = true
-            
+        
         let newbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 550, width: 250, height: 70))
         newbtn.setTitleColor(UIColor.white, for: .normal)
         newbtn.frame.size = CGSize(width: 200, height: 45)
@@ -150,7 +146,6 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
             self.tableView.reloadData()
         })
 
-        //Create a button to place order only if it is owner trying to access it and if the order has not been placed
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
         RightButtonDisplay()
         self.orderGroupNameLabel.text = orderGroupObject?.name
@@ -172,7 +167,6 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 550, width: 250, height: 70))
         btn.isHidden = false
         self.view.addSubview(btn)
-        //btn.backgroundColor = UIColor.blue
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.frame.size = CGSize(width: 200, height: 45)
         btn.center.x = (btn.superview?.center.x)!
@@ -181,29 +175,24 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         btn.layer.borderColor = UIColor.lightText.cgColor
         btn.layer.cornerRadius = btn.frame.size.height / 2;
         btn.clipsToBounds = true;
-        //let btn = ButtonBaseClass(type: .custom) as ButtonBaseClass
         if ((orderGroupObject?.ownerId == Auth.auth().currentUser?.uid)) {
 
             if(orderGroupObject?.IsPlaced == false){
                 btn.setTitle("Place Order", for: .normal)
                 btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
                 btn.tag = 1
-                //self.view.addSubview(btn)
             }else if(orderGroupObject?.IsDelivered == false){
                 btn.setTitle("Order Delivered ?", for: .normal)
                 btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
                 btn.tag = 2
-                //self.view.addSubview(btn)
             }else if(orderGroupObject?.IsCompleted == false){
                 btn.setTitle("Order Completed ?", for: .normal)
                 btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
                 btn.tag = 3
-                //self.view.addSubview(btn)
             }else{
                 btn.setTitle("Exit", for: .normal)
                 btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
                 btn.tag = 4
-                //self.view.addSubview(btn)
             }
             
         } else {
@@ -214,7 +203,6 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

@@ -124,4 +124,5 @@ class CreateNewGroupViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.short
         orderDate.text = dateFormatter.string(from: sender.date)
     }
+    
 }

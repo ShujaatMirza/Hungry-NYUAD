@@ -20,9 +20,9 @@ class SelectRestaurant: UITableViewController {
     var restaurantInfo: [Restaurant] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
         ref = Database.database().reference()
         ref.child("restaurants").observeSingleEvent(of: .value, with: { snapshot in
+            print("The count is\(Int(snapshot.childrenCount))")
             self.rowCount = Int(snapshot.childrenCount)
             self.restaurantInfo.removeAll()
             for rest in snapshot.children.allObjects as! [DataSnapshot] {
@@ -32,6 +32,10 @@ class SelectRestaurant: UITableViewController {
             }
             self.tableView.reloadData()
         })
+
+        setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 106, green: 156, blue: 105))
+        
+        print("Here")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,10 +51,8 @@ class SelectRestaurant: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // method to run when table view cell is tapped
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.section).")
         selectedRestaurant = restaurantInfo[indexPath.section]

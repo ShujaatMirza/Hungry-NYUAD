@@ -57,6 +57,8 @@ class ProfileView: UIViewController, UITextFieldDelegate {
         
         // Get a reference to the database
         ref = Database.database().reference()
+        
+        
         ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
@@ -118,7 +120,6 @@ class ProfileView: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textField(_ textField: UITextField,

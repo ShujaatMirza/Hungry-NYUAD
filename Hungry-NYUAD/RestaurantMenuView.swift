@@ -74,7 +74,9 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        print("The menuID is: \(currentRestaurant?.menuId)")
         setTableViewBackgroundGradient(sender: self, cgColor(red: 163, green: 201, blue: 63), cgColor(red: 248, green: 205, blue: 70))
+
         
         
         // Retrieving menu for selected restaurant
@@ -136,6 +138,7 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("There are, \(section),  \(sectionItemCount[section])")
         if section == 0 {
             return sectionItemCount[section]
         }
@@ -173,4 +176,5 @@ class RestaurantMenuView: UITableViewController, MaintainOrder {
         
         return cell
     }
+
 }

@@ -22,6 +22,7 @@ class AddRestaurantViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         ref = Database.database().reference()
+
     }
     
     func fieldsEmpty() -> Bool{
@@ -51,4 +52,6 @@ class AddRestaurantViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+
 }

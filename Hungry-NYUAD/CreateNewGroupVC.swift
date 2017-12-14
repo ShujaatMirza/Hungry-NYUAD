@@ -16,8 +16,6 @@ class CreateNewGroupVC: UITableViewController {
         super.viewDidLoad()
         setTableViewBackgroundGradient(sender: self, cgColor(red: 10, green: 143, blue: 173), cgColor(red: 34, green: 69, blue: 145))
         self.hideKeyboardWhenTappedAround()
-        //tableView.delegate = self
-        //tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
         refOrderGroups = Constants.refs.databaseOrderGroup
@@ -39,11 +37,7 @@ class CreateNewGroupVC: UITableViewController {
     }
 
     func addGroup(){
-        //generating a new key inside artists node
-        //and also getting the generated key
         let key = refOrderGroups.childByAutoId().key
-        //OrderGroup(id: key, name: groupNameTextField.text! as String, restaurant: restaurantNameTextField.text! as String)
-        //creating order group with the given values
         let group = ["id":key,
                       "name": groupNameTextField.text! as String,
                       "restaurant": restaurantNameTextField.text! as String,
@@ -79,12 +73,11 @@ class CreateNewGroupVC: UITableViewController {
         
         self.orderGroup = orderGroup
         
-        //adding the artist inside the generated unique key
         refOrderGroups.child(key).setValue(group)
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        // Checking segues to send required data to destination
         if segue.identifier == "toSelectRestaurant" {
             print("Performing Segue")
             if let selectRestaurant = segue.destination as? SelectRestaurant{
@@ -98,7 +91,6 @@ class CreateNewGroupVC: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source

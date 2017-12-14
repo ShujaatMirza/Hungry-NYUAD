@@ -50,6 +50,8 @@ class GroupDetailsViewController : UIViewController {
     func joinGroupFunc() {
         let currentUserId : String = (Auth.auth().currentUser?.uid)!
         let key = orderGroupObject.id
+
+    
     }
 
     

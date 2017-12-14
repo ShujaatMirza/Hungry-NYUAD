@@ -24,10 +24,8 @@ import Firebase
         let databaseRef = Database.database().reference().child("order_group")
         databaseRef.observe(DataEventType.value, with: { (snapshot) in
             
-            //if the reference have some values
             if snapshot.childrenCount > 0 {
                 
-                //clearing the list
                 self.orderGroups.removeAll()
                 
                 //iterating through all the values
@@ -72,9 +70,6 @@ import Firebase
                         
                         let orderGroup = OrderGroup(id: (ordergroupId as! String?)!, name: (ordergroupName as! String?)!, restaurant: (ordergroupRestaurant as! String?)!, ownerId: (ordergroupOwnerId as! String?)!, IsPlaced: (ordergroupIsPlaced as! Bool?)!, IsDelivered: (ordergroupIsDelivered as! Bool?)!, IsCompleted: (ordergroupIsCompleted as! Bool?)!, hasReachedCapacity: (ordergrouphasReachedCapacity as! Bool?)!, numMembers: (ordergroupnumMembers as! Int?)!, menuId: ordergroupMenuId as! String, orderDate: ordergroupOrderDate
                         )
-                        //self.orderGroupObjectToSend = orderGroup
-                        //print("The object capacity is as follows " + (self.orderGroupObjectToSend?.hasReachedCapacity.description)!)
-                        //appending it to list
                         self.orderGroups.append(orderGroup!)
                     }
                 }
@@ -88,10 +83,9 @@ import Firebase
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return orderGroups.count
@@ -140,7 +134,6 @@ import Firebase
         if segue.identifier == "showGroupData" {
             
             if let ExchangeViewData = segue.destination as? GroupDetailsViewController{
-                //ExchangeViewData.orderGroupObject = self.orderGroupObjectToSend!
                 let index = tableView.indexPathForSelectedRow?.section
                 ExchangeViewData.orderGroupObject = orderGroups[index!]
                 print(ExchangeViewData.orderGroupObject.id)
@@ -148,46 +141,7 @@ import Firebase
                 print(ExchangeViewData.orderGroupObject.hasReachedCapacity.description)
             }
         }
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
    }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 
 }

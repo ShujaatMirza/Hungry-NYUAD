@@ -51,11 +51,14 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         else {
             print("Auth not in keychain")
         }
+        
+        ref = Database.database().reference()
+                
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // Sign in procedure
@@ -115,7 +118,6 @@ class SignUpView: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UINa
         GIDSignIn.sharedInstance().signOut()
         print("\nSign out clicked")
         let user = Auth.auth().currentUser
-        //print(user)
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
