@@ -62,6 +62,19 @@ class GroupMembersViewController: UIViewController, UITableViewDataSource, UITab
         return costs.count + 1
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "viewProfile" {
+            let path = self.tableView.indexPathForSelectedRow!
+            if path.row == costs.count {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewProfile" {
             let path = self.tableView.indexPathForSelectedRow!
